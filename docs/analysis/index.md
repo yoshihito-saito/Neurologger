@@ -1,6 +1,6 @@
 # Analysis
 
-Use these pages to convert WILD exports into analysis-ready files, preserve timing metadata, and prepare datasets for MATLAB, Python, and spike-sorting workflows.
+Analysis documentation covers conversion from WILD exports to analysis-ready files, with timing metadata, MATLAB and Python workflows, and spike-sorting preparation kept explicit.
 
 ## Entry Points
 
@@ -15,7 +15,7 @@ Use these pages to convert WILD exports into analysis-ready files, preserve timi
   </div>
   <div class="wild-card">
     <h3>Spike Sorting</h3>
-    <p>Export recordings into layouts usable by common spike sorting pipelines.</p>
+    <p>Recording layouts compatible with common spike-sorting pipelines.</p>
   </div>
 </div>
 

@@ -1,27 +1,27 @@
 # Hardware
 
-Use this section to identify WILD hardware files, assembly checks, power limits, and release-image compatibility before building or operating a device.
+Hardware documentation covers the WILD device architecture, board fabrication assets, mechanical assembly, power choices, and release-image compatibility for each supported hardware revision.
 
 <div class="wild-grid two">
   <div class="wild-card">
     <h3>Device Overview</h3>
-    <p>Check the core device specifications, supported modalities, storage path, wireless control, and closed-loop outputs.</p>
+    <p>Core device specifications, supported modalities, local storage path, wireless control, and closed-loop output paths.</p>
   </div>
   <div class="wild-card">
     <h3>PCB</h3>
-    <p>Find board packages, fabrication files, assembly files, and inspection points before ordering or checking boards.</p>
+    <p>Board packages, fabrication outputs, assembly files, revision notes, and inspection points for manufactured boards.</p>
   </div>
   <div class="wild-card">
     <h3>Mechanical</h3>
-    <p>Locate printable parts, baseplates, camera mounts, and orientation notes for physical assembly.</p>
+    <p>Printable parts, baseplates, camera mounts, enclosure orientation, and fit checks for head-mounted assemblies.</p>
   </div>
   <div class="wild-card">
     <h3>Power</h3>
-    <p>Select batteries and microSD cards with enough margin for boot, recording, preview, stimulation, and camera use.</p>
+    <p>Battery and microSD guidance covering boot current, recording runtime, preview load, stimulation, and camera use.</p>
   </div>
   <div class="wild-card">
     <h3>Release Images</h3>
-    <p>Match each hardware revision to the validated device image used for the experiment.</p>
+    <p>Validated device images linked to compatible hardware revisions and experiment metadata.</p>
   </div>
 </div>
 
@@ -38,4 +38,4 @@ Use this section to identify WILD hardware files, assembly checks, power limits,
 
 ## Visual Asset Policy
 
-Use real WILD material for hardware visuals: device photographs, CAD or EDA exports, microscope images, measured drawings, screenshots from project tools, or hand-authored diagrams derived from measured hardware. Do not use AI-generated device photographs or device-like renders for WILD hardware.
+Public hardware visuals are limited to real WILD material: device photographs, CAD or EDA exports, microscope images, measured drawings, screenshots from project tools, or hand-authored diagrams derived from measured hardware. AI-generated device photographs or device-like renders are excluded from WILD hardware documentation.

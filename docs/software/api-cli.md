@@ -1,6 +1,6 @@
 # API and CLI Operations
 
-Use WILD_console and the listed scripts as the supported public interface for acquisition, export, post-processing, and validation.
+WILD_console and the listed scripts form the supported public interface for acquisition, export, post-processing, and validation.
 
 WILD_console handles BLE discovery, synchronization, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
 
@@ -17,7 +17,7 @@ WILD_console handles BLE discovery, synchronization, configuration, selected pre
 
 ## CLI-Style Tool Operations
 
-Use these operations as the current public API surface:
+The current public API surface is organized around these operations:
 
 - Export recording folders from WILD_console.
 - Generate corrected `info.rhd` and `time.dat` outputs.
@@ -42,4 +42,4 @@ For reproducible use, record the following metadata with tool outputs and exampl
 
 ## SDK Status
 
-WILD_console operations and documented processing scripts are the supported public surface. Treat script internals as implementation details unless a workflow is explicitly documented.
+WILD_console operations and documented processing scripts are the supported public surface. Script internals remain implementation details unless a workflow is explicitly documented.

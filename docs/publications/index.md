@@ -1,6 +1,6 @@
 # Publications
 
-Use this page to cite WILD and report the exact hardware, release image, software version, and analysis scripts used in a study.
+Publication notes collect the current WILD citation status and the release metadata needed for reproducible methods reporting.
 
 ## Platform Manuscript
 

@@ -1,6 +1,6 @@
 # Software
 
-Use this section to install WILD_console, run acquisition workflows, export SD-card recordings, and process data for analysis.
+Software documentation covers WILD_console installation, acquisition workflows, SD-card export, and downstream processing for analysis.
 
 ## Software Components
 
@@ -15,7 +15,7 @@ Use this section to install WILD_console, run acquisition workflows, export SD-c
   </div>
   <div class="wild-card">
     <h3>API and CLI operations</h3>
-    <p>Use documented operations for data export, batch post-processing, video/audio decoding, GPIO logging, and validation utilities.</p>
+    <p>Documented operations for data export, batch post-processing, video/audio decoding, GPIO logging, and validation utilities.</p>
   </div>
   <div class="wild-card">
     <h3>Analysis scripts</h3>

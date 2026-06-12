@@ -4,7 +4,7 @@ This checklist covers the physical preparation before connecting WILD to softwar
 
 ## Device and Connectors
 
-Use the connector images to identify the stimulation, auxiliary, sensor, sync, and battery interfaces before powering the board.
+Connector images identify the stimulation, auxiliary, sensor, sync, and battery interfaces before board power-up.
 
 ![WILD connector overview](../images/WIrelessEphys_Github_8_connectors.jpg){ .wild-readable-figure }
 
@@ -22,14 +22,14 @@ Format the card from WILD_console before recording. The microSD card affects bot
 
 ![microSD power comparison](../images/WIrelessEphys_Github_10_SDcard_power.jpg){ .wild-readable-figure }
 
-Treat battery and SD guidance as part of the experimental protocol, not as optional accessory setup.
+Battery and SD guidance are part of the experimental protocol, not optional accessory setup.
 
 ![Battery examples](../images/WIrelessEphys_Github_9_batteries.jpg){ .wild-readable-figure }
 
 ## Released Device Image
 
-Public setup documentation uses prebuilt WILD release images. Select the release image that matches the hardware revision and experimental configuration, then record the release tag and image filename with the dataset metadata.
+Public setup documentation is based on prebuilt WILD release images. The release image is matched to the hardware revision and experimental configuration, with the release tag and image filename kept in dataset metadata.
 
 Release images are distributed through the [latest GitHub release](https://github.com/zifangzhao/Neurologger/releases/latest). Follow the release notes for the specific image used in the experiment.
 
-Keep a record of the release image used for each experiment so analysis metadata can be traced later.
+Release-image records keep analysis metadata traceable across experiments.

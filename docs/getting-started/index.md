@@ -1,19 +1,19 @@
 # Getting Started
 
-Start here for the shortest path from a prepared WILD device to exported, analysis-ready data.
+A prepared WILD device moves from hardware checks to acquisition and analysis through three main steps.
 
 <div class="wild-grid two">
   <div class="wild-card">
     <h3>1. Hardware setup</h3>
-    <p>Check the device, connectors, microSD card, battery, probe or sensor cabling, and confirm the matching release image for the experiment.</p>
+    <p>Device, connector, microSD, battery, probe or sensor cabling, and release-image checks before the first recording.</p>
   </div>
   <div class="wild-card">
     <h3>2. Data acquisition</h3>
-    <p>Use WILD_console for BLE discovery, synchronization, recording configuration, closed-loop control, and data export.</p>
+    <p>WILD_console provides BLE discovery, synchronization, recording configuration, closed-loop control, and data export.</p>
   </div>
   <div class="wild-card">
     <h3>3. Data analysis</h3>
-    <p>Generate compatible headers and timing files, decode camera streams, process IMU data, and prepare spike-sorting inputs.</p>
+    <p>Compatible headers, timing files, decoded camera streams, processed IMU data, and spike-sorting inputs.</p>
   </div>
 </div>
 
@@ -35,4 +35,4 @@ Start here for the shortest path from a prepared WILD device to exported, analys
 | MATLAB and Python analysis scripts | [Code](https://github.com/zifangzhao/Neurologger/tree/main/Code) |
 
 !!! tip "Recommended first path"
-    For a first device, work through Hardware Setup, Data Acquisition, and Data Analysis in order. Confirm the SD card, battery, release image, and boot state before troubleshooting acquisition.
+    The recommended first-device path is Hardware Setup, Data Acquisition, then Data Analysis. SD-card, battery, release-image, and boot-state checks provide the baseline for troubleshooting acquisition.

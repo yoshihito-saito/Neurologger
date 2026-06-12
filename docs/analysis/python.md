@@ -1,6 +1,6 @@
 # Python
 
-Use these Python scripts for camera decoding, audio handling, and validation utilities after SD-card export.
+Python utilities cover camera decoding, audio handling, GPIO logging, and validation after SD-card export.
 
 ## Scripts
 

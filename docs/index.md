@@ -49,7 +49,7 @@ hide:
 
 <section class="wild-section">
   <h2>Key Features</h2>
-  <p>Start with the capabilities most relevant to operating WILD in an experiment.</p>
+  <p>WILD capabilities center on local neural logging, responsive stimulation, embedded processing, multimodal sensing, and long-duration experiments.</p>
   <div class="wild-grid">
     <div class="wild-card">
       <h3>Local Neural Logging</h3>
@@ -117,7 +117,7 @@ hide:
     </div>
     <div class="wild-card">
       <h3>Open hardware iteration</h3>
-      <p>Use the repository to find hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
+      <p>The repository contains hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
     </div>
   </div>
 </section>
@@ -127,15 +127,15 @@ hide:
   <div class="wild-grid two">
     <div class="wild-card wild-step">
       <h3>Hardware setup</h3>
-      <p>Review connectors, battery polarity, microSD recommendations, probe or sensor cabling, then confirm the matching release image for the experiment.</p>
+      <p>Connector, battery-polarity, microSD, probe-cabling, sensor-cabling, and release-image checks come before the first recording.</p>
     </div>
     <div class="wild-card wild-step">
       <h3>Data acquisition</h3>
-      <p>Install WILD_console, connect over BLE, synchronize the device, configure recording and closed-loop settings, then start local logging.</p>
+      <p>WILD_console handles BLE connection, synchronization, recording configuration, closed-loop settings, and local logging startup.</p>
     </div>
     <div class="wild-card wild-step">
       <h3>Data analysis</h3>
-      <p>Export recordings, generate Intan-style files, process IMU and camera data, and prepare spike-sorting inputs.</p>
+      <p>Exported recordings are converted into Intan-style files, IMU and camera outputs, and spike-sorting inputs.</p>
     </div>
   </div>
 </section>
@@ -172,11 +172,11 @@ hide:
     </div>
     <div class="wild-card">
       <h3>Discussions</h3>
-      <p>Use GitHub Discussions for experiment design questions, integration planning, and troubleshooting.</p>
+      <p>GitHub Discussions host experiment design questions, integration planning, and troubleshooting.</p>
     </div>
     <div class="wild-card">
       <h3>Contributing</h3>
-      <p><a href="contributing/">Open an issue or pull request with hardware notes, analysis examples, compatibility reports, or documentation improvements.</a></p>
+      <p><a href="contributing/">Issues and pull requests are appropriate for hardware notes, analysis examples, compatibility reports, and documentation improvements.</a></p>
     </div>
   </div>
 </section>

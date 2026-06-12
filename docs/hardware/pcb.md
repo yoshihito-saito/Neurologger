@@ -1,6 +1,6 @@
 # PCB
 
-Use these board packages when ordering, assembling, or inspecting WILD hardware.
+Board packages support ordering, assembly, and inspection for WILD hardware revisions.
 
 ## Fabrication Files
 

@@ -12,7 +12,7 @@ Current AI support uses validated, experiment-specific models rather than arbitr
 - RAM use is curated before deployment.
 - Inference timing is checked against acquisition, storage, BLE, and DSP tasks.
 - Model output is integrated with device state reporting and closed-loop logic.
-- Record release image and model identity with each experiment.
+- Release image and model identity are recorded with each experiment.
 
 This approach keeps timing behavior predictable on resource-constrained embedded hardware.
 
@@ -20,7 +20,7 @@ This approach keeps timing behavior predictable on resource-constrained embedded
 
 Generic model loading is not part of the stable public workflow yet. Current releases prioritize predictable timing, memory use, and closed-loop behavior.
 
-Before a model is used in closed-loop experiments, confirm that the release defines:
+Closed-loop model releases define:
 
 - Accepted model format and quantization requirements.
 - Maximum model size and tensor arena limits.
@@ -30,4 +30,4 @@ Before a model is used in closed-loop experiments, confirm that the release defi
 - How model version, release image, and experiment metadata are recorded.
 
 !!! warning "Deployment discipline"
-    Treat embedded AI models as part of the validated device release. A model that passes desktop inference tests may still be unsafe for closed-loop use if RAM pressure or inference timing affects acquisition, storage, or stimulation behavior.
+    Embedded AI models are part of the validated device release. A model that passes desktop inference tests may still be unsafe for closed-loop use if RAM pressure or inference timing affects acquisition, storage, or stimulation behavior.
