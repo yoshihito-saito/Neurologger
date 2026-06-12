@@ -6,9 +6,9 @@ The repository contains fabrication and assembly packages for the datalogger, op
 
 | Board | Files |
 | --- | --- |
-| Datalogger | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/Datalogger) |
-| Opto module | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/Optomodule) |
-| Camera unit | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/CameraUnit) |
+| Datalogger | [Gerbers, drill files, assembly files](https://github.com/zifangzhao/Neurologger/tree/main/PCB/Datalogger) |
+| Opto module | [Gerbers, drill files, assembly files](https://github.com/zifangzhao/Neurologger/tree/main/PCB/Optomodule) |
+| Camera unit | [Gerbers, drill files, assembly files](https://github.com/zifangzhao/Neurologger/tree/main/PCB/CameraUnit) |
 
 ## Manufacturing Notes
 

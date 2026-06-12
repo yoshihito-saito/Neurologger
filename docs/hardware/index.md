@@ -25,11 +25,11 @@ WILD hardware documentation should let a new lab understand the device, manufact
 
 | Hardware area | Repository path |
 | --- | --- |
-| Datalogger PCB | [PCB/Datalogger](https://github.com/ayalab1/Neurologger/tree/main/PCB/Datalogger) |
-| Opto module | [PCB/Optomodule](https://github.com/ayalab1/Neurologger/tree/main/PCB/Optomodule) |
-| Camera unit | [PCB/CameraUnit](https://github.com/ayalab1/Neurologger/tree/main/PCB/CameraUnit) |
-| Mechanical parts | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
-| Battery table | [LipoBattery_selection.csv](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) |
+| Datalogger PCB | [PCB/Datalogger](https://github.com/zifangzhao/Neurologger/tree/main/PCB/Datalogger) |
+| Opto module | [PCB/Optomodule](https://github.com/zifangzhao/Neurologger/tree/main/PCB/Optomodule) |
+| Camera unit | [PCB/CameraUnit](https://github.com/zifangzhao/Neurologger/tree/main/PCB/CameraUnit) |
+| Mechanical parts | [3Dprint](https://github.com/zifangzhao/Neurologger/tree/main/3Dprint) |
+| Battery table | [LipoBattery_selection.csv](https://github.com/zifangzhao/Neurologger/blob/main/docs/LipoBattery_selection.csv) |
 
 ## Recommended Figures
 

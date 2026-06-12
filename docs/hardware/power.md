@@ -8,7 +8,7 @@ The current usage guide notes that WILD accepts a wide battery input range and r
 
 ![Battery examples](../images/WIrelessEphys_Github_9_batteries.jpg)
 
-Use the [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) as the starting point for runtime planning.
+Use the [battery selection table](https://github.com/zifangzhao/Neurologger/blob/main/docs/LipoBattery_selection.csv) as the starting point for runtime planning.
 
 ## microSD Power
 

@@ -11,7 +11,7 @@ Until a formal platform paper is available, cite the repository and include the 
   title        = {WILD: Open-source Wireless Neurotechnology for Naturalistic Neuroscience},
   author       = {WILD contributors},
   year         = {2026},
-  howpublished = {\url{https://github.com/ayalab1/Neurologger}}
+  howpublished = {\url{https://github.com/zifangzhao/Neurologger}}
 }
 ```
 

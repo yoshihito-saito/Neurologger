@@ -22,7 +22,7 @@ This page is the public build checklist for firmware contributors.
 Prefer names that can be traced later:
 
 ```text
-WILD64X_release_YYYYMMDD_HHMM.bin
+WILD_<revision>_release_YYYYMMDD_HHMM.bin
 ```
 
 ## Public Checklist

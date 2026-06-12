@@ -24,6 +24,6 @@ The analysis documentation should make WILD data easy to move into established n
 - Record firmware binary filename.
 - Record WILD_console version.
 - Preserve raw export folder.
-- Preserve `CE_params.bin`.
+- Preserve the WILD parameter binary.
 - Record probe, channel map, sampling rate, and stimulation configuration.
 - Track post-processing script version or commit hash.

@@ -1,9 +1,9 @@
 
 site_name: WILD
 site_description: Open-source wireless neurotechnology for naturalistic neuroscience
-site_url: https://ayalab1.github.io/Neurologger/
-repo_url: https://github.com/ayalab1/Neurologger
-repo_name: ayalab1/Neurologger
+site_url: https://zifangzhao.github.io/Neurologger/
+repo_url: https://github.com/zifangzhao/Neurologger
+repo_name: zifangzhao/Neurologger
 edit_uri: edit/main/docs/
 
 theme:
@@ -72,7 +72,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ayalab1/Neurologger
+      link: https://github.com/zifangzhao/Neurologger
       name: WILD on GitHub
 
 nav:

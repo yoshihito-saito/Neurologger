@@ -12,7 +12,7 @@ hide:
       <a class="md-button md-button--primary" href="getting-started/">Get Started</a>
       <a class="md-button" href="hardware/">Hardware</a>
       <a class="md-button" href="software/">Software</a>
-      <a class="md-button" href="https://github.com/ayalab1/Neurologger">GitHub</a>
+      <a class="md-button" href="https://github.com/zifangzhao/Neurologger">GitHub</a>
     </div>
     <div class="wild-signal-row">
       <span>Neural electrophysiology</span>
@@ -145,7 +145,7 @@ hide:
   title        = {WILD: Open-source Wireless Neurotechnology for Naturalistic Neuroscience},
   author       = {WILD contributors},
   year         = {2026},
-  howpublished = {\url{https://github.com/ayalab1/Neurologger}}
+  howpublished = {\url{https://github.com/zifangzhao/Neurologger}}
 }
 ```
 </section>
@@ -155,7 +155,7 @@ hide:
   <div class="wild-grid">
     <div class="wild-card">
       <h3>GitHub</h3>
-      <p><a href="https://github.com/ayalab1/Neurologger">Browse source, hardware files, firmware releases, and analysis scripts.</a></p>
+      <p><a href="https://github.com/zifangzhao/Neurologger">Browse source, hardware files, firmware releases, and analysis scripts.</a></p>
     </div>
     <div class="wild-card">
       <h3>Discussions</h3>

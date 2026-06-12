@@ -17,7 +17,7 @@ WILD software covers acquisition, live visualization, data export, and post-proc
 
 ## Install
 
-Download the latest installer from [Software](https://github.com/ayalab1/Neurologger/tree/main/Software). Development builds of the console are maintained in the CE32_console reference project.
+Download the latest WILD console installer from [Software](https://github.com/zifangzhao/Neurologger/tree/main/Software). Development builds should be documented under the WILD console name, even when internal source folders still use older names.
 
 ## Requirements
 
@@ -29,5 +29,5 @@ Download the latest installer from [Software](https://github.com/ayalab1/Neurolo
 ## Optional Runtime Files
 
 - `dll_upfirdn.dll` for resampling.
-- `CE32_BLE.dll` for BLE backend support in older layouts.
+- WILD BLE backend DLL for BLE support in older installer layouts.
 - `ffmpeg.exe` for some camera processing workflows.

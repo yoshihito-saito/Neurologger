@@ -19,7 +19,7 @@ flowchart TD
 - Start from bootloader or application image.
 - Validate and apply system parameters.
 - Acquire neural and auxiliary channels.
-- Write data to microSD in the WILD/CE32 recording layout.
+- Write data to microSD in the WILD recording layout.
 - Respond to BLE commands from WILD_console.
 - Run online filters and closed-loop logic when enabled.
 - Provide preview and state data for live monitoring.

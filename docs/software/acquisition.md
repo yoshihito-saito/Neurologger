@@ -26,6 +26,6 @@ The exported folder can include:
 - `supply.dat`.
 - `time.dat`.
 - `info.rhd`.
-- `CE_params.bin`.
+- WILD parameter binary.
 
 See [Data Format](data-format.md) for field descriptions.

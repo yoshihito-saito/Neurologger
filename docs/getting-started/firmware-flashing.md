@@ -9,7 +9,7 @@ WILD uses a bootloader plus application-image workflow. The first flash programs
 3. Connect USB to the PC while holding the short.
 4. Release the short after the device powers up.
 5. Open STM32CubeProgrammer.
-6. Flash the bootloader image from [Firmware](https://github.com/ayalab1/Neurologger/tree/main/Firmware).
+6. Flash the bootloader image from [Firmware](https://github.com/zifangzhao/Neurologger/tree/main/Firmware).
 
 ## Application Update from microSD
 
@@ -21,6 +21,6 @@ WILD uses a bootloader plus application-image workflow. The first flash programs
 
 ## Firmware References
 
-- Current repository release images are in [Firmware](https://github.com/ayalab1/Neurologger/tree/main/Firmware).
-- The CE64 reference project uses STM32 firmware sources and Keil MDK project files.
+- Current repository release images are in [Firmware](https://github.com/zifangzhao/Neurologger/tree/main/Firmware).
+- WILD firmware reference projects use STM32 firmware sources and Keil MDK project files.
 - Keep a record of the firmware image used for each experiment so analysis metadata can be traced later.

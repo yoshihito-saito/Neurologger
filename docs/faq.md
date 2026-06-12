@@ -6,7 +6,7 @@ WILD is designed for wireless and naturalistic experiments where tethered acquis
 
 ## How do I install the PC software?
 
-Download the latest installer from [Software](https://github.com/ayalab1/Neurologger/tree/main/Software), then follow the acquisition guide.
+Download the latest installer from [Software](https://github.com/zifangzhao/Neurologger/tree/main/Software), then follow the acquisition guide.
 
 ## What should I check if BLE connects but recording does not start?
 

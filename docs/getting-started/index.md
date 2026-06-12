@@ -33,11 +33,11 @@ WILD setup has four practical stages: prepare the hardware, flash firmware, reco
 
 | Asset | Location |
 | --- | --- |
-| Firmware releases | [Firmware](https://github.com/ayalab1/Neurologger/tree/main/Firmware) |
-| WILD_console installers | [Software](https://github.com/ayalab1/Neurologger/tree/main/Software) |
-| PCB fabrication files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
-| 3D-print files | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
-| MATLAB and Python analysis scripts | [Code](https://github.com/ayalab1/Neurologger/tree/main/Code) |
+| Firmware releases | [Firmware](https://github.com/zifangzhao/Neurologger/tree/main/Firmware) |
+| WILD_console installers | [Software](https://github.com/zifangzhao/Neurologger/tree/main/Software) |
+| PCB fabrication files | [PCB](https://github.com/zifangzhao/Neurologger/tree/main/PCB) |
+| 3D-print files | [3Dprint](https://github.com/zifangzhao/Neurologger/tree/main/3Dprint) |
+| MATLAB and Python analysis scripts | [Code](https://github.com/zifangzhao/Neurologger/tree/main/Code) |
 
 !!! tip "Recommended first path"
     If this is your first device, work through Hardware Setup, Firmware Flashing, Data Acquisition, and Data Analysis in order. Most acquisition failures are easier to diagnose when the SD card, battery, and boot state are known.

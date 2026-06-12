@@ -4,7 +4,7 @@ WILD firmware coordinates sensor acquisition, local storage, BLE control, closed
 
 ## Reference Firmware Tree
 
-The current public release binaries live in [Firmware](https://github.com/ayalab1/Neurologger/tree/main/Firmware). The CE64 reference project contains STM32 sources and Keil MDK project files used for WILD64-style firmware development.
+The current public release binaries live in [Firmware](https://github.com/zifangzhao/Neurologger/tree/main/Firmware). Public docs should describe all supported hardware revisions as WILD firmware targets, with exact source trees and toolchains documented by WILD revision name.
 
 ## Firmware Topics
 
