@@ -19,4 +19,4 @@ The WILD platform manuscript is currently under review. Cite the manuscript once
 
 When citing a specific software or hardware release, include the GitHub repository URL and the exact release image, software version, and hardware revision used.
 
-Repository: [https://github.com/zifangzhao/Neurologger](https://github.com/zifangzhao/Neurologger)
+Repository: [https://github.com/ayalab/neurologger](https://github.com/ayalab/neurologger)
