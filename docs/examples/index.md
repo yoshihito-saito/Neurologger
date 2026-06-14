@@ -5,7 +5,7 @@ These example workflows summarize common WILD device use cases and the metadata 
 ## Workflow Index
 
 | Example | Scope | Expected validation |
-| --- | --- |
+| --- | --- | --- |
 | Basic neural recording | Battery, SD format, BLE connect, recording, export, preprocessing. | `amplifier.dat`, `analogin.dat`, `time.dat`, `info.rhd`, `CE_params.bin`. |
 | Closed-loop ripple detection | Filter setup, thresholding, stimulation configuration, validation waveform. | Event files, threshold traces, and stimulation timing review. |
 | Theta phase stimulation | Hilbert mode setup, phase logic, stimulation timing, event export. | Phase-locked trigger timing and stimulation event checks. |
