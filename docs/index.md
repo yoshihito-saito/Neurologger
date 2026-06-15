@@ -22,8 +22,11 @@ hide:
       <span>Camera</span>
     </div>
   </div>
-  <figure class="wild-hero-media">
-    <img src="images/WIrelessEphys_Github_1_devicePicture.jpg" alt="WILD wireless modular datalogger device">
+  <figure class="wild-hero-media wild-hero-media-tiled">
+    <div class="wild-hero-tiles">
+      <img src="images/WIrelessEphys_Github_1_devicePicture.jpg" alt="WILD wireless modular datalogger device">
+      <img src="images/WIrelessEphys_Github.jpg" alt="Example WILD electrophysiology recording workflow">
+    </div>
     <figcaption class="wild-caption">The WILD device integrates local neural recording, behavioral monitoring, real-time embedded processing, microSD storage, and wireless control for naturalistic systems neuroscience experiments.</figcaption>
   </figure>
 </section>

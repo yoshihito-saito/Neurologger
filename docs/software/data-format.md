@@ -5,7 +5,7 @@ Each WILD device recording session exports a folder with neural data, auxiliary 
 ## Files
 
 | File | Verified public handling | Notes |
-| --- | --- |
+| --- | --- | --- |
 | `amplifier.dat` | Read by `WILD_PreProcess.m` as channel-interleaved 16-bit neural data. | Sample count is computed as `file_bytes / 2 / Nch`, with `Nch` read from `CE_params.bin`. |
 | `analogin.dat` | Used as the auxiliary stream for digital inputs, IMU, and timing-related channels. | Public MATLAB scripts read this stream as 16 channels at 1250 Hz for preprocessing and IMU extraction. |
 | `digitalin.dat` | Optional digital-input export artifact. | Not every workflow generates a separate file; public trigger generation currently derives digital events from `analogin.dat`. |
