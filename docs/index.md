@@ -41,20 +41,20 @@ hide:
 
 <section class="wild-section">
   <h2>Why WILD?</h2>
-  <div class="wild-grid">
-    <div class="wild-card">
+  <div class="wild-grid wild-feature-grid">
+    <div class="wild-card wild-feature-card">
       <h3>Naturalistic neuroscience</h3>
       <p>Record neural activity while animals explore, interact socially, vocalize, or move through large environments where tethered systems are limiting.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Local full-resolution recording</h3>
       <p>High-bandwidth neural and multimodal data are written to onboard microSD storage. BLE is used for discovery, configuration, synchronization support, status, preview, and commands.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Closed-loop control</h3>
       <p>Embedded DSP and curated TinyML workflows support device-local detection and responsive stimulation without requiring continuous full-bandwidth wireless streaming.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Open and reproducible</h3>
       <p>Hardware files, release images, WILD_console installers, MATLAB scripts, Python tools, and documentation are maintained in the public repository.</p>
     </div>
@@ -123,28 +123,18 @@ hide:
 
 <section class="wild-section">
   <h2>Specification summary</h2>
-  <p>These values summarize the current public WILD release. Report exact release metadata when comparing experiments.</p>
-  <div class="wild-spec-scroll" role="region" aria-label="WILD device specification summary" tabindex="0">
-    <table class="wild-spec-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Public WILD specification</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Neural channels</td><td>64</td></tr>
-        <tr><td>Logger mass</td><td>Approximately 1.48 g, configuration-dependent</td></tr>
-        <tr><td>Board dimensions</td><td>23.3 x 15.7 mm</td></tr>
-        <tr><td>Neural sampling rates</td><td>1,250-20,000 Hz, release-configured</td></tr>
-        <tr><td>Storage</td><td>Onboard microSD local recording</td></tr>
-        <tr><td>Wireless link</td><td>BLE for discovery, configuration, synchronization support, status, preview, and commands</td></tr>
-        <tr><td>Behavioral sensors</td><td>9-axis IMU, ultrasonic microphone, head-mounted camera, digital inputs</td></tr>
-        <tr><td>Closed-loop support</td><td>Embedded DSP, curated TinyML workflows, and optional stimulation outputs in validated releases</td></tr>
-      </tbody>
-    </table>
+  <p>The public WILD workflow combines local high-bandwidth recording with low-bandwidth wireless control and documented post-processing.</p>
+  <div class="wild-spec-strip" aria-label="WILD device specification strip">
+    <span>64 channels</span>
+    <span>~1.48 g logger</span>
+    <span>microSD logging</span>
+    <span>BLE control</span>
+    <span>9-axis IMU</span>
+    <span>USV audio</span>
+    <span>Head-mounted camera</span>
+    <span>Closed-loop DSP</span>
   </div>
-  <p class="wild-table-note">Detailed power measurements by operating mode are listed in the Hardware and Power documentation.</p>
+  <p class="wild-table-note">Detailed mode-dependent power and runtime records belong in the Hardware and Power documentation, together with release image, SD-card, and battery metadata.</p>
 </section>
 
 <section class="wild-section">
@@ -167,28 +157,28 @@ hide:
 
 <section class="wild-section">
   <h2>Research highlights</h2>
-  <div class="wild-grid">
-    <div class="wild-card">
+  <div class="wild-grid wild-highlight-grid">
+    <div class="wild-card wild-highlight-card">
       <h3>Outdoor recordings</h3>
       <p>Local storage and wireless control support electrophysiological recordings in large naturalistic environments where tethering is impractical.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Multi-animal experiments</h3>
       <p>Wired sync, BLE calibration, and clock-correction workflows coordinate multiple WILD devices and external behavioral systems.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Closed-loop ripple detection</h3>
       <p>DSP filters support ripple-band detection for responsive hippocampal experiments in validated release images.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Theta phase stimulation</h3>
       <p>Hilbert and filter modes support phase-aware online control designs when enabled and validated for the release image.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Multimodal behavior</h3>
       <p>IMU, video, USV, and neural data support studies of social interaction, navigation, and freely expressed behavior.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Open hardware iteration</h3>
       <p>The repository contains hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
     </div>

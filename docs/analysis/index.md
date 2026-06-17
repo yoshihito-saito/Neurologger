@@ -4,18 +4,24 @@ Analysis documentation covers conversion from WILD exports to analysis-ready fil
 
 ## Entry Points
 
-<div class="wild-grid">
-  <a class="wild-card wild-card-link" href="python/">
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="python/">
+    <div>
     <h3>Python</h3>
-    <p>Camera decoding, video/audio handling, GPIO logging, and pipeline integration scripts.</p>
+      <p>Video and GPIO</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="matlab/">
+  <a class="wild-card wild-card-link wild-card-compact" href="matlab/">
+    <div>
     <h3>MATLAB</h3>
-    <p>Header generation, preprocessing, IMU processing, and compatibility with existing lab scripts.</p>
+      <p>Preprocessing</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="spike-sorting/">
-    <h3>Spike Sorting</h3>
-    <p>Recording layouts compatible with common spike-sorting pipelines.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="spike-sorting/">
+    <div>
+      <h3>Spike sorting</h3>
+      <p>Ephys pipeline</p>
+    </div>
   </a>
 </div>
 

@@ -4,26 +4,36 @@ Software documentation covers how to connect to the WILD device, configure recor
 
 ## Software Components
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="acquisition/">
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/">
+    <div>
     <h3>WILD_console</h3>
-    <p>Windows GUI for connecting to WILD over BLE, synchronizing the session, setting up recordings, previewing selected signals, configuring closed-loop behavior, and exporting SD-card data.</p>
+      <p>Connect and export</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="acquisition/#wireless-connection-model">
+  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/#wireless-connection-model">
+    <div>
     <h3>iOS controller</h3>
-    <p>In-development app for device discovery, BLE connection, synchronization support, status checks, and low-bandwidth control.</p>
+      <p>Wireless control</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="artificial-intelligence/">
-    <h3>Embedded inference</h3>
-    <p>Curated embedded models for validated closed-loop releases. Generic model loading is not yet part of the stable workflow.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="artificial-intelligence/">
+    <div>
+      <h3>Embedded AI</h3>
+      <p>Validated models</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="api-cli/">
-    <h3>Programmatic workflows</h3>
-    <p>Documented operations for data export, batch post-processing, video/audio decoding, GPIO logging, and validation utilities.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="api-cli/">
+    <div>
+      <h3>Scripts</h3>
+      <p>Batch tools</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="../analysis/">
-    <h3>Analysis scripts</h3>
-    <p>MATLAB and Python scripts for headers, timing, IMU processing, video decoding, and downstream analysis.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="../analysis/">
+    <div>
+      <h3>Analysis</h3>
+      <p>MATLAB and Python</p>
+    </div>
   </a>
 </div>
 

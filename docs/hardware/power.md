@@ -20,6 +20,8 @@ The [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/d
 
 The WILD device battery input uses the JST-SH connector orientation documented in the hardware setup workflow. The connector is part of the experiment record because polarity, strain relief, and repeated mating can affect boot stability and long-session reliability.
 
+![WILD connector orientation schematic](../images/WIrelessEphys_Github_6_Connectors.jpg){ .wild-readable-figure }
+
 For each hardware revision, record:
 
 - Battery connector type and orientation.

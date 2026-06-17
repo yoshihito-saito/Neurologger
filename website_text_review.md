@@ -51,20 +51,20 @@ hide:
 
 <section class="wild-section">
   <h2>Why WILD?</h2>
-  <div class="wild-grid">
-    <div class="wild-card">
+  <div class="wild-grid wild-feature-grid">
+    <div class="wild-card wild-feature-card">
       <h3>Naturalistic neuroscience</h3>
       <p>Record neural activity while animals explore, interact socially, vocalize, or move through large environments where tethered systems are limiting.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Local full-resolution recording</h3>
       <p>High-bandwidth neural and multimodal data are written to onboard microSD storage. BLE is used for discovery, configuration, synchronization support, status, preview, and commands.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Closed-loop control</h3>
       <p>Embedded DSP and curated TinyML workflows support device-local detection and responsive stimulation without requiring continuous full-bandwidth wireless streaming.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-feature-card">
       <h3>Open and reproducible</h3>
       <p>Hardware files, release images, WILD_console installers, MATLAB scripts, Python tools, and documentation are maintained in the public repository.</p>
     </div>
@@ -133,28 +133,18 @@ hide:
 
 <section class="wild-section">
   <h2>Specification summary</h2>
-  <p>These values summarize the current public WILD release. Report exact release metadata when comparing experiments.</p>
-  <div class="wild-spec-scroll" role="region" aria-label="WILD device specification summary" tabindex="0">
-    <table class="wild-spec-table">
-      <thead>
-        <tr>
-          <th>Feature</th>
-          <th>Public WILD specification</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Neural channels</td><td>64</td></tr>
-        <tr><td>Logger mass</td><td>Approximately 1.48 g, configuration-dependent</td></tr>
-        <tr><td>Board dimensions</td><td>23.3 x 15.7 mm</td></tr>
-        <tr><td>Neural sampling rates</td><td>1,250-20,000 Hz, release-configured</td></tr>
-        <tr><td>Storage</td><td>Onboard microSD local recording</td></tr>
-        <tr><td>Wireless link</td><td>BLE for discovery, configuration, synchronization support, status, preview, and commands</td></tr>
-        <tr><td>Behavioral sensors</td><td>9-axis IMU, ultrasonic microphone, head-mounted camera, digital inputs</td></tr>
-        <tr><td>Closed-loop support</td><td>Embedded DSP, curated TinyML workflows, and optional stimulation outputs in validated releases</td></tr>
-      </tbody>
-    </table>
+  <p>The public WILD workflow combines local high-bandwidth recording with low-bandwidth wireless control and documented post-processing.</p>
+  <div class="wild-spec-strip" aria-label="WILD device specification strip">
+    <span>64 channels</span>
+    <span>~1.48 g logger</span>
+    <span>microSD logging</span>
+    <span>BLE control</span>
+    <span>9-axis IMU</span>
+    <span>USV audio</span>
+    <span>Head-mounted camera</span>
+    <span>Closed-loop DSP</span>
   </div>
-  <p class="wild-table-note">Detailed power measurements by operating mode are listed in the Hardware and Power documentation.</p>
+  <p class="wild-table-note">Detailed mode-dependent power and runtime records belong in the Hardware and Power documentation, together with release image, SD-card, and battery metadata.</p>
 </section>
 
 <section class="wild-section">
@@ -177,28 +167,28 @@ hide:
 
 <section class="wild-section">
   <h2>Research highlights</h2>
-  <div class="wild-grid">
-    <div class="wild-card">
+  <div class="wild-grid wild-highlight-grid">
+    <div class="wild-card wild-highlight-card">
       <h3>Outdoor recordings</h3>
       <p>Local storage and wireless control support electrophysiological recordings in large naturalistic environments where tethering is impractical.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Multi-animal experiments</h3>
       <p>Wired sync, BLE calibration, and clock-correction workflows coordinate multiple WILD devices and external behavioral systems.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Closed-loop ripple detection</h3>
       <p>DSP filters support ripple-band detection for responsive hippocampal experiments in validated release images.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Theta phase stimulation</h3>
       <p>Hilbert and filter modes support phase-aware online control designs when enabled and validated for the release image.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Multimodal behavior</h3>
       <p>IMU, video, USV, and neural data support studies of social interaction, navigation, and freely expressed behavior.</p>
     </div>
-    <div class="wild-card">
+    <div class="wild-card wild-highlight-card">
       <h3>Open hardware iteration</h3>
       <p>The repository contains hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
     </div>
@@ -275,18 +265,24 @@ hide:
 
 Start here if you are setting up a WILD device for the first time or reproducing the public workflow from the Nature Methods platform paper.
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="hardware-setup/">
-    <h3>1. Hardware setup</h3>
-    <p>Prepare the WILD device, connector, microSD card, battery, probe or sensor cabling, and release image before recording.</p>
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="hardware-setup/">
+    <div>
+      <h3>Hardware setup</h3>
+      <p>Prepare device</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="data-acquisition/">
-    <h3>2. Data acquisition</h3>
-    <p>Use WILD_console for BLE discovery, synchronization support, recording configuration, closed-loop control, and SD-card export.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="data-acquisition/">
+    <div>
+      <h3>Data acquisition</h3>
+      <p>Record and export</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="data-analysis/">
-    <h3>3. Data analysis</h3>
-    <p>Generate compatible headers, timing files, decoded camera streams, processed IMU data, and spike-sorting inputs.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="data-analysis/">
+    <div>
+      <h3>Data analysis</h3>
+      <p>Convert outputs</p>
+    </div>
   </a>
 </div>
 
@@ -352,6 +348,10 @@ This checklist covers the physical preparation required before connecting WILD t
 Connector images identify the stimulation, auxiliary, sensor, sync, and battery interfaces before board power-up.
 
 ![WILD connector overview](../images/WIrelessEphys_Github_8_connectors.jpg){ .wild-readable-figure }
+
+The connector-orientation schematic below highlights the power, ground, and USB data-line positions used during the first hardware check. Confirm the actual connector orientation on the assembled WILD device before applying power.
+
+![WILD connector orientation schematic](../images/WIrelessEphys_Github_6_Connectors.jpg){ .wild-readable-figure }
 
 The WILD device uses these connectors to support local acquisition, storage, wireless control, synchronization, and optional stimulation in a compact head-mounted unit. Before powering the device, confirm which interfaces are required for the planned session.
 
@@ -560,38 +560,54 @@ The repository includes MATLAB and Python scripts for converting WILD recordings
 
 Hardware documentation covers the WILD device architecture, board fabrication assets, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="device-overview/">
-    <h3>Device Overview</h3>
-    <p>Core device specifications, supported modalities, local storage, wireless control, and closed-loop output paths.</p>
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="device-overview/">
+    <div>
+      <h3>Device</h3>
+      <p>Architecture</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="onboard-sensors/">
-    <h3>Onboard Sensors</h3>
-    <p>IMU, camera, microphone, digital inputs, camera working distance, and microphone ribbon-amplifier notes.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="onboard-sensors/">
+    <div>
+      <h3>Sensors</h3>
+      <p>IMU, audio, camera</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="opto-module/">
-    <h3>Opto Module</h3>
-    <p>Optional stimulation-module assets, supported stimulation operations, and bench validation checks.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="opto-module/">
+    <div>
+      <h3>Opto module</h3>
+      <p>Stimulation</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="usb-board/">
-    <h3>USB Board</h3>
-    <p>USB-GPIO board picture, supported input/output operations, and trigger-alignment metadata.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="usb-board/">
+    <div>
+      <h3>USB-GPIO</h3>
+      <p>Trigger alignment</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="pcb/">
+  <a class="wild-card wild-card-link wild-card-compact" href="pcb/">
+    <div>
     <h3>PCB</h3>
-    <p>Board packages, fabrication outputs, assembly files, revision notes, and inspection points for manufactured boards.</p>
+      <p>Fabrication files</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="mechanical/">
+  <a class="wild-card wild-card-link wild-card-compact" href="mechanical/">
+    <div>
     <h3>Mechanical</h3>
-    <p>Printable parts, baseplates, camera mounts, enclosure orientation, and fit checks for head-mounted assemblies.</p>
+      <p>Mounts and enclosures</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="power/">
+  <a class="wild-card wild-card-link wild-card-compact" href="power/">
+    <div>
     <h3>Power</h3>
-    <p>Battery and microSD guidance for boot current, recording runtime, preview load, stimulation, and camera use.</p>
+      <p>Battery and SD</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="https://github.com/ayalab1/Neurologger/releases/latest">
-    <h3>Release Images</h3>
-    <p>Validated WILD device images linked to compatible hardware revisions and experiment metadata.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="https://github.com/ayalab1/Neurologger/releases/latest">
+    <div>
+      <h3>Releases</h3>
+      <p>Firmware images</p>
+    </div>
   </a>
 </div>
 
@@ -652,18 +668,32 @@ The device is best understood as a head-mounted acquisition and control unit. Ne
 
 ## Functional Blocks
 
-```mermaid
-flowchart TB
-  Probe[Neural probe] --> AFE[Analog front end]
-  Sensors[IMU, audio, camera, digital inputs] --> MCU[MCU and embedded DSP]
-  AFE --> MCU
-  MCU --> SD[microSD storage]
-  MCU --> BLE[BLE control, sync, status, preview]
-  MCU --> ExtIO[External I/O sync and control]
-  MCU --> USB[USB setup and bench streaming]
-  MCU --> Stim[Stimulation outputs]
-  SD --> Analysis[MATLAB, Python, spike sorting]
-```
+<div class="wild-functional-blocks" aria-label="WILD functional block diagram">
+  <div class="wild-fb-group">
+    <h3>Inputs</h3>
+    <div class="wild-fb-card">Neural probe</div>
+    <div class="wild-fb-card">IMU, audio, camera, and digital inputs</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Device core</h3>
+    <div class="wild-fb-card wild-fb-primary">Analog front end</div>
+    <div class="wild-fb-card wild-fb-primary">MCU and embedded DSP</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Local outputs</h3>
+    <div class="wild-fb-card">microSD storage</div>
+    <div class="wild-fb-card">Stimulation outputs</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Control links</h3>
+    <div class="wild-fb-card">BLE control, sync, status, and preview</div>
+    <div class="wild-fb-card">External I/O and USB setup</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Analysis</h3>
+    <div class="wild-fb-card">MATLAB, Python, and spike sorting</div>
+  </div>
+</div>
 
 ## Device Interfaces
 
@@ -942,6 +972,8 @@ The [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/d
 
 The WILD device battery input uses the JST-SH connector orientation documented in the hardware setup workflow. The connector is part of the experiment record because polarity, strain relief, and repeated mating can affect boot stability and long-session reliability.
 
+![WILD connector orientation schematic](../images/WIrelessEphys_Github_6_Connectors.jpg){ .wild-readable-figure }
+
 For each hardware revision, record:
 
 - Battery connector type and orientation.
@@ -998,26 +1030,36 @@ Software documentation covers how to connect to the WILD device, configure recor
 
 ## Software Components
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="acquisition/">
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/">
+    <div>
     <h3>WILD_console</h3>
-    <p>Windows GUI for connecting to WILD over BLE, synchronizing the session, setting up recordings, previewing selected signals, configuring closed-loop behavior, and exporting SD-card data.</p>
+      <p>Connect and export</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="acquisition/#wireless-connection-model">
+  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/#wireless-connection-model">
+    <div>
     <h3>iOS controller</h3>
-    <p>In-development app for device discovery, BLE connection, synchronization support, status checks, and low-bandwidth control.</p>
+      <p>Wireless control</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="artificial-intelligence/">
-    <h3>Embedded inference</h3>
-    <p>Curated embedded models for validated closed-loop releases. Generic model loading is not yet part of the stable workflow.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="artificial-intelligence/">
+    <div>
+      <h3>Embedded AI</h3>
+      <p>Validated models</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="api-cli/">
-    <h3>Programmatic workflows</h3>
-    <p>Documented operations for data export, batch post-processing, video/audio decoding, GPIO logging, and validation utilities.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="api-cli/">
+    <div>
+      <h3>Scripts</h3>
+      <p>Batch tools</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="../analysis/">
-    <h3>Analysis scripts</h3>
-    <p>MATLAB and Python scripts for headers, timing, IMU processing, video decoding, and downstream analysis.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="../analysis/">
+    <div>
+      <h3>Analysis</h3>
+      <p>MATLAB and Python</p>
+    </div>
   </a>
 </div>
 
@@ -1408,18 +1450,24 @@ Analysis documentation covers conversion from WILD exports to analysis-ready fil
 
 ## Entry Points
 
-<div class="wild-grid">
-  <a class="wild-card wild-card-link" href="python/">
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="python/">
+    <div>
     <h3>Python</h3>
-    <p>Camera decoding, video/audio handling, GPIO logging, and pipeline integration scripts.</p>
+      <p>Video and GPIO</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="matlab/">
+  <a class="wild-card wild-card-link wild-card-compact" href="matlab/">
+    <div>
     <h3>MATLAB</h3>
-    <p>Header generation, preprocessing, IMU processing, and compatibility with existing lab scripts.</p>
+      <p>Preprocessing</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="spike-sorting/">
-    <h3>Spike Sorting</h3>
-    <p>Recording layouts compatible with common spike-sorting pipelines.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="spike-sorting/">
+    <div>
+      <h3>Spike sorting</h3>
+      <p>Ephys pipeline</p>
+    </div>
   </a>
 </div>
 

@@ -10,18 +10,32 @@ The device is best understood as a head-mounted acquisition and control unit. Ne
 
 ## Functional Blocks
 
-```mermaid
-flowchart TB
-  Probe[Neural probe] --> AFE[Analog front end]
-  Sensors[IMU, audio, camera, digital inputs] --> MCU[MCU and embedded DSP]
-  AFE --> MCU
-  MCU --> SD[microSD storage]
-  MCU --> BLE[BLE control, sync, status, preview]
-  MCU --> ExtIO[External I/O sync and control]
-  MCU --> USB[USB setup and bench streaming]
-  MCU --> Stim[Stimulation outputs]
-  SD --> Analysis[MATLAB, Python, spike sorting]
-```
+<div class="wild-functional-blocks" aria-label="WILD functional block diagram">
+  <div class="wild-fb-group">
+    <h3>Inputs</h3>
+    <div class="wild-fb-card">Neural probe</div>
+    <div class="wild-fb-card">IMU, audio, camera, and digital inputs</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Device core</h3>
+    <div class="wild-fb-card wild-fb-primary">Analog front end</div>
+    <div class="wild-fb-card wild-fb-primary">MCU and embedded DSP</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Local outputs</h3>
+    <div class="wild-fb-card">microSD storage</div>
+    <div class="wild-fb-card">Stimulation outputs</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Control links</h3>
+    <div class="wild-fb-card">BLE control, sync, status, and preview</div>
+    <div class="wild-fb-card">External I/O and USB setup</div>
+  </div>
+  <div class="wild-fb-group">
+    <h3>Analysis</h3>
+    <div class="wild-fb-card">MATLAB, Python, and spike sorting</div>
+  </div>
+</div>
 
 ## Device Interfaces
 

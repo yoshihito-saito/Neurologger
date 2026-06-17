@@ -2,18 +2,24 @@
 
 Start here if you are setting up a WILD device for the first time or reproducing the public workflow from the Nature Methods platform paper.
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="hardware-setup/">
-    <h3>1. Hardware setup</h3>
-    <p>Prepare the WILD device, connector, microSD card, battery, probe or sensor cabling, and release image before recording.</p>
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="hardware-setup/">
+    <div>
+      <h3>Hardware setup</h3>
+      <p>Prepare device</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="data-acquisition/">
-    <h3>2. Data acquisition</h3>
-    <p>Use WILD_console for BLE discovery, synchronization support, recording configuration, closed-loop control, and SD-card export.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="data-acquisition/">
+    <div>
+      <h3>Data acquisition</h3>
+      <p>Record and export</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="data-analysis/">
-    <h3>3. Data analysis</h3>
-    <p>Generate compatible headers, timing files, decoded camera streams, processed IMU data, and spike-sorting inputs.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="data-analysis/">
+    <div>
+      <h3>Data analysis</h3>
+      <p>Convert outputs</p>
+    </div>
   </a>
 </div>
 

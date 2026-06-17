@@ -2,38 +2,54 @@
 
 Hardware documentation covers the WILD device architecture, board fabrication assets, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
 
-<div class="wild-grid two">
-  <a class="wild-card wild-card-link" href="device-overview/">
-    <h3>Device Overview</h3>
-    <p>Core device specifications, supported modalities, local storage, wireless control, and closed-loop output paths.</p>
+<div class="wild-grid wild-nav-grid">
+  <a class="wild-card wild-card-link wild-card-compact" href="device-overview/">
+    <div>
+      <h3>Device</h3>
+      <p>Architecture</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="onboard-sensors/">
-    <h3>Onboard Sensors</h3>
-    <p>IMU, camera, microphone, digital inputs, camera working distance, and microphone ribbon-amplifier notes.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="onboard-sensors/">
+    <div>
+      <h3>Sensors</h3>
+      <p>IMU, audio, camera</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="opto-module/">
-    <h3>Opto Module</h3>
-    <p>Optional stimulation-module assets, supported stimulation operations, and bench validation checks.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="opto-module/">
+    <div>
+      <h3>Opto module</h3>
+      <p>Stimulation</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="usb-board/">
-    <h3>USB Board</h3>
-    <p>USB-GPIO board picture, supported input/output operations, and trigger-alignment metadata.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="usb-board/">
+    <div>
+      <h3>USB-GPIO</h3>
+      <p>Trigger alignment</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="pcb/">
+  <a class="wild-card wild-card-link wild-card-compact" href="pcb/">
+    <div>
     <h3>PCB</h3>
-    <p>Board packages, fabrication outputs, assembly files, revision notes, and inspection points for manufactured boards.</p>
+      <p>Fabrication files</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="mechanical/">
+  <a class="wild-card wild-card-link wild-card-compact" href="mechanical/">
+    <div>
     <h3>Mechanical</h3>
-    <p>Printable parts, baseplates, camera mounts, enclosure orientation, and fit checks for head-mounted assemblies.</p>
+      <p>Mounts and enclosures</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="power/">
+  <a class="wild-card wild-card-link wild-card-compact" href="power/">
+    <div>
     <h3>Power</h3>
-    <p>Battery and microSD guidance for boot current, recording runtime, preview load, stimulation, and camera use.</p>
+      <p>Battery and SD</p>
+    </div>
   </a>
-  <a class="wild-card wild-card-link" href="https://github.com/ayalab1/Neurologger/releases/latest">
-    <h3>Release Images</h3>
-    <p>Validated WILD device images linked to compatible hardware revisions and experiment metadata.</p>
+  <a class="wild-card wild-card-link wild-card-compact" href="https://github.com/ayalab1/Neurologger/releases/latest">
+    <div>
+      <h3>Releases</h3>
+      <p>Firmware images</p>
+    </div>
   </a>
 </div>
 
