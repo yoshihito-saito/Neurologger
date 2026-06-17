@@ -1,17 +1,18 @@
 # Publications
 
-Publication notes collect the current WILD citation status and the release metadata needed for reproducible methods reporting.
+Publication notes collect the WILD citation and the release metadata needed for reproducible methods reporting.
 
-## Platform Manuscript
+## Platform Paper
 
-The WILD platform manuscript is currently under review. Cite the manuscript once the final public citation is available. For repository-based methods descriptions, include the WILD hardware revision, release image, WILD_console version, and analysis-script version used in the work.
+The WILD platform paper appears in *Nature Methods*. Add the final DOI, volume, issue, and page range here when available. For repository-based methods descriptions, include the WILD hardware revision, release image, WILD_console version, and analysis-script version used in the work.
 
 ```bibtex
-@article{zhao_wild_neurologger,
+@article{zhao2026wild,
   title        = {A wireless modular platform for neuro-behavioral recording and closed-loop manipulation in small animals},
   author       = {Zhao, Zifang and Chang, Hongyu and Paudel, Praveen and Park, Jaehyo and Liu, Can and Aurelio, Maria Q. and Oliva, Azahara and Fernandez-Ruiz, Antonio},
+  journal      = {Nature Methods},
   year         = {2026},
-  note         = {Under review}
+  doi          = {ADD_FINAL_DOI}
 }
 ```
 
@@ -21,9 +22,9 @@ When citing a specific software or hardware release, include the GitHub reposito
 
 Repository: [https://github.com/ayalab1/Neurologger](https://github.com/ayalab1/Neurologger)
 
-## How to Cite Before Publication
+## Reproducible Methods Reporting
 
-Until the platform manuscript has a final public citation, cite the repository and the exact release context used in the work:
+In addition to the paper citation, report the exact release context used in the work:
 
 - Repository URL.
 - Release tag.
@@ -32,4 +33,4 @@ Until the platform manuscript has a final public citation, cite the repository a
 - WILD_console version.
 - Analysis script version or commit hash, when applicable.
 
-The repository now includes a root `CITATION.cff` file for software-style citation metadata.
+The repository includes a root `CITATION.cff` file for software-style citation metadata.

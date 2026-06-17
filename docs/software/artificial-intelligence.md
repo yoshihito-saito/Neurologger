@@ -1,12 +1,12 @@
-# Artificial Intelligence
+# Embedded Inference
 
 The WILD device supports onboard biomarker detection and behavioral classification for responsive stimulation.
 
-Current WILD device releases are intentionally conservative: AI models are curated into validated release images and reviewed for RAM use, compute timing, sampling schedules, and closed-loop latency.
+Current WILD releases are intentionally conservative: embedded models are curated into validated release images and reviewed for RAM use, compute timing, sampling schedules, storage interactions, and closed-loop behavior.
 
 ## Current Model Integration
 
-Current AI support uses validated, experiment-specific models rather than arbitrary runtime uploads.
+Current support uses validated, experiment-specific models rather than arbitrary runtime uploads.
 
 - Models are distributed as part of validated release images.
 - RAM use is curated before deployment.
@@ -30,4 +30,4 @@ Closed-loop model releases define:
 - How model version, release image, and experiment metadata are recorded.
 
 !!! warning "Deployment discipline"
-    Embedded AI models are part of the validated device release. A model that passes desktop inference tests may still be unsafe for closed-loop use if RAM pressure or inference timing affects acquisition, storage, or stimulation behavior.
+    Embedded models are part of the validated device release. A model that passes desktop inference tests may still be unsafe for closed-loop use if RAM pressure or inference timing affects acquisition, storage, or stimulation behavior.

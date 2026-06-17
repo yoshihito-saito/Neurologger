@@ -1,28 +1,29 @@
 # Getting Started
 
-A prepared WILD device moves from hardware checks to acquisition and analysis through three main steps.
+Start here if you are setting up a WILD device for the first time or reproducing the public workflow from the Nature Methods platform paper.
 
 <div class="wild-grid two">
-  <div class="wild-card">
+  <a class="wild-card wild-card-link" href="hardware-setup/">
     <h3>1. Hardware setup</h3>
-    <p>WILD device, connector, microSD, battery, probe or sensor cabling, and release-image checks before the first recording.</p>
-  </div>
-  <div class="wild-card">
+    <p>Prepare the WILD device, connector, microSD card, battery, probe or sensor cabling, and release image before recording.</p>
+  </a>
+  <a class="wild-card wild-card-link" href="data-acquisition/">
     <h3>2. Data acquisition</h3>
-    <p>WILD_console provides BLE discovery, synchronization, recording configuration, closed-loop control, and data export.</p>
-  </div>
-  <div class="wild-card">
+    <p>Use WILD_console for BLE discovery, synchronization support, recording configuration, closed-loop control, and SD-card export.</p>
+  </a>
+  <a class="wild-card wild-card-link" href="data-analysis/">
     <h3>3. Data analysis</h3>
-    <p>Compatible headers, timing files, decoded camera streams, processed IMU data, and spike-sorting inputs.</p>
-  </div>
+    <p>Generate compatible headers, timing files, decoded camera streams, processed IMU data, and spike-sorting inputs.</p>
+  </a>
 </div>
 
 ## Before You Begin
 
 - Windows 10 or later for WILD_console.
 - Bluetooth 4.0 or later for BLE control.
-- A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable.
+- A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable in specific WILD operating modes.
 - A battery that can boot the WILD device and sustain the planned recording mode.
+- The correct release image for the hardware revision and experiment mode.
 
 ## Repository Assets
 
@@ -35,7 +36,7 @@ A prepared WILD device moves from hardware checks to acquisition and analysis th
 | MATLAB and Python analysis scripts | [Code](https://github.com/ayalab1/Neurologger/tree/main/Code) |
 
 !!! tip "Recommended first path"
-    The recommended first-device path is Hardware Setup, Data Acquisition, then Data Analysis. The WILD device SD card, battery, release image, and boot state provide the baseline for troubleshooting acquisition.
+    Start with Hardware Setup, then Data Acquisition, then Data Analysis. The SD card, battery, release image, and boot state provide the baseline for troubleshooting.
 
 ## First Successful Dry Run
 
@@ -51,15 +52,15 @@ A prepared WILD device moves from hardware checks to acquisition and analysis th
 
 **Optional outputs, depending on mode:**
 
-- `adc.dat` for audio workflows
-- `misc.dat` for camera workflows
-- `device_event.*.evt` files after MATLAB preprocessing
-- `IMU.mat` after IMU processing
+- `adc.dat` for audio workflows.
+- `misc.dat` for camera workflows.
+- `device_event.*.evt` files after MATLAB preprocessing.
+- `IMU.mat` after IMU processing.
 
 **Success criteria:**
 
 1. The WILD device is discovered and connected in WILD_console.
 2. A short recording starts and stops cleanly.
 3. SD-card export completes without missing-core-file errors.
-4. The exported folder contains the expected files for the recording mode used.
-5. MATLAB or Python post-processing runs without requiring manual file repair.
+4. The exported folder contains the expected files for the recording mode.
+5. MATLAB or Python post-processing runs without manual file repair.

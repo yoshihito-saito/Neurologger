@@ -33,6 +33,32 @@ Timing metadata should be interpreted as a layered system: device sample counts 
 
 PC-device time synchronization is useful for session organization, export metadata, and cross-device coordination. It should not be treated as a substitute for hardware sync or digital event channels when the analysis requires high-precision alignment.
 
+## GPIO-through-USB Trigger Alignment
+
+USB-GPIO and BLE can bridge external equipment and the WILD device, but the bridge has direction-dependent latency. Keep the two cases separate:
+
+- **Incoming external trigger:** `TTL -> USB-GPIO -> PC -> BLE -> WILD`. The PC can timestamp the TTL edge, but the WILD device receives the related BLE command later. The logged WILD event reflects logger-side receive, handling, or sampled digital-input time, not the original PC timestamp unless the delay has been calibrated.
+- **Outgoing WILD trigger:** `WILD -> BLE -> PC -> USB-GPIO -> TTL`. The WILD event begins on the logger time base, but the external TTL output appears later after BLE notification, PC scheduling, USB transfer, and GPIO output latency.
+
+These two paths are not interchangeable. The incoming path maps PC-observed trigger time into WILD logger time; the outgoing path maps WILD events into external-equipment time, or is inverted to express external TTL outputs back on the WILD time base. Each direction should be calibrated with pulses that follow the same direction as the real experiment signal.
+
+For high-precision alignment, prefer a hardware TTL split that is recorded directly by WILD and the external system. When a PC/BLE bridge is part of the experiment, treat the USB-GPIO-to-WILD or WILD-to-USB-GPIO delay as a measured timing relationship rather than a constant assumed to be zero. The delay can include GPIO edge detection, USB packet scheduling, operating-system timestamping, BLE connection interval, firmware handling, and the logger sampling edge.
+
+![USB-GPIO trigger timestamp alignment](../images/WILD_usb_gpio_timestamp_alignment.svg){ .wild-readable-figure }
+
+Recommended synchronization workflow:
+
+1. Choose the bridge direction used by the experiment: incoming `TTL -> PC -> BLE -> WILD`, outgoing `WILD -> BLE -> PC -> TTL`, or a direct hardware TTL split.
+2. Add periodic calibration pulses that traverse the same path as the experiment trigger.
+3. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
+4. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
+5. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
+6. Store the direction, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
+
+Periodic drift monitoring should continue across the recording, not only at the start. A short pre-session pulse train estimates initial delay, but repeated pulses during the session reveal PC clock drift, USB scheduling changes, logger clock drift, missed edges, or an interrupted connection. After fitting the USB-to-WILD time map, inspect residuals over time. A stable residual trace supports a single affine correction; jumps or curvature indicate that the session needs segmented correction, dropped-pulse review, or exclusion from high-precision timing analysis.
+
+Post-export timestamp correction should be applied before merging external triggers with neural, IMU, audio, camera, or stimulation events. The corrected external trigger time is the timestamp expressed on the WILD logger time base, not the original USB host time. Keep both the raw USB-GPIO log and the corrected WILD-time trigger table so the alignment can be audited later.
+
 ## Verified Script Assumptions
 
 The following public assumptions are visible in the repository scripts and should be treated as the current documented behavior unless a release note states otherwise:

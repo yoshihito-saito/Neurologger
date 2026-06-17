@@ -5,25 +5,25 @@ Analysis documentation covers conversion from WILD exports to analysis-ready fil
 ## Entry Points
 
 <div class="wild-grid">
-  <div class="wild-card">
+  <a class="wild-card wild-card-link" href="python/">
     <h3>Python</h3>
     <p>Camera decoding, video/audio handling, GPIO logging, and pipeline integration scripts.</p>
-  </div>
-  <div class="wild-card">
+  </a>
+  <a class="wild-card wild-card-link" href="matlab/">
     <h3>MATLAB</h3>
     <p>Header generation, preprocessing, IMU processing, and compatibility with existing lab scripts.</p>
-  </div>
-  <div class="wild-card">
+  </a>
+  <a class="wild-card wild-card-link" href="spike-sorting/">
     <h3>Spike Sorting</h3>
     <p>Recording layouts compatible with common spike-sorting pipelines.</p>
-  </div>
+  </a>
 </div>
 
 ## Reproducibility Checklist
 
 - Record release image filename.
 - Record WILD_console version.
-- Preserve raw export folder.
+- Preserve the raw export folder.
 - Preserve the WILD parameter binary.
 - Record probe, channel map, sampling rate, and stimulation configuration.
 - Track post-processing script version or commit hash.

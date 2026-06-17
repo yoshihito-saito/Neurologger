@@ -1,16 +1,22 @@
 # Live Visualization
 
-WILD_console includes a real-time display for previewing selected neural and auxiliary signals during recording.
+WILD_console includes real-time panels for checking selected neural channels, auxiliary signals, camera preview, closed-loop state, and device status during setup and recording.
 
-Live view supports selected previews, status checks, and closed-loop monitoring. Full-resolution recordings are written locally to the device microSD card.
+Live visualization is a monitoring surface. Full-resolution neural, IMU, audio, camera, and event data are written locally to the device microSD card and recovered during export. Use the live view to confirm that the device is configured correctly, sensors are connected, and closed-loop state variables behave as expected.
 
 ![WILD_console runtime screenshot with live preview and camera windows](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
 
-## Camera Imaging Profile
+## What Live View Is For
 
-![Camera imaging profile at 4 mm, 8 mm, and 12 mm working distances](../images/WIrelessEphys_Github_11_cameraProfile.jpg){ .wild-readable-figure }
+Use live visualization to check:
 
-Use the camera imaging profile during bench setup to choose the working distance and focus range before mounting the camera module. Confirm the expected target distance with live preview before treating camera data as part of the experiment record.
+- BLE connection state and TX/RX counters.
+- Selected neural preview channels.
+- Signal scale, saturation, obvious disconnects, and large motion artifacts.
+- IMU and auxiliary-channel activity.
+- Camera framing and gross focus during setup.
+- DSP state, threshold crossings, stimulation state, and TinyML state messages when enabled.
+- Recording state before handling the animal.
 
 ## Display Controls
 
@@ -20,6 +26,22 @@ Use the camera imaging profile during bench setup to choose the working distance
 - Adjust display gain.
 - Show threshold overlays when closed-loop channels are selected.
 - Monitor internal state, stimulation triggers, DSP state, and TinyML state messages.
+
+## Neural Preview
+
+The neural preview is intended for fast quality checks, not for replacing exported electrophysiology data. Use it to confirm that the expected channels are active, that the signal is not saturated, and that preview gain and time scale are appropriate for the bench condition.
+
+For recording sessions, treat exported `amplifier.dat`, event files, and metadata as the analysis source of truth. The live preview may be bandwidth-limited or channel-limited depending on configured mode and wireless conditions.
+
+## Auxiliary and Closed-Loop Monitoring
+
+Auxiliary previews help confirm IMU activity, digital input edges, stimulation markers, and onboard DSP or TinyML states. During closed-loop tests, use the live display to verify that thresholds and state variables change in the expected direction before relying on the configuration in an animal session.
+
+For timing-sensitive triggers, combine live monitoring with exported files and the synchronization procedures documented in [Data Format](data-format.md). Live display timing is useful for operator feedback, but exported event timestamps and correction records are used for analysis.
+
+## Camera Preview
+
+Camera preview is useful for checking field of view, lighting, gross focus, and cable stability before a session. Camera characterization, working distance, and sensor hardware are documented in [Onboard Sensors](../hardware/onboard-sensors.md#camera).
 
 ## Power and Bandwidth
 

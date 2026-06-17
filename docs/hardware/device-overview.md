@@ -1,10 +1,10 @@
 # Device Overview
 
-The WILD device is a Wireless, Interactive, Lightweight Datalogger: an ultra-lightweight multimodal neurologger for freely behaving animals. The device combines local neural data logging, auxiliary sensing, onboard processing, BLE configuration and status, synchronization, and responsive stimulation.
+The WILD device is a Wireless, Interactive, Lightweight Datalogger: an ultra-lightweight multimodal neurologger for freely behaving animals. It combines local neural data logging, auxiliary sensing, onboard processing, BLE configuration and status, synchronization support, and responsive stimulation.
 
-The WILD device is not a BLE telemetry system. High-bandwidth neural data are recorded locally to microSD; wireless links are used for discovery, configuration, synchronization, status, low-bandwidth preview, and online control commands.
+WILD is not a BLE telemetry system. High-bandwidth neural data are recorded locally to microSD; wireless links are used for discovery, configuration, synchronization support, status, low-bandwidth preview, and online control commands.
 
-The device is best understood as a head-mounted acquisition and control unit. Neural acquisition, auxiliary sensing, embedded processing, microSD storage, external I/O, and optional stimulation are handled on the device; the host computer or controller supports setup, timing coordination, status review, selected preview, command delivery, and export.
+The device is best understood as a head-mounted acquisition and control unit. Neural acquisition, auxiliary sensing, embedded processing, microSD storage, external I/O, and optional stimulation are handled on the device. The host computer or controller supports setup, timing coordination, status review, selected preview, command delivery, and export.
 
 ![WILD device](../images/WIrelessEphys_Github_1_devicePicture.jpg){ .wild-readable-figure }
 
@@ -17,7 +17,7 @@ flowchart TB
   AFE --> MCU
   MCU --> SD[microSD storage]
   MCU --> BLE[BLE control, sync, status, preview]
-  MCU --> ExtIO[External IO sync and control]
+  MCU --> ExtIO[External I/O sync and control]
   MCU --> USB[USB setup and bench streaming]
   MCU --> Stim[Stimulation outputs]
   SD --> Analysis[MATLAB, Python, spike sorting]
@@ -33,16 +33,12 @@ flowchart TB
 | External I/O | Sync and control lines connect WILD devices with cameras, behavior systems, stimulation modules, and multi-device sessions. |
 | Bench setup | USB and wired interfaces can support setup and validation workflows when high-bandwidth local monitoring is needed. |
 
-### USB-GPIO Board
-
-![USB-GPIO board with IO0 to IO3 and USB interface labels](../images/WIrelessEphys_Github-12_GPIOBoard.jpg){ .wild-readable-figure }
-
-The USB-GPIO board exposes four external I/O lines and a USB connection for synchronization and validation workflows. Use it when checking camera triggers, behavioral-system events, stimulation-control lines, or multi-device timing before animal recordings.
+Detailed sensor, opto-module, and USB-GPIO board notes are documented in the dedicated Hardware chapters.
 
 ## Current Public Scope
 
-- The current open-source WILD device release is the 64-channel local-storage neurologger workflow.
-- Higher-performance Neuropixels-compatible and active-SPI-probe workflows are separate research and variant targets.
+- The current open-source WILD release is the 64-channel local-storage neurologger workflow.
+- Higher-performance Neuropixels-compatible and active-SPI-probe workflows are separate research and variant targets unless explicitly supported by a release note.
 - Multi-device experiments use explicit synchronization workflows rather than BLE timestamps alone.
 - Mass is configuration-dependent; report device-only mass, probe or module mass, battery mass, and complete implant mass separately.
 

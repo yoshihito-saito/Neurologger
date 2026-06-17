@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">USB-GPIO and BLE trigger timing paths for WILD</title>
+  <desc id="desc">Schematic showing incoming TTL to PC to BLE to WILD timing, outgoing WILD to BLE to PC to TTL timing, and post-export drift correction.</desc>
+  <rect width="1200" height="620" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#092b4b"/>
+    </marker>
+  </defs>
+  <style>
+    .title { font: 700 28px Arial, sans-serif; fill: #092b4b; }
+    .label { font: 700 18px Arial, sans-serif; fill: #092b4b; }
+    .small { font: 15px Arial, sans-serif; fill: #50687a; }
+    .tiny { font: 13px Arial, sans-serif; fill: #50687a; }
+    .box { fill: #ffffff; stroke: #c9d9e5; stroke-width: 1.5; rx: 10; }
+    .panel { fill: #f5f9fc; stroke: #c9d9e5; stroke-width: 1.5; rx: 14; }
+    .arrow { stroke: #092b4b; stroke-width: 2.6; fill: none; marker-end: url(#arrow); }
+    .incoming { stroke: #16699a; stroke-width: 4; fill: none; }
+    .outgoing { stroke: #2f8b57; stroke-width: 4; fill: none; }
+    .fit { stroke: #092b4b; stroke-width: 3; fill: none; }
+    .grid { stroke: #d7e3ec; stroke-width: 1; stroke-dasharray: 6 7; }
+    .dot-in { fill: #16699a; }
+    .dot-out { fill: #2f8b57; }
+    .dot-res { fill: #b9502f; }
+  </style>
+
+  <text x="52" y="48" class="title">USB-GPIO and BLE timing paths must be calibrated by direction</text>
+  <text x="52" y="80" class="small">Incoming and outgoing bridge paths have different latency. Periodic pulses estimate offset, drift, and residual timing error.</text>
+
+  <rect x="48" y="112" width="690" height="190" class="panel"/>
+  <text x="76" y="148" class="label">Case A: incoming external trigger</text>
+  <text x="76" y="174" class="small">TTL -> USB-GPIO -> PC clock -> BLE -> WILD logger time</text>
+  <rect x="78" y="204" width="100" height="54" class="box"/>
+  <text x="96" y="236" class="small">TTL in</text>
+  <line x1="178" y1="231" x2="230" y2="231" class="arrow"/>
+  <rect x="230" y="204" width="110" height="54" class="box"/>
+  <text x="251" y="226" class="small">USB-GPIO</text>
+  <text x="254" y="246" class="tiny">input</text>
+  <line x1="340" y1="231" x2="390" y2="231" class="arrow"/>
+  <rect x="390" y="204" width="92" height="54" class="box"/>
+  <text x="414" y="226" class="small">PC</text>
+  <text x="407" y="246" class="tiny">t_usb</text>
+  <line x1="482" y1="231" x2="522" y2="231" class="arrow"/>
+  <rect x="522" y="204" width="70" height="54" class="box"/>
+  <text x="541" y="236" class="small">BLE</text>
+  <line x1="592" y1="231" x2="620" y2="231" class="arrow"/>
+  <rect x="620" y="204" width="92" height="54" class="box"/>
+  <text x="640" y="226" class="small">WILD</text>
+  <text x="634" y="246" class="tiny">t_wild</text>
+  <text x="78" y="284" class="tiny">Correction goal: express PC-observed external triggers on the WILD logger time base.</text>
+
+  <rect x="48" y="330" width="690" height="190" class="panel"/>
+  <text x="76" y="366" class="label">Case B: outgoing WILD trigger</text>
+  <text x="76" y="392" class="small">WILD logger event -> BLE -> PC clock -> USB-GPIO -> external TTL</text>
+  <rect x="78" y="422" width="112" height="54" class="box"/>
+  <text x="108" y="444" class="small">WILD</text>
+  <text x="103" y="464" class="tiny">t_wild</text>
+  <line x1="190" y1="449" x2="232" y2="449" class="arrow"/>
+  <rect x="232" y="422" width="70" height="54" class="box"/>
+  <text x="251" y="454" class="small">BLE</text>
+  <line x1="302" y1="449" x2="342" y2="449" class="arrow"/>
+  <rect x="342" y="422" width="92" height="54" class="box"/>
+  <text x="366" y="444" class="small">PC</text>
+  <text x="358" y="464" class="tiny">callback</text>
+  <line x1="434" y1="449" x2="486" y2="449" class="arrow"/>
+  <rect x="486" y="422" width="112" height="54" class="box"/>
+  <text x="504" y="444" class="small">USB-GPIO</text>
+  <text x="516" y="464" class="tiny">output</text>
+  <line x1="598" y1="449" x2="620" y2="449" class="arrow"/>
+  <rect x="620" y="422" width="92" height="54" class="box"/>
+  <text x="642" y="454" class="small">TTL out</text>
+  <text x="78" y="502" class="tiny">Correction goal: map external TTL output time back to the originating WILD logger event.</text>
+
+  <rect x="778" y="112" width="374" height="408" class="panel"/>
+  <text x="806" y="148" class="label">Post-export correction</text>
+  <text x="806" y="174" class="small">Fit each direction separately.</text>
+  <line x1="838" y1="444" x2="1110" y2="444" stroke="#092b4b" stroke-width="2"/>
+  <line x1="838" y1="444" x2="838" y2="220" stroke="#092b4b" stroke-width="2"/>
+  <text x="1000" y="476" class="tiny">bridge timestamp</text>
+  <text x="765" y="252" class="tiny" transform="rotate(-90 765 252)">WILD logger time</text>
+  <line x1="850" y1="420" x2="1090" y2="250" class="fit"/>
+  <line x1="870" y1="220" x2="870" y2="444" class="grid"/>
+  <line x1="950" y1="220" x2="950" y2="444" class="grid"/>
+  <line x1="1030" y1="220" x2="1030" y2="444" class="grid"/>
+
+  <circle cx="875" cy="402" r="6" class="dot-in"/>
+  <circle cx="945" cy="352" r="6" class="dot-in"/>
+  <circle cx="1020" cy="301" r="6" class="dot-in"/>
+  <circle cx="1085" cy="258" r="6" class="dot-in"/>
+  <circle cx="875" cy="390" r="5" class="dot-out"/>
+  <circle cx="945" cy="344" r="5" class="dot-out"/>
+  <circle cx="1020" cy="312" r="5" class="dot-out"/>
+  <circle cx="1085" cy="246" r="5" class="dot-out"/>
+  <line x1="875" y1="402" x2="875" y2="390" stroke="#b9502f" stroke-width="1.5"/>
+  <line x1="945" y1="352" x2="945" y2="344" stroke="#b9502f" stroke-width="1.5"/>
+  <line x1="1020" y1="301" x2="1020" y2="312" stroke="#b9502f" stroke-width="1.5"/>
+  <line x1="1085" y1="258" x2="1085" y2="246" stroke="#b9502f" stroke-width="1.5"/>
+  <text x="806" y="540" class="tiny">Residuals reveal drift, dropped edges, and direction-specific latency changes.</text>
+
+  <circle cx="806" cy="568" r="6" class="dot-in"/>
+  <text x="820" y="573" class="tiny">Incoming calibration pulses</text>
+  <circle cx="1000" cy="568" r="6" class="dot-out"/>
+  <text x="1014" y="573" class="tiny">Outgoing calibration pulses</text>
+</svg>

@@ -4,7 +4,7 @@ Power planning is central to WILD experiments because battery selection, microSD
 
 ## Power Architecture
 
-The WILD device conditions the selected battery through a converter and regulator chain before powering analog acquisition, digital control, and peripheral subsystems. Battery choice should therefore follow the validated hardware-revision guidance rather than a single nominal-voltage number.
+The WILD device conditions the selected battery through a converter and regulator chain before powering analog acquisition, digital control, and peripheral subsystems. Battery choice should therefore follow validated hardware-revision guidance rather than a single nominal-voltage number.
 
 Boot, microSD writes, camera use, stimulation, and live preview can create different peak-load conditions. Validate the complete experiment mode on the bench before using a battery in an animal session.
 
@@ -16,6 +16,37 @@ The WILD device should use a battery approved for the specific hardware revision
 
 The [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) provides baseline capacity and runtime-planning references.
 
+## Battery Connector
+
+The WILD device battery input uses the JST-SH connector orientation documented in the hardware setup workflow. The connector is part of the experiment record because polarity, strain relief, and repeated mating can affect boot stability and long-session reliability.
+
+For each hardware revision, record:
+
+- Battery connector type and orientation.
+- Battery lead polarity as assembled.
+- Whether the battery lead was modified, extended, or re-terminated.
+- Any strain-relief method used between the battery, enclosure, and animal-mounted device.
+
+Before a recording session, inspect the connector shell, solder joints, and battery lead for looseness or damage. Do not infer polarity from wire color alone; confirm the assembled connector orientation against the WILD hardware revision being used.
+
+See [Hardware Setup](../getting-started/hardware-setup.md) for the first-device connector checklist.
+
+## Battery Charger
+
+The charger is external to the WILD recording path. Charge batteries with a single-cell lithium-polymer charger that matches the battery chemistry, capacity, connector, and manufacturer charge-current rating. Record the charger model when reporting runtime or power stability results.
+
+The WILD device should not be treated as a battery charger unless a specific hardware revision and release note explicitly documents charging support. For the public workflow, charge and inspect the battery before connecting it to the WILD device.
+
+Recommended charger record:
+
+| Item | Record |
+| --- | --- |
+| Charger model | Identifies the charge circuit used before the session. |
+| Battery model and capacity | Links runtime to the actual energy source. |
+| Charge current | Helps interpret battery heating, aging, and boot margin. |
+| Connector adapter | Documents any JST-SH adapter or lead conversion used between the charger and battery. |
+| Pre-session check | Confirms battery voltage, connector condition, and absence of swelling or cable damage. |
+
 ## microSD Power
 
 The microSD card is part of the power and reliability budget. Format cards with WILD_console before recording, and validate the selected card in the same sampling and modality mode planned for the experiment.
@@ -24,10 +55,10 @@ The microSD card is part of the power and reliability budget. Format cards with 
 
 ## Runtime Reporting
 
-Runtime depends on sampling rate, active modalities, preview state, stimulation use, microSD card model, battery capacity, and ambient conditions. When reporting a WILD recording mode, include:
+Runtime depends on sampling rate, active modalities, preview state, stimulation use, microSD-card model, battery capacity, and ambient conditions. When reporting a WILD recording mode, include:
 
 - Release image.
-- SD card model and format state.
+- SD-card model and format state.
 - Battery model and capacity.
 - Sampling rate and enabled modalities.
 - Preview state.

@@ -16,12 +16,12 @@ Mechanical files are stored in the repository for baseplates, covers, and camera
 
 <div class="wild-grid two">
   <figure class="wild-image-frame">
-    <img src="../../images/WILD_Case_render.png" alt="Rendered WILD mouse case model with baseplate and cover">
+    <img src="../images/WILD_Case_render.png" alt="Rendered WILD mouse case model with baseplate and cover">
     <figcaption class="wild-caption">Mouse-case render showing the baseplate and cover geometry for device protection and mounting.</figcaption>
   </figure>
   <figure class="wild-image-frame">
-    <img src="../../images/WILDAssemblyVertical_render.png" alt="Rendered vertical WILD assembly for Cambridge NeuroTech probe workflow">
-    <figcaption class="wild-caption">Vertical assembly render for the Cambridge NeuroTech probe workflow, useful for checking model orientation and enclosure clearance.</figcaption>
+    <img src="../images/WILDAssemblyVertical_render.png" alt="Rendered vertical WILD assembly for Cambridge NeuroTech probe workflow">
+    <figcaption class="wild-caption">Vertical assembly render for the Cambridge NeuroTech probe workflow, useful for checking model orientation and enclosure clearance. Courtesy of Adam Lowet, UC Berkeley.</figcaption>
   </figure>
 </div>
 

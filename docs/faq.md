@@ -10,11 +10,11 @@ No. WILD is primarily a local-storage neurologger. High-bandwidth neural and mul
 
 ## Will WILD have an iOS controller?
 
-An iOS-based WILD controller app is in development for device discovery, BLE connection, synchronization support, status checks, and low-bandwidth commands. It is expected to provide more consistent wireless-control performance than typical PC BLE adapters, but full-resolution recordings will still be stored locally on the device microSD card.
+An iOS-based WILD controller app is in development for device discovery, BLE connection, synchronization support, status checks, and low-bandwidth commands. Full-resolution recordings will still be stored locally on the device microSD card.
 
 ## What is the current recording scale?
 
-The current open-source workflow is the 64-channel WILD system. Neuropixels-compatible and active-SPI-probe variants are higher-performance research targets and are separate from the current public release.
+The current open-source workflow is the 64-channel WILD system. Neuropixels-compatible and active-SPI-probe variants are higher-performance research targets and are separate from the current public release unless a release note explicitly states otherwise.
 
 ## How do I install the PC software?
 
@@ -30,7 +30,7 @@ WILD supports online inference of curated, experiment-specific models through va
 
 ## How do I cite WILD?
 
-The under-review platform manuscript entry is listed on the [Publications](publications/index.md) page. Reproducible methods include the WILD hardware revision, release image, WILD_console version, and analysis-script version.
+Use the Nature Methods citation listed on the [Publications](publications/index.md) page. Reproducible methods should also include the WILD hardware revision, release image, WILD_console version, and analysis-script version.
 
 ## Where do new diagrams go?
 

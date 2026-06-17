@@ -2,9 +2,9 @@
 
 The acquisition workflow starts by connecting to a WILD device in WILD_console and ends with exported recording folders from the device microSD card.
 
-The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
+The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization support, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
 
-WILD_console is the stable public control path today. An iOS-based WILD controller app is in development and is expected to provide more consistent BLE discovery, connection, and low-bandwidth control performance than typical PC BLE adapters. The iOS app is a controller path; full-resolution recordings remain stored on the device microSD card.
+WILD_console is the stable public control path today. An iOS-based WILD controller app is in development for BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands. The iOS app is a controller path; full-resolution recordings remain stored on the device microSD card.
 
 ## Wireless Connection Model
 
@@ -23,7 +23,7 @@ Most first-session work uses four button groups:
 | Stop recording | Online tab, recording controls | <span class="wild-button-label">Recording Stop</span> |
 | Export data | Offline tab, File panel | <span class="wild-button-label primary">Save to Disk</span> |
 
-Closed-loop settings, camera controls, stimulation parameters, GPIO options, and advanced panels are optional experiment-specific controls. They are easier to configure after the basic connect-record-export path is working.
+Closed-loop settings, camera controls, stimulation parameters, GPIO options, and advanced panels are optional experiment-specific controls. Configure them after the basic connect-record-export path is working.
 
 ![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
