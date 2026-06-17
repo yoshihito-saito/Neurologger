@@ -4,7 +4,7 @@ WILD_console is the main operator interface for BLE connection, synchronization 
 
 WILD is a local-storage neurologger. High-bandwidth neural and multimodal data are written to the device microSD card. BLE supports setup, timing calibration, status messages, command delivery, and selected preview signals.
 
-The current public workflow uses WILD_console on Windows. An iOS-based WILD controller app is in development for device discovery, connection, synchronization support, status checks, and low-bandwidth control. Full-resolution recordings are still recovered from the microSD card.
+The current public workflow uses WILD_console on Windows. Full-resolution recordings are recovered from the microSD card.
 
 The WILD device does not need continuous full-bandwidth wireless streaming to preserve the recording. Keep BLE connected when the session needs online preview, parameter changes, or live commands. Otherwise, use BLE for setup and timing coordination, then recover the full dataset from the microSD card.
 

@@ -1,6 +1,6 @@
 # Hardware
 
-Hardware documentation covers the WILD device architecture, board fabrication assets, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
+Hardware documentation covers the WILD device architecture, onboard sensors, optional modules, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="device-overview/">
@@ -25,12 +25,6 @@ Hardware documentation covers the WILD device architecture, board fabrication as
     <div>
       <h3>USB-GPIO</h3>
       <p>Trigger alignment</p>
-    </div>
-  </a>
-  <a class="wild-card wild-card-link wild-card-compact" href="pcb/">
-    <div>
-    <h3>PCB</h3>
-      <p>Fabrication files</p>
     </div>
   </a>
   <a class="wild-card wild-card-link wild-card-compact" href="mechanical/">
@@ -60,11 +54,16 @@ Hardware documentation covers the WILD device architecture, board fabrication as
 | Datalogger PCB | [PCB/Datalogger](https://github.com/ayalab1/Neurologger/tree/main/PCB/Datalogger) |
 | Opto module | [PCB/Optomodule](https://github.com/ayalab1/Neurologger/tree/main/PCB/Optomodule) |
 | Camera unit | [PCB/CameraUnit](https://github.com/ayalab1/Neurologger/tree/main/PCB/CameraUnit) |
+| USB-GPIO board | [PCB/USBboard](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard) |
 | USB-GPIO firmware | [Firmware/WILD_USB_GPIO.hex](https://github.com/ayalab1/Neurologger/blob/main/Firmware/WILD_USB_GPIO.hex) |
 | Opto-module firmware | [Firmware/Opto_module.hex](https://github.com/ayalab1/Neurologger/blob/main/Firmware/Opto_module.hex) |
 | Mechanical parts | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
 | Battery table | [LipoBattery_selection.csv](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
+
+## Manufacturing Workflow
+
+For a new WILD device build, start with the [Fabrication](../fabrication.md) page. The workflow covers fabrication parameters, PCBA submission, special components, manual soldering notes, and first DFU image installation.
 
 ## Compatibility Record
 
@@ -83,11 +82,13 @@ Document the following for each supported WILD hardware build or dataset:
 
 Before the first recording on a newly assembled WILD device:
 
-1. Confirm that the intended release image and hardware revision match.
-2. Confirm battery polarity and boot stability.
-3. Confirm microSD insertion and basic discoverability.
-4. Confirm BLE connection and synchronization state.
-5. Run a short recording, export it, and verify the expected files before any animal session.
+1. Confirm that the PCB revision, assembly files, and intended release image match.
+2. Use the USB-to-4-pin bench cable and USB power meter for the first power check.
+3. Install the first validated `.hex` release image through WILD_console **Advanced** DFU update.
+4. Confirm battery polarity and boot stability.
+5. Confirm microSD insertion and basic discoverability.
+6. Confirm BLE connection and synchronization state.
+7. Run a short recording, export it, and verify the expected files before any animal session.
 
 ## Visual Asset Policy
 

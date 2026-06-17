@@ -91,9 +91,9 @@ nav:
       - Onboard Sensors: hardware/onboard-sensors.md
       - Opto Module: hardware/opto-module.md
       - USB Board: hardware/usb-board.md
-      - PCB: hardware/pcb.md
       - Mechanical: hardware/mechanical.md
       - Power: hardware/power.md
+  - Fabrication: fabrication.md
   - Software:
       - software/index.md
       - Acquisition: software/acquisition.md

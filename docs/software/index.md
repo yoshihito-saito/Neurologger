@@ -11,12 +11,6 @@ Software documentation covers how to connect to the WILD device, configure recor
       <p>Connect and export</p>
     </div>
   </a>
-  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/#wireless-connection-model">
-    <div>
-    <h3>iOS controller</h3>
-      <p>Wireless control</p>
-    </div>
-  </a>
   <a class="wild-card wild-card-link wild-card-compact" href="artificial-intelligence/">
     <div>
       <h3>Embedded AI</h3>
@@ -53,7 +47,7 @@ The public documentation does not treat BLE as a continuous high-bandwidth acqui
 
 ## Wireless Control
 
-WILD_console remains the stable public control and export workflow. The iOS-based controller app is being developed as a lighter wireless-control path for BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands.
+WILD_console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
 
 Full-resolution WILD recordings remain local to the device microSD card and are exported after the session.
 

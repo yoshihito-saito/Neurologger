@@ -37,7 +37,8 @@ Start here if you are setting up a WILD device for the first time or reproducing
 | --- | --- |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
 | WILD_console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
-| PCB fabrication files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
+| Fabrication guide | [Fabrication](../fabrication.md) |
+| Board source files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
 | 3D-print files | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
 | MATLAB and Python analysis scripts | [Code](https://github.com/ayalab1/Neurologger/tree/main/Code) |
 

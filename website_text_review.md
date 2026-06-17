@@ -300,7 +300,8 @@ Start here if you are setting up a WILD device for the first time or reproducing
 | --- | --- |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
 | WILD_console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
-| PCB fabrication files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
+| Fabrication guide | [Fabrication](../fabrication.md) |
+| Board source files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
 | 3D-print files | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
 | MATLAB and Python analysis scripts | [Code](https://github.com/ayalab1/Neurologger/tree/main/Code) |
 
@@ -364,6 +365,22 @@ The WILD device uses these connectors to support local acquisition, storage, wir
 5. Confirm the stimulation output, IMU, microphone, camera, and external-sync connections needed for the experiment.
 6. Confirm that the device is running the expected released device image.
 
+## New Device Bring-Up
+
+For a newly assembled WILD device, complete the bench power and programming checks before connecting a battery or probe.
+
+1. Prepare a 4-pin JST-SH 1.0 mm cable using the connector orientation shown above. Pre-crimped JST-SH wire leads can be used, for example [JST-SH 1.0 mm female wire leads](https://www.amazon.com/dp/B0FH4QRHH4).
+2. Build a USB-to-4-pin test cable by soldering the JST-SH lead to a USB-A connector board, for example [USB-A solder socket board](https://www.amazon.com/dp/B0F935X5YP).
+3. Insert a USB power meter between the PC or USB supply and the WILD device.
+4. Connect the WILD device without a battery and check the first current reading. A current below 10 mA is the expected first-pass check for no obvious short circuit.
+5. If current is higher than expected, disconnect the device and inspect the power connector, regulator area, microSD socket, and fine-pitch solder joints before continuing.
+6. To enter DFU mode, momentarily short the DFU mode-select pin to VCC with metal tweezers while connecting USB. Use the connector schematic and avoid shorting adjacent pins.
+7. Confirm that Windows detects an `STM32-DFU` device. If needed, install the ST DFU driver from [STSW-STM32080](https://www.st.com/en/development-tools/stsw-stm32080.html).
+8. In WILD_console, open the **Advanced** tab and use the DFU update pipeline to install the latest validated `.hex` release image for the hardware revision.
+9. After the first release image is installed, later supported updates can be performed through microSD when the release notes document that path.
+
+Detailed board-ordering, assembly, and special-component notes are listed in [Fabrication](../fabrication.md).
+
 ## microSD Card
 
 Format the card from WILD_console before recording. The microSD card affects both reliability and power draw.
@@ -393,7 +410,7 @@ WILD_console is the main operator interface for BLE connection, synchronization 
 
 WILD is a local-storage neurologger. High-bandwidth neural and multimodal data are written to the device microSD card. BLE supports setup, timing calibration, status messages, command delivery, and selected preview signals.
 
-The current public workflow uses WILD_console on Windows. An iOS-based WILD controller app is in development for device discovery, connection, synchronization support, status checks, and low-bandwidth control. Full-resolution recordings are still recovered from the microSD card.
+The current public workflow uses WILD_console on Windows. Full-resolution recordings are recovered from the microSD card.
 
 The WILD device does not need continuous full-bandwidth wireless streaming to preserve the recording. Keep BLE connected when the session needs online preview, parameter changes, or live commands. Otherwise, use BLE for setup and timing coordination, then recover the full dataset from the microSD card.
 
@@ -558,7 +575,7 @@ The repository includes MATLAB and Python scripts for converting WILD recordings
 
 # Hardware
 
-Hardware documentation covers the WILD device architecture, board fabrication assets, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
+Hardware documentation covers the WILD device architecture, onboard sensors, optional modules, mechanical assembly, power choices, and release-image compatibility for supported device revisions.
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="device-overview/">
@@ -583,12 +600,6 @@ Hardware documentation covers the WILD device architecture, board fabrication as
     <div>
       <h3>USB-GPIO</h3>
       <p>Trigger alignment</p>
-    </div>
-  </a>
-  <a class="wild-card wild-card-link wild-card-compact" href="pcb/">
-    <div>
-    <h3>PCB</h3>
-      <p>Fabrication files</p>
     </div>
   </a>
   <a class="wild-card wild-card-link wild-card-compact" href="mechanical/">
@@ -618,11 +629,16 @@ Hardware documentation covers the WILD device architecture, board fabrication as
 | Datalogger PCB | [PCB/Datalogger](https://github.com/ayalab1/Neurologger/tree/main/PCB/Datalogger) |
 | Opto module | [PCB/Optomodule](https://github.com/ayalab1/Neurologger/tree/main/PCB/Optomodule) |
 | Camera unit | [PCB/CameraUnit](https://github.com/ayalab1/Neurologger/tree/main/PCB/CameraUnit) |
+| USB-GPIO board | [PCB/USBboard](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard) |
 | USB-GPIO firmware | [Firmware/WILD_USB_GPIO.hex](https://github.com/ayalab1/Neurologger/blob/main/Firmware/WILD_USB_GPIO.hex) |
 | Opto-module firmware | [Firmware/Opto_module.hex](https://github.com/ayalab1/Neurologger/blob/main/Firmware/Opto_module.hex) |
 | Mechanical parts | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
 | Battery table | [LipoBattery_selection.csv](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
+
+## Manufacturing Workflow
+
+For a new WILD device build, start with the [Fabrication](../fabrication.md) page. The workflow covers fabrication parameters, PCBA submission, special components, manual soldering notes, and first DFU image installation.
 
 ## Compatibility Record
 
@@ -641,11 +657,13 @@ Document the following for each supported WILD hardware build or dataset:
 
 Before the first recording on a newly assembled WILD device:
 
-1. Confirm that the intended release image and hardware revision match.
-2. Confirm battery polarity and boot stability.
-3. Confirm microSD insertion and basic discoverability.
-4. Confirm BLE connection and synchronization state.
-5. Run a short recording, export it, and verify the expected files before any animal session.
+1. Confirm that the PCB revision, assembly files, and intended release image match.
+2. Use the USB-to-4-pin bench cable and USB power meter for the first power check.
+3. Install the first validated `.hex` release image through WILD_console **Advanced** DFU update.
+4. Confirm battery polarity and boot stability.
+5. Confirm microSD insertion and basic discoverability.
+6. Confirm BLE connection and synchronization state.
+7. Run a short recording, export it, and verify the expected files before any animal session.
 
 ## Visual Asset Policy
 
@@ -852,6 +870,17 @@ The WILD USB-GPIO board is used for bench validation, external trigger logging, 
 
 The board exposes four external I/O channels, labeled `IO0` to `IO3`, and a USB connection to the host PC. The USB path is useful for recording external events at the PC, generating TTL outputs for external equipment, and validating synchronization behavior before animal recordings.
 
+## Fabrication Files
+
+USB-GPIO board manufacturing files are available in [`PCB/USBboard`](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard).
+
+| File | Purpose |
+| --- | --- |
+| [`WILD_USB_2026-06-18.zip`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB_2026-06-18.zip) | Gerber package for PCB fabrication. |
+| [`WILD_USB.xlsx`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.xlsx) | BOM workbook for assembly review. |
+| [`WILD_USB.csv`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.csv) | BOM export for manufacturer upload or quick inspection. |
+| [`WILD_USB.brd`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.brd) and [`WILD_USB.sch`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.sch) | Eagle board and schematic source files. |
+
 ## Supported Operations
 
 | Operation | Direction | Use case | Timing note |
@@ -878,9 +907,9 @@ Record the USB-GPIO board revision, connected channels, edge polarity, host soft
 
 ---
 
-# Source file: docs/hardware/pcb.md
+# Source file: docs/fabrication.md
 
-# PCB
+# Fabrication
 
 Board packages support ordering, assembly, and inspection for WILD hardware revisions.
 
@@ -891,20 +920,75 @@ Board packages support ordering, assembly, and inspection for WILD hardware revi
 | Datalogger | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/Datalogger) |
 | Opto module | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/Optomodule) |
 | Camera unit | [Gerbers, drill files, assembly files](https://github.com/ayalab1/Neurologger/tree/main/PCB/CameraUnit) |
+| USB-GPIO board | [Gerber package, BOM, and Eagle source files](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard) |
 
-## Manufacturing Notes
+## USB-GPIO Board Package
 
-- Review PCB stackup, impedance constraints, and connector orientation before ordering.
-- Confirm component availability against the assembly files.
-- Inspect the microSD socket, battery connector, BLE UART pins, sensor connectors, and stimulation output path after assembly.
-- Keep manufacturing revisions tied to compatible release images.
+The USB-GPIO board fabrication package is stored in [`PCB/USBboard`](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard). It includes the dated Gerber package, BOM files, and Eagle board/schematic source files.
 
-## Assembly Checks
+| File | Purpose |
+| --- | --- |
+| [`WILD_USB_2026-06-18.zip`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB_2026-06-18.zip) | Gerber package for PCB fabrication. |
+| [`WILD_USB.xlsx`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.xlsx) | BOM workbook for assembly review. |
+| [`WILD_USB.csv`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.csv) | BOM export for manufacturer upload or quick inspection. |
+| [`WILD_USB.brd`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.brd) and [`WILD_USB.sch`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.sch) | Eagle board and schematic source files. |
+
+## PCB Fabrication
+
+Use the zipped Gerber and drill files for the target WILD board revision. Upload the package to a PCB manufacturer that supports fine-pitch multilayer boards; [NextPCB](https://www.nextpcb.com/) is one option used for ordering.
+
+Recommended fabrication parameters for the current WILD datalogger board:
+
+| Parameter | Value |
+| --- | --- |
+| Board thickness | 1.0 mm |
+| Layer count | 4 layers |
+| Minimum drill hole | 0.15 mm |
+| Trace width | 3.5 mil |
+| Blind vias | Rank 1 blind vias |
+| Surface finish | Engineering gold, 1 uin |
+
+Before submitting the order, confirm that the fabrication house can accept the drill files, blind-via definition, board outline, and stackup used by the selected WILD revision.
+
+## Assembly Order
+
+1. Upload the board package again for PCBA quotation, including the `Assembly` folder supplied with the selected WILD board revision.
+2. Upload the BOM and placement files supplied for the same WILD board revision.
+3. Review unavailable or special-order parts before approving assembly.
+4. Confirm with the manufacturer which parts will be machine assembled and which parts will be left for hand soldering.
+5. Finish hand soldering, connector inspection, and continuity checks before first power-up.
+
+## Special Components
+
+Some WILD components may need advance ordering or manual handling:
+
+| Component | Manufacturing note |
+| --- | --- |
+| BMX160 IMU | This part is obsolete. BMI270 is a possible 6-axis replacement candidate, but the public WILD driver path is not developed yet. Do not substitute it unless the release image explicitly supports the replacement. |
+| HJ580 BLE module | Confirm availability directly with HJ-SIP. Validated builds should use the HJ580 module firmware version documented for WILD, currently firmware version 20220507. |
+| Omnetics A79025 | This 64-channel probe connector has a high failure rate during standard reflow. Prefer manual soldering with an alignment fixture, then inspect alignment, solder bridges, and continuity under magnification. |
+
+## Post-Assembly Bring-Up
+
+Prepare a bench cable before applying power to a newly assembled WILD device.
+
+1. Solder the WILD 4-pin JST-SH 1.0 mm cable according to the connector illustration in [Hardware Setup](getting-started/hardware-setup.md).
+2. Pre-crimped JST-SH 1.0 mm wire leads can be used for cable preparation, for example [JST-SH 1.0 mm female wire leads](https://www.amazon.com/dp/B0FH4QRHH4).
+3. Build a 4-pin USB power/programming cable by soldering the JST-SH lead to a USB-A connector board, for example [USB-A solder socket board](https://www.amazon.com/dp/B0F935X5YP).
+4. Place a USB power meter between the PC or USB supply and the 4-pin cable.
+5. Connect the WILD device for the first time and check the current before programming. Current below 10 mA is the expected first-pass check for no obvious short circuit; disconnect immediately if the current is higher than expected or unstable.
+6. Momentarily short the DFU mode-select pin to VCC with metal tweezers while connecting USB, using the connector schematic to avoid shorting the wrong pins.
+7. Confirm that the PC detects an `STM32-DFU` device. If the driver is missing, install the ST DFU driver package from [STSW-STM32080](https://www.st.com/en/development-tools/stsw-stm32080.html).
+8. Open WILD_console, go to the **Advanced** tab, and use the packed DFU update pipeline to select the latest validated `.hex` release image.
+9. After the first DFU installation succeeds, use the documented microSD release-image update path for later upgrades when the release notes support it.
+
+## Inspection Checks
 
 - Confirm top and bottom orientation against the board files.
-- Inspect connectors, solder joints, and the microSD socket before power-up.
-- Keep the PCB revision with the experiment metadata.
-- Match each board revision to a compatible release image.
+- Inspect the microSD socket, battery connector, BLE UART pins, sensor connectors, stimulation output path, and probe connector before power-up.
+- Check for solder bridges around fine-pitch parts and high-density connectors.
+- Keep the PCB revision, manufacturer, assembly date, special part substitutions, and release-image filename with the experiment metadata.
+- Match each board revision to a compatible release image before recording.
 
 
 ---
@@ -985,6 +1069,12 @@ Before a recording session, inspect the connector shell, solder joints, and batt
 
 See [Hardware Setup](../getting-started/hardware-setup.md) for the first-device connector checklist.
 
+## First Power Check
+
+For a newly assembled WILD device, use the USB-to-4-pin bench cable and a USB power meter before connecting a battery. The first connection should draw less than 10 mA before a release image is installed; a higher or unstable current is a stop condition for solder-bridge and connector inspection.
+
+The DFU mode-select pin can be temporarily shorted to VCC during USB connection to expose the `STM32-DFU` device for first image installation. Use the connector schematic, keep the short temporary, and verify the pin orientation before applying power.
+
 ## Battery Charger
 
 The charger is external to the WILD recording path. Charge batteries with a single-cell lithium-polymer charger that matches the battery chemistry, capacity, connector, and manufacturer charge-current rating. Record the charger model when reporting runtime or power stability results.
@@ -1037,12 +1127,6 @@ Software documentation covers how to connect to the WILD device, configure recor
       <p>Connect and export</p>
     </div>
   </a>
-  <a class="wild-card wild-card-link wild-card-compact" href="acquisition/#wireless-connection-model">
-    <div>
-    <h3>iOS controller</h3>
-      <p>Wireless control</p>
-    </div>
-  </a>
   <a class="wild-card wild-card-link wild-card-compact" href="artificial-intelligence/">
     <div>
       <h3>Embedded AI</h3>
@@ -1079,7 +1163,7 @@ The public documentation does not treat BLE as a continuous high-bandwidth acqui
 
 ## Wireless Control
 
-WILD_console remains the stable public control and export workflow. The iOS-based controller app is being developed as a lighter wireless-control path for BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands.
+WILD_console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
 
 Full-resolution WILD recordings remain local to the device microSD card and are exported after the session.
 
@@ -1107,7 +1191,7 @@ The acquisition workflow starts by connecting to a WILD device in WILD_console a
 
 The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization support, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
 
-WILD_console is the stable public control path today. An iOS-based WILD controller app is in development for BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands. The iOS app is a controller path; full-resolution recordings remain stored on the device microSD card.
+WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
 ## Wireless Connection Model
 
@@ -1378,8 +1462,6 @@ WILD_console and the listed scripts form the supported public interface for acqu
 
 WILD_console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
 
-An iOS-based WILD controller app is in development for wireless device control. The current stable public export and post-processing workflow remains WILD_console plus the documented MATLAB and Python scripts.
-
 !!! warning "No stable SDK yet"
     The supported public programmable surface is WILD_console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
 
@@ -1388,7 +1470,6 @@ An iOS-based WILD controller app is in development for wireless device control. 
 | Area | Current operation style | Purpose |
 | --- | --- | --- |
 | Acquisition | WILD_console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
-| Wireless control | iOS controller app, in development | BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands. |
 | Post-processing | MATLAB scripts | Header generation, timing correction, event export, IMU processing, and Intan-compatible output preparation. |
 | Camera/audio decoding | Python scripts | Decode `misc.dat` and related audio data into reviewable media outputs. |
 | Batch processing | Python and MATLAB scripts | Process folders of recordings after SD export. |
@@ -1799,10 +1880,6 @@ WILD is designed for wireless and naturalistic experiments where tethered acquis
 ## Is WILD a BLE telemetry system?
 
 No. WILD is primarily a local-storage neurologger. High-bandwidth neural and multimodal data are recorded to the device microSD card. BLE is used for discovery, configuration, synchronization support, status, selected low-bandwidth preview, and control commands.
-
-## Will WILD have an iOS controller?
-
-An iOS-based WILD controller app is in development for device discovery, BLE connection, synchronization support, status checks, and low-bandwidth commands. Full-resolution recordings will still be stored locally on the device microSD card.
 
 ## What is the current recording scale?
 

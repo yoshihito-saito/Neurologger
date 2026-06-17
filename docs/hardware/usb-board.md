@@ -8,6 +8,17 @@ The WILD USB-GPIO board is used for bench validation, external trigger logging, 
 
 The board exposes four external I/O channels, labeled `IO0` to `IO3`, and a USB connection to the host PC. The USB path is useful for recording external events at the PC, generating TTL outputs for external equipment, and validating synchronization behavior before animal recordings.
 
+## Fabrication Files
+
+USB-GPIO board manufacturing files are available in [`PCB/USBboard`](https://github.com/ayalab1/Neurologger/tree/main/PCB/USBboard).
+
+| File | Purpose |
+| --- | --- |
+| [`WILD_USB_2026-06-18.zip`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB_2026-06-18.zip) | Gerber package for PCB fabrication. |
+| [`WILD_USB.xlsx`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.xlsx) | BOM workbook for assembly review. |
+| [`WILD_USB.csv`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.csv) | BOM export for manufacturer upload or quick inspection. |
+| [`WILD_USB.brd`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.brd) and [`WILD_USB.sch`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.sch) | Eagle board and schematic source files. |
+
 ## Supported Operations
 
 | Operation | Direction | Use case | Timing note |

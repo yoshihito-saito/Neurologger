@@ -4,8 +4,6 @@ WILD_console and the listed scripts form the supported public interface for acqu
 
 WILD_console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
 
-An iOS-based WILD controller app is in development for wireless device control. The current stable public export and post-processing workflow remains WILD_console plus the documented MATLAB and Python scripts.
-
 !!! warning "No stable SDK yet"
     The supported public programmable surface is WILD_console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
 
@@ -14,7 +12,6 @@ An iOS-based WILD controller app is in development for wireless device control. 
 | Area | Current operation style | Purpose |
 | --- | --- | --- |
 | Acquisition | WILD_console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
-| Wireless control | iOS controller app, in development | BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands. |
 | Post-processing | MATLAB scripts | Header generation, timing correction, event export, IMU processing, and Intan-compatible output preparation. |
 | Camera/audio decoding | Python scripts | Decode `misc.dat` and related audio data into reviewable media outputs. |
 | Batch processing | Python and MATLAB scripts | Process folders of recordings after SD export. |

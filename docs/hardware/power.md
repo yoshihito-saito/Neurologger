@@ -33,6 +33,12 @@ Before a recording session, inspect the connector shell, solder joints, and batt
 
 See [Hardware Setup](../getting-started/hardware-setup.md) for the first-device connector checklist.
 
+## First Power Check
+
+For a newly assembled WILD device, use the USB-to-4-pin bench cable and a USB power meter before connecting a battery. The first connection should draw less than 10 mA before a release image is installed; a higher or unstable current is a stop condition for solder-bridge and connector inspection.
+
+The DFU mode-select pin can be temporarily shorted to VCC during USB connection to expose the `STM32-DFU` device for first image installation. Use the connector schematic, keep the short temporary, and verify the pin orientation before applying power.
+
 ## Battery Charger
 
 The charger is external to the WILD recording path. Charge batteries with a single-cell lithium-polymer charger that matches the battery chemistry, capacity, connector, and manufacturer charge-current rating. Record the charger model when reporting runtime or power stability results.

@@ -4,7 +4,7 @@ The acquisition workflow starts by connecting to a WILD device in WILD_console a
 
 The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization support, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
 
-WILD_console is the stable public control path today. An iOS-based WILD controller app is in development for BLE discovery, connection, synchronization support, status checks, and low-bandwidth commands. The iOS app is a controller path; full-resolution recordings remain stored on the device microSD card.
+WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
 ## Wireless Connection Model
 
