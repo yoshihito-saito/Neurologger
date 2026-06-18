@@ -293,6 +293,10 @@ Start here if you are setting up a WILD device for the first time or reproducing
 - A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable in specific WILD operating modes.
 - A battery that can boot the WILD device and sustain the planned recording mode.
 - The correct release image for the hardware revision and experiment mode.
+- Windows clock preparation before timing-sensitive recordings: disable automatic time setting and automatic time-zone changes, run `TimeCalibrator`, and keep the calibration record for post-export offset and drift correction.
+
+!!! warning "Recording prerequisite: Windows clock preparation"
+    WILD logger time and PC system time are independent clocks. Windows automatic time correction can create an abrupt PC-clock step during a session, so timing-sensitive recordings should not begin until Windows automatic time adjustment is disabled and `TimeCalibrator` has been run.
 
 ## Repository Assets
 
@@ -416,6 +420,17 @@ The WILD device does not need continuous full-bandwidth wireless streaming to pr
 
 !!! tip "First-session scope"
     For the first dry run, use only the minimum path needed to connect, record, stop, and export. Leave closed-loop, camera, stimulation, GPIO, and advanced parameter panels unchanged until the basic local-storage workflow is confirmed.
+
+## Recording Prerequisites
+
+Before starting a recording that will use PC-side timestamps, USB-GPIO triggers, camera triggers, behavior events, or multi-device alignment:
+
+1. Disable Windows automatic time setting and automatic time-zone changes.
+2. Run `TimeCalibrator` on the acquisition computer.
+3. Keep the TimeCalibrator record with the WILD export.
+4. Use the calibration record after export to correct PC-to-WILD time offset and drift.
+
+WILD and the PC use independent clocks. Windows automatic time management does not calibrate PC drift against the WILD device clock, and an automatic correction can introduce an abrupt shift between PC time and WILD logger time during a recording.
 
 ## First-Pass Button Path
 
@@ -881,6 +896,14 @@ USB-GPIO board manufacturing files are available in [`PCB/USBboard`](https://git
 | [`WILD_USB.csv`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.csv) | BOM export for manufacturer upload or quick inspection. |
 | [`WILD_USB.brd`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.brd) and [`WILD_USB.sch`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.sch) | Eagle board and schematic source files. |
 
+## Windows Host Timing
+
+The WILD device and the Windows acquisition PC use independent clocks. Keeping those clocks aligned matters when USB-GPIO trigger timestamps are merged with WILD logger events. Windows automatic time management does not calibrate drift against WILD time, and an automatic time correction can create an abrupt shift between the PC clock and the device clock during a recording.
+
+For best synchronization accuracy with the USB-GPIO board on Windows, disable automatic time setting and automatic time-zone changes before the recording session. Download and run `TimeCalibrator` on the acquisition computer, then use the calibration record to correct PC-to-WILD time offset and drift after export.
+
+Keep the raw USB-GPIO log, TimeCalibrator record, and corrected timestamp table with the WILD export so the synchronization correction can be audited later.
+
 ## Supported Operations
 
 | Operation | Direction | Use case | Timing note |
@@ -1193,6 +1216,12 @@ The WILD device records high-bandwidth neural and multimodal data locally. BLE i
 
 WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
+## Recording Prerequisites
+
+Before acquisition, prepare the Windows host clock for any timing-sensitive session. Disable automatic time setting and automatic time-zone changes, run `TimeCalibrator`, and keep the calibration record with the exported dataset. This is required when USB-GPIO logs, behavior timestamps, camera triggers, stimulation markers, or multi-device sessions will be aligned to WILD logger time.
+
+The WILD device and PC use independent clocks. Windows automatic time management does not calibrate drift against the WILD clock and can create an abrupt PC-clock shift during the session if an automatic correction occurs.
+
 ## Wireless Connection Model
 
 The WILD device can be connected for discovery, synchronization support, parameter review, selected preview, and command delivery. After setup and timing coordination, local recording does not depend on continuous full-bandwidth wireless streaming because the device writes the full dataset to microSD.
@@ -1217,15 +1246,16 @@ Closed-loop settings, camera controls, stimulation parameters, GPIO options, and
 ## Typical Session
 
 1. Start WILD_console.
-2. Scan for the WILD device.
-3. Connect over BLE.
-4. Read current parameters and change experiment-specific settings only when needed.
-5. Configure sampling, closed-loop, camera, stimulation, and GPIO options as needed.
-6. Start local recording.
-7. Monitor selected preview and state signals.
-8. Stop recording.
-9. Export data from the SD card.
-10. Check duration, file size, representative channels, and sync markers before treating the session as complete.
+2. Complete Windows clock preparation if the session uses PC-side timestamps or external timing alignment.
+3. Scan for the WILD device.
+4. Connect over BLE.
+5. Read current parameters and change experiment-specific settings only when needed.
+6. Configure sampling, closed-loop, camera, stimulation, and GPIO options as needed.
+7. Start local recording.
+8. Monitor selected preview and state signals.
+9. Stop recording.
+10. Export data from the SD card.
+11. Check duration, file size, representative channels, and sync markers before treating the session as complete.
 
 ## Multi-Device Sessions
 
@@ -1353,6 +1383,19 @@ Timing metadata should be interpreted as a layered system: device sample counts 
 
 PC-device time synchronization is useful for session organization, export metadata, and cross-device coordination. It should not be treated as a substitute for hardware sync or digital event channels when the analysis requires high-precision alignment.
 
+## Windows Timing Preparation
+
+WILD logger time and PC system time are independent clocks. They can have a fixed offset and a small relative drift during a session. Windows automatic time management is designed to keep the PC close to network time; it does not calibrate drift against the WILD device clock. If Windows applies an automatic correction during an experiment, the PC clock can step abruptly relative to WILD logger time, which creates a discontinuity in PC-side trigger timestamps.
+
+Treat this as a recording prerequisite for any session that uses PC-side timestamps or external timing alignment. For the best PC-side timestamp accuracy on Windows, prepare the acquisition computer before synchronization trials:
+
+1. Disable Windows automatic time adjustment during the recording session, including automatic time setting and automatic time-zone changes.
+2. Download and run `TimeCalibrator` on the acquisition computer before the experiment.
+3. Use `TimeCalibrator` records together with WILD sync pulses to estimate PC-to-WILD time offset and drift.
+4. Apply the offset and drift correction after export before merging USB-GPIO, behavior, camera, stimulation, or multi-device event timestamps with WILD logger time.
+
+This step improves the stability of PC-side timestamps. It does not replace device-side sample timing or direct hardware TTL synchronization when the experiment requires the highest alignment accuracy.
+
 ## GPIO-through-USB Trigger Alignment
 
 USB-GPIO and BLE can bridge external equipment and the WILD device, but the bridge has direction-dependent latency. Keep the two cases separate:
@@ -1369,11 +1412,12 @@ For high-precision alignment, prefer a hardware TTL split that is recorded direc
 Recommended synchronization workflow:
 
 1. Choose the bridge direction used by the experiment: incoming `TTL -> PC -> BLE -> WILD`, outgoing `WILD -> BLE -> PC -> TTL`, or a direct hardware TTL split.
-2. Add periodic calibration pulses that traverse the same path as the experiment trigger.
-3. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
-4. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
-5. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
-6. Store the direction, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
+2. On the Windows host, disable automatic time adjustment and run `TimeCalibrator` before the session.
+3. Add periodic calibration pulses that traverse the same path as the experiment trigger.
+4. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
+5. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
+6. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
+7. Store the direction, TimeCalibrator record, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
 
 Periodic drift monitoring should continue across the recording, not only at the start. A short pre-session pulse train estimates initial delay, but repeated pulses during the session reveal PC clock drift, USB scheduling changes, logger clock drift, missed edges, or an interrupted connection. After fitting the USB-to-WILD time map, inspect residuals over time. A stable residual trace supports a single affine correction; jumps or curvature indicate that the session needs segmented correction, dropped-pulse review, or exclusion from high-precision timing analysis.
 

@@ -19,6 +19,14 @@ USB-GPIO board manufacturing files are available in [`PCB/USBboard`](https://git
 | [`WILD_USB.csv`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.csv) | BOM export for manufacturer upload or quick inspection. |
 | [`WILD_USB.brd`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.brd) and [`WILD_USB.sch`](https://github.com/ayalab1/Neurologger/blob/main/PCB/USBboard/WILD_USB.sch) | Eagle board and schematic source files. |
 
+## Windows Host Timing
+
+The WILD device and the Windows acquisition PC use independent clocks. Keeping those clocks aligned matters when USB-GPIO trigger timestamps are merged with WILD logger events. Windows automatic time management does not calibrate drift against WILD time, and an automatic time correction can create an abrupt shift between the PC clock and the device clock during a recording.
+
+For best synchronization accuracy with the USB-GPIO board on Windows, disable automatic time setting and automatic time-zone changes before the recording session. Download and run `TimeCalibrator` on the acquisition computer, then use the calibration record to correct PC-to-WILD time offset and drift after export.
+
+Keep the raw USB-GPIO log, TimeCalibrator record, and corrected timestamp table with the WILD export so the synchronization correction can be audited later.
+
 ## Supported Operations
 
 | Operation | Direction | Use case | Timing note |

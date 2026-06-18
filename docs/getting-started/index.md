@@ -30,6 +30,10 @@ Start here if you are setting up a WILD device for the first time or reproducing
 - A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable in specific WILD operating modes.
 - A battery that can boot the WILD device and sustain the planned recording mode.
 - The correct release image for the hardware revision and experiment mode.
+- Windows clock preparation before timing-sensitive recordings: disable automatic time setting and automatic time-zone changes, run `TimeCalibrator`, and keep the calibration record for post-export offset and drift correction.
+
+!!! warning "Recording prerequisite: Windows clock preparation"
+    WILD logger time and PC system time are independent clocks. Windows automatic time correction can create an abrupt PC-clock step during a session, so timing-sensitive recordings should not begin until Windows automatic time adjustment is disabled and `TimeCalibrator` has been run.
 
 ## Repository Assets
 

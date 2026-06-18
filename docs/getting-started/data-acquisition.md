@@ -11,6 +11,17 @@ The WILD device does not need continuous full-bandwidth wireless streaming to pr
 !!! tip "First-session scope"
     For the first dry run, use only the minimum path needed to connect, record, stop, and export. Leave closed-loop, camera, stimulation, GPIO, and advanced parameter panels unchanged until the basic local-storage workflow is confirmed.
 
+## Recording Prerequisites
+
+Before starting a recording that will use PC-side timestamps, USB-GPIO triggers, camera triggers, behavior events, or multi-device alignment:
+
+1. Disable Windows automatic time setting and automatic time-zone changes.
+2. Run `TimeCalibrator` on the acquisition computer.
+3. Keep the TimeCalibrator record with the WILD export.
+4. Use the calibration record after export to correct PC-to-WILD time offset and drift.
+
+WILD and the PC use independent clocks. Windows automatic time management does not calibrate PC drift against the WILD device clock, and an automatic correction can introduce an abrupt shift between PC time and WILD logger time during a recording.
+
 ## First-Pass Button Path
 
 For a basic dry run, only a small part of WILD_console is needed. The closed-loop, camera, stimulation, GPIO, and advanced parameter panels can stay unchanged until the device connects, synchronizes, records, and exports reliably.

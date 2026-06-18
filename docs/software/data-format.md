@@ -33,6 +33,19 @@ Timing metadata should be interpreted as a layered system: device sample counts 
 
 PC-device time synchronization is useful for session organization, export metadata, and cross-device coordination. It should not be treated as a substitute for hardware sync or digital event channels when the analysis requires high-precision alignment.
 
+## Windows Timing Preparation
+
+WILD logger time and PC system time are independent clocks. They can have a fixed offset and a small relative drift during a session. Windows automatic time management is designed to keep the PC close to network time; it does not calibrate drift against the WILD device clock. If Windows applies an automatic correction during an experiment, the PC clock can step abruptly relative to WILD logger time, which creates a discontinuity in PC-side trigger timestamps.
+
+Treat this as a recording prerequisite for any session that uses PC-side timestamps or external timing alignment. For the best PC-side timestamp accuracy on Windows, prepare the acquisition computer before synchronization trials:
+
+1. Disable Windows automatic time adjustment during the recording session, including automatic time setting and automatic time-zone changes.
+2. Download and run `TimeCalibrator` on the acquisition computer before the experiment.
+3. Use `TimeCalibrator` records together with WILD sync pulses to estimate PC-to-WILD time offset and drift.
+4. Apply the offset and drift correction after export before merging USB-GPIO, behavior, camera, stimulation, or multi-device event timestamps with WILD logger time.
+
+This step improves the stability of PC-side timestamps. It does not replace device-side sample timing or direct hardware TTL synchronization when the experiment requires the highest alignment accuracy.
+
 ## GPIO-through-USB Trigger Alignment
 
 USB-GPIO and BLE can bridge external equipment and the WILD device, but the bridge has direction-dependent latency. Keep the two cases separate:
@@ -49,11 +62,12 @@ For high-precision alignment, prefer a hardware TTL split that is recorded direc
 Recommended synchronization workflow:
 
 1. Choose the bridge direction used by the experiment: incoming `TTL -> PC -> BLE -> WILD`, outgoing `WILD -> BLE -> PC -> TTL`, or a direct hardware TTL split.
-2. Add periodic calibration pulses that traverse the same path as the experiment trigger.
-3. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
-4. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
-5. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
-6. Store the direction, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
+2. On the Windows host, disable automatic time adjustment and run `TimeCalibrator` before the session.
+3. Add periodic calibration pulses that traverse the same path as the experiment trigger.
+4. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
+5. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
+6. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
+7. Store the direction, TimeCalibrator record, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
 
 Periodic drift monitoring should continue across the recording, not only at the start. A short pre-session pulse train estimates initial delay, but repeated pulses during the session reveal PC clock drift, USB scheduling changes, logger clock drift, missed edges, or an interrupted connection. After fitting the USB-to-WILD time map, inspect residuals over time. A stable residual trace supports a single affine correction; jumps or curvature indicate that the session needs segmented correction, dropped-pulse review, or exclusion from high-precision timing analysis.
 

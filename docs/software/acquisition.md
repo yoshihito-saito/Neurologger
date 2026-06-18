@@ -6,6 +6,12 @@ The WILD device records high-bandwidth neural and multimodal data locally. BLE i
 
 WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
+## Recording Prerequisites
+
+Before acquisition, prepare the Windows host clock for any timing-sensitive session. Disable automatic time setting and automatic time-zone changes, run `TimeCalibrator`, and keep the calibration record with the exported dataset. This is required when USB-GPIO logs, behavior timestamps, camera triggers, stimulation markers, or multi-device sessions will be aligned to WILD logger time.
+
+The WILD device and PC use independent clocks. Windows automatic time management does not calibrate drift against the WILD clock and can create an abrupt PC-clock shift during the session if an automatic correction occurs.
+
 ## Wireless Connection Model
 
 The WILD device can be connected for discovery, synchronization support, parameter review, selected preview, and command delivery. After setup and timing coordination, local recording does not depend on continuous full-bandwidth wireless streaming because the device writes the full dataset to microSD.
@@ -30,15 +36,16 @@ Closed-loop settings, camera controls, stimulation parameters, GPIO options, and
 ## Typical Session
 
 1. Start WILD_console.
-2. Scan for the WILD device.
-3. Connect over BLE.
-4. Read current parameters and change experiment-specific settings only when needed.
-5. Configure sampling, closed-loop, camera, stimulation, and GPIO options as needed.
-6. Start local recording.
-7. Monitor selected preview and state signals.
-8. Stop recording.
-9. Export data from the SD card.
-10. Check duration, file size, representative channels, and sync markers before treating the session as complete.
+2. Complete Windows clock preparation if the session uses PC-side timestamps or external timing alignment.
+3. Scan for the WILD device.
+4. Connect over BLE.
+5. Read current parameters and change experiment-specific settings only when needed.
+6. Configure sampling, closed-loop, camera, stimulation, and GPIO options as needed.
+7. Start local recording.
+8. Monitor selected preview and state signals.
+9. Stop recording.
+10. Export data from the SD card.
+11. Check duration, file size, representative channels, and sync markers before treating the session as complete.
 
 ## Multi-Device Sessions
 
