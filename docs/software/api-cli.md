@@ -1,17 +1,17 @@
 # Programmatic Workflows
 
-WILD_console and the listed scripts form the supported public interface for acquisition, export, post-processing, and validation.
+WILD Console and the listed scripts form the supported public interface for acquisition, export, post-processing, and validation.
 
-WILD_console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
+WILD Console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
 
 !!! warning "No stable SDK yet"
-    The supported public programmable surface is WILD_console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
+    The supported public programmable surface is WILD Console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
 
 ## Current Support
 
 | Area | Current operation style | Purpose |
 | --- | --- | --- |
-| Acquisition | WILD_console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
+| Acquisition | WILD Console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
 | Post-processing | MATLAB scripts | Header generation, timing correction, event export, IMU processing, and Intan-compatible output preparation. |
 | Camera/audio decoding | Python scripts | Decode `misc.dat` and related audio data into reviewable media outputs. |
 | Batch processing | Python and MATLAB scripts | Process folders of recordings after SD export. |
@@ -22,7 +22,7 @@ WILD_console handles BLE discovery, synchronization support, configuration, sele
 
 The current public API surface is organized around these operations:
 
-- Export recording folders from WILD_console.
+- Export recording folders from WILD Console.
 - Generate corrected `info.rhd` and `time.dat` outputs.
 - Convert raw WILD camera/audio data into media files.
 - Process IMU channels into calibrated signals.
@@ -32,7 +32,7 @@ The current public API surface is organized around these operations:
 
 ## Device Operation Categories
 
-WILD_console and controller workflows expose device operations at a task level. Public documentation should describe these operations by purpose rather than by low-level command ID.
+WILD Console and controller workflows expose device operations at a task level. Public documentation should describe these operations by purpose rather than by low-level command ID.
 
 | Category | Typical operations |
 | --- | --- |
@@ -60,4 +60,4 @@ For reproducible use, record the following metadata with tool outputs and exampl
 
 ## SDK Status
 
-WILD_console operations and documented processing scripts are the supported public surface. Script internals remain implementation details unless a workflow is explicitly documented.
+WILD Console operations and documented processing scripts are the supported public surface. Script internals remain implementation details unless a workflow is explicitly documented.

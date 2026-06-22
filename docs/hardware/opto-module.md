@@ -18,7 +18,7 @@ The WILD opto-module is the optional stimulation hardware path for optical manip
 | Manual stimulation test | Confirm optical output and wiring before closed-loop use. | Use a bench photodiode, optical power meter, or other approved output check. |
 | Closed-loop stimulation output | Deliver stimulation in response to WILD DSP, threshold, or TinyML state when supported by the release image. | Compare event files, stimulation markers, and observed output timing. |
 | External trigger stimulation | Drive stimulation from external timing equipment when the experiment requires external coordination. | Record the external trigger and WILD event path for later alignment. |
-| Parameter review | Confirm pulse width, intensity, channel selection, and enable state before the animal session. | Save release image, WILD_console version, and stimulation settings with the dataset. |
+| Parameter review | Confirm pulse width, intensity, channel selection, and enable state before the animal session. | Save release image, WILD Console version, and stimulation settings with the dataset. |
 
 ## Bring-Up Checks
 

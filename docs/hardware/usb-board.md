@@ -48,4 +48,4 @@ See [GPIO-through-USB Trigger Alignment](../software/data-format.md#gpio-through
 
 ## Metadata
 
-Record the USB-GPIO board revision, connected channels, edge polarity, host software, WILD_console version, BLE controller path, and whether the board was used for input logging, output control, or both.
+Record the USB-GPIO board revision, connected channels, edge polarity, host software, WILD Console version, BLE controller path, and whether the board was used for input logging, output control, or both.

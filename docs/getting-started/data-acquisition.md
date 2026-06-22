@@ -1,10 +1,10 @@
 # Data Acquisition
 
-WILD_console is the main operator interface for BLE connection, synchronization support, recording configuration, selected live preview, closed-loop control, and SD-card export.
+WILD Console is the main operator interface for BLE connection, synchronization support, recording configuration, selected live preview, closed-loop control, and SD-card export.
 
 WILD is a local-storage neurologger. High-bandwidth neural and multimodal data are written to the device microSD card. BLE supports setup, timing calibration, status messages, command delivery, and selected preview signals.
 
-The current public workflow uses WILD_console on Windows. Full-resolution recordings are recovered from the microSD card.
+The current public workflow uses WILD Console on Windows. Full-resolution recordings are recovered from the microSD card.
 
 The WILD device does not need continuous full-bandwidth wireless streaming to preserve the recording. Keep BLE connected when the session needs online preview, parameter changes, or live commands. Otherwise, use BLE for setup and timing coordination, then recover the full dataset from the microSD card.
 
@@ -24,9 +24,9 @@ WILD and the PC use independent clocks. Windows automatic time management does n
 
 ## First-Pass Button Path
 
-For a basic dry run, only a small part of WILD_console is needed. The closed-loop, camera, stimulation, GPIO, and advanced parameter panels can stay unchanged until the device connects, synchronizes, records, and exports reliably.
+For a basic dry run, only a small part of WILD Console is needed. The closed-loop, camera, stimulation, GPIO, and advanced parameter panels can stay unchanged until the device connects, synchronizes, records, and exports reliably.
 
-The online and live figures below are runtime screenshots from WILD_console during hardware sessions. Some window-title or device-list strings may still show older internal labels; the public documentation uses the WILD name consistently.
+The online and live figures below are runtime screenshots from WILD Console during hardware sessions. Some window-title or device-list strings may still show older internal labels; the public documentation uses the WILD name consistently.
 
 <div class="wild-operator-path">
   <div class="wild-operator-step">
@@ -59,7 +59,7 @@ The online and live figures below are runtime screenshots from WILD_console duri
   </div>
   <div class="wild-operator-step">
     <span class="wild-button-label primary">Save to Disk</span>
-    <p><strong>Export the recording folder.</strong> WILD_console decodes the SD-card recording into public analysis files.</p>
+    <p><strong>Export the recording folder.</strong> WILD Console decodes the SD-card recording into public analysis files.</p>
   </div>
 </div>
 
@@ -67,11 +67,11 @@ The online and live figures below are runtime screenshots from WILD_console duri
   First-session rule: ignore <span class="wild-button-label muted">Closed-loop</span>, <span class="wild-button-label muted">Camera</span>, <span class="wild-button-label muted">Advanced</span>, and parameter panels until a simple recording can be started, stopped, and exported.
 </p>
 
-![WILD_console runtime screenshot during connected acquisition](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot during connected acquisition](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
 
 ## Connect
 
-1. Launch `WILD_console.exe`.
+1. Launch `WILD Console_EXE_PLACEHOLDER`.
 2. Click <span class="wild-button-label">Rescan</span> if the device is not listed.
 3. Select the WILD device from <span class="wild-button-label">Device List</span>.
 4. Click <span class="wild-button-label primary">Connect</span> and wait for device-state and synchronization updates.
@@ -88,7 +88,7 @@ The online and live figures below are runtime screenshots from WILD_console duri
 
 1. Confirm the expected sampling speed and channel count.
 2. Leave closed-loop and camera settings unchanged unless the experiment needs them.
-3. Use `Wait for start` only when coordinating multiple WILD_console instances.
+3. Use `Wait for start` only when coordinating multiple WILD Console instances.
 4. Click <span class="wild-button-label primary">Recording Start</span> to begin local logging on the device.
 5. Click <span class="wild-button-label">Recording Stop</span> when the experiment is complete.
 
@@ -119,7 +119,7 @@ Disable preview to save power and BLE bandwidth when live monitoring is not need
 
 ## Download
 
-Insert the SD card and click <span class="wild-button-label primary">Save to Disk</span>. WILD_console exports recordings into timestamped folders with neural, auxiliary, ADC, camera, metadata, and parameter files.
+Insert the SD card and click <span class="wild-button-label primary">Save to Disk</span>. WILD Console exports recordings into timestamped folders with neural, auxiliary, ADC, camera, metadata, and parameter files.
 
 **Expected signs of success**
 
@@ -132,7 +132,7 @@ Insert the SD card and click <span class="wild-button-label primary">Save to Dis
   Normal export does not require the red maintenance buttons. <span class="wild-button-label warning">Quick Format</span> is only for preparing a known empty card, and release-image maintenance is outside the routine recording path.
 </p>
 
-![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
 ## Common Blockers
 

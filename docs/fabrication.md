@@ -62,13 +62,13 @@ Some WILD components may need advance ordering or manual handling:
 Prepare a bench cable before applying power to a newly assembled WILD device.
 
 1. Solder the WILD 4-pin JST-SH 1.0 mm cable according to the connector illustration in [Hardware Setup](getting-started/hardware-setup.md).
-2. Pre-crimped JST-SH 1.0 mm wire leads can be used for cable preparation, for example [JST-SH 1.0 mm female wire leads](https://www.amazon.com/dp/B0FH4QRHH4).
-3. Build a 4-pin USB power/programming cable by soldering the JST-SH lead to a USB-A connector board, for example [USB-A solder socket board](https://www.amazon.com/dp/B0F935X5YP).
+2. Pre-crimped JST-SH 1.0 mm wire leads or equivalent lab-qualified leads can be used for cable preparation after verifying polarity and pin order.
+3. Build a 4-pin USB power/programming cable by soldering the JST-SH lead to a USB-A connector breakout or equivalent bench-supply adapter. Keep the cable labeled and reuse it only after continuity checks.
 4. Place a USB power meter between the PC or USB supply and the 4-pin cable.
 5. Connect the WILD device for the first time and check the current before programming. Current below 10 mA is the expected first-pass check for no obvious short circuit; disconnect immediately if the current is higher than expected or unstable.
 6. Momentarily short the DFU mode-select pin to VCC with metal tweezers while connecting USB, using the connector schematic to avoid shorting the wrong pins.
 7. Confirm that the PC detects an `STM32-DFU` device. If the driver is missing, install the ST DFU driver package from [STSW-STM32080](https://www.st.com/en/development-tools/stsw-stm32080.html).
-8. Open WILD_console, go to the **Advanced** tab, and use the packed DFU update pipeline to select the latest validated `.hex` release image.
+8. Open WILD Console, go to the **Advanced** tab, and use the packed DFU update pipeline to select the latest validated `.hex` release image.
 9. After the first DFU installation succeeds, use the documented microSD release-image update path for later upgrades when the release notes support it.
 
 ## Inspection Checks

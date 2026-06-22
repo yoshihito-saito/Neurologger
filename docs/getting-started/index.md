@@ -1,6 +1,6 @@
 # Getting Started
 
-Start here if you are setting up a WILD device for the first time or reproducing the public workflow from the Nature Methods platform paper.
+Start here if you are setting up a WILD device for the first time or reproducing the public WILD workflow associated with the manuscript under review.
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="hardware-setup/">
@@ -25,7 +25,7 @@ Start here if you are setting up a WILD device for the first time or reproducing
 
 ## Before You Begin
 
-- Windows 10 or later for WILD_console.
+- Windows 10 or later for WILD Console.
 - Bluetooth 4.0 or later for BLE control.
 - A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable in specific WILD operating modes.
 - A battery that can boot the WILD device and sustain the planned recording mode.
@@ -40,7 +40,7 @@ Start here if you are setting up a WILD device for the first time or reproducing
 | Asset | Location |
 | --- | --- |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
-| WILD_console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
+| WILD Console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
 | Fabrication guide | [Fabrication](../fabrication.md) |
 | Board source files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
 | 3D-print files | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
@@ -70,7 +70,7 @@ Start here if you are setting up a WILD device for the first time or reproducing
 
 **Success criteria:**
 
-1. The WILD device is discovered and connected in WILD_console.
+1. The WILD device is discovered and connected in WILD Console.
 2. A short recording starts and stops cleanly.
 3. SD-card export completes without missing-core-file errors.
 4. The exported folder contains the expected files for the recording mode.

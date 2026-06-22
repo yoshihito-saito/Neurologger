@@ -1,18 +1,24 @@
 # Publications
 
-Publication notes collect the WILD citation and the release metadata needed for reproducible methods reporting.
+Publication notes collect the current WILD manuscript status and the release metadata needed for reproducible methods reporting.
 
-## Platform Paper
+## Publication Status
 
-The WILD platform paper appears in *Nature Methods*. Add the final DOI, volume, issue, and page range here when available. For repository-based methods descriptions, include the WILD hardware revision, release image, WILD_console version, and analysis-script version used in the work.
+A manuscript describing the WILD platform is currently under review. This documentation provides public-facing information for the hardware files, release images, WILD Console usage, post-processing workflows, metadata requirements, and validation checks associated with the platform.
+
+Final peer-reviewed citation information, including journal, DOI, volume, issue, and page details, will be added after publication.
+
+## Citation Before Publication
+
+Before publication, cite the repository or release record and report the exact release context used in the work. Do not include journal, DOI, volume, issue, or page information until those details are final.
 
 ```bibtex
-@article{zhao2026wild,
-  title        = {A wireless modular platform for neuro-behavioral recording and closed-loop manipulation in small animals},
+@misc{wild_repository,
+  title        = {WILD: Wireless, Interactive, Lightweight Datalogger},
   author       = {Zhao, Zifang and Chang, Hongyu and Paudel, Praveen and Park, Jaehyo and Liu, Can and Aurelio, Maria Q. and Oliva, Azahara and Fernandez-Ruiz, Antonio},
-  journal      = {Nature Methods},
-  year         = {2026},
-  doi          = {ADD_FINAL_DOI}
+  howpublished = {\url{https://github.com/ayalab1/Neurologger}},
+  note         = {Public documentation and release files. Report the release tag, device image, hardware revision, WILD Console version, and analysis-script commit used in the experiment.},
+  year         = {2026}
 }
 ```
 
@@ -24,13 +30,13 @@ Repository: [https://github.com/ayalab1/Neurologger](https://github.com/ayalab1/
 
 ## Reproducible Methods Reporting
 
-In addition to the paper citation, report the exact release context used in the work:
+For reproducible methods reporting, include:
 
 - Repository URL.
 - Release tag.
 - Release image filename.
 - Hardware revision.
-- WILD_console version.
+- WILD Console version.
 - Analysis script version or commit hash, when applicable.
 
 The repository includes a root `CITATION.cff` file for software-style citation metadata.

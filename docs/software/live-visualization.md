@@ -1,10 +1,10 @@
 # Live Visualization
 
-WILD_console includes real-time panels for checking selected neural channels, auxiliary signals, camera preview, closed-loop state, and device status during setup and recording.
+WILD Console includes real-time panels for checking selected neural channels, auxiliary signals, camera preview, closed-loop state, and device status during setup and recording.
 
 Live visualization is a monitoring surface. Full-resolution neural, IMU, audio, camera, and event data are written locally to the device microSD card and recovered during export. Use the live view to confirm that the device is configured correctly, sensors are connected, and closed-loop state variables behave as expected.
 
-![WILD_console runtime screenshot with live preview and camera windows](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot with live preview and camera windows](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
 
 ## What Live View Is For
 

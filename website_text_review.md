@@ -1,6 +1,6 @@
 # WILD Website Text Review Bundle
 
-Generated from the current MkDocs Markdown source files in navigation order.
+Generated from the current MkDocs Markdown source files, including the navigation pages and the built PCB compatibility page.
 
 Use the Source file marker before each section to map edits back to the website source.
 
@@ -16,8 +16,8 @@ hide:
 
 <section class="wild-hero">
   <div>
-    <h1>WILD: Wireless neuro-behavioral recording and closed-loop manipulation in freely moving animals</h1>
-    <p>The Wireless, Interactive, Lightweight Datalogger (WILD) is an ultra-lightweight multimodal neurologger for local electrophysiology, behavioral sensing, embedded processing, and responsive stimulation in freely behaving small animals.</p>
+    <h1>WILD: wireless neural recording and closed-loop control in freely behaving animals</h1>
+    <p>The Wireless, Interactive, Lightweight Datalogger (WILD) is a head-mounted local-storage platform for neural recording and closed-loop experimental control in freely behaving small animals. The system combines multichannel electrophysiology, auxiliary behavioral sensing, onboard processing, microSD storage, wireless configuration, and validated stimulation workflows.</p>
     <div class="wild-actions">
       <a class="md-button md-button--primary" href="getting-started/">Get Started</a>
       <a class="md-button" href="hardware/">Hardware</a>
@@ -44,9 +44,9 @@ hide:
 </section>
 
 <section class="wild-section wild-paper-banner">
-  <h2>Nature Methods platform paper</h2>
-  <p>WILD was developed to make high-channel-count neural recording, multimodal behavioral monitoring, and closed-loop perturbation feasible during naturalistic behavior without tethered acquisition hardware.</p>
-  <p>Use this site to reproduce the public 64-channel WILD workflow, locate hardware and software assets, and document the release image, hardware revision, WILD_console version, SD card, battery, and analysis scripts used for each dataset.</p>
+  <h2>Publication status</h2>
+  <p>A manuscript describing the WILD platform is currently under review. This website provides public-facing documentation for the hardware files, release images, WILD Console usage, post-processing workflows, metadata requirements, and validation checks associated with the platform.</p>
+  <p>Final peer-reviewed citation information will be added after publication. Until then, report the repository, release image, hardware revision, WILD Console version, SD card, battery, enabled modalities, and analysis scripts used for each dataset.</p>
 </section>
 
 <section class="wild-section">
@@ -66,7 +66,7 @@ hide:
     </div>
     <div class="wild-card wild-feature-card">
       <h3>Open and reproducible</h3>
-      <p>Hardware files, release images, WILD_console installers, MATLAB scripts, Python tools, and documentation are maintained in the public repository.</p>
+      <p>Hardware files, release images, WILD Console installers, MATLAB scripts, Python tools, and documentation are organized for release-specific methods reporting.</p>
     </div>
   </div>
 </section>
@@ -75,12 +75,12 @@ hide:
   <div class="wild-grid two">
     <div class="wild-card">
       <h2>Open-source release</h2>
-      <p><strong>Included in the public workflow:</strong> 64-channel local-storage WILD recording, WILD_console on Windows, validated release images, optional stimulation workflows, and post-processing through documented MATLAB and Python scripts.</p>
+      <p><strong>Included in the public workflow:</strong> 64-channel local-storage WILD recording, WILD Console on Windows, validated release images, optional stimulation workflows, and post-processing through documented MATLAB and Python scripts.</p>
       <p><strong>Not part of the stable public workflow:</strong> continuous full-bandwidth BLE telemetry, arbitrary runtime AI-model upload, and separate higher-performance research variants unless a release note explicitly supports them.</p>
     </div>
     <div class="wild-card">
       <h2>Reproducibility record</h2>
-      <p>For each experiment, record the exact release tag, device image filename, hardware revision, WILD_console version, SD-card model, battery, enabled modalities, and analysis-script commit.</p>
+      <p>For each experiment, record the exact release tag, device image filename, hardware revision, WILD Console version, SD-card model, battery, enabled modalities, and analysis-script commit.</p>
       <p><a href="https://github.com/ayalab1/Neurologger/releases/latest">Open the latest GitHub release</a>.</p>
     </div>
   </div>
@@ -144,7 +144,7 @@ hide:
     <span>Head-mounted camera</span>
     <span>Closed-loop DSP</span>
   </div>
-  <p class="wild-table-note">Detailed mode-dependent power and runtime records belong in the Hardware and Power documentation, together with release image, SD-card, and battery metadata.</p>
+  <p class="wild-table-note">Mode-dependent power values are listed in <a href="hardware/power/#measured-device-modes">Hardware / Power</a>, together with release image, SD-card, and battery metadata.</p>
 </section>
 
 <section class="wild-section">
@@ -190,7 +190,7 @@ hide:
     </div>
     <div class="wild-card wild-highlight-card">
       <h3>Open hardware iteration</h3>
-      <p>The repository contains hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
+      <p>The repository contains hardware files, validated release assets, WILD Console installers, and analysis scripts.</p>
     </div>
   </div>
 </section>
@@ -204,7 +204,7 @@ hide:
     </div>
     <div class="wild-card wild-step">
       <h3>2. Data acquisition</h3>
-      <p>Use WILD_console for BLE connection, synchronization support, recording configuration, closed-loop settings, and local logging startup.</p>
+      <p>Use WILD Console for BLE connection, synchronization support, recording configuration, closed-loop settings, and local logging startup.</p>
     </div>
     <div class="wild-card wild-step">
       <h3>3. Data analysis</h3>
@@ -218,22 +218,22 @@ hide:
   <h2>Publication and citation</h2>
   <div class="wild-grid two">
     <div class="wild-card">
-      <h3>Platform paper</h3>
-      <p>The WILD platform paper appears in <em>Nature Methods</em>. Add the final DOI and page details here when available.</p>
+      <h3>Publication status</h3>
+      <p>A manuscript describing the WILD platform is currently under review. Final citation information, including journal, DOI, volume, issue, and page details, will be added only after publication.</p>
     </div>
     <div class="wild-card">
       <h3>Repository and release versions</h3>
-      <p>For reproducible methods, report the hardware revision, release image, WILD_console version, and analysis scripts used for each dataset.</p>
+      <p>Before publication, cite the repository or release record and report the hardware revision, release image, WILD Console version, SD-card model, battery configuration, enabled modalities, and analysis scripts used for each dataset.</p>
     </div>
   </div>
 
 ```bibtex
-@article{zhao2026wild,
-  title        = {A wireless modular platform for neuro-behavioral recording and closed-loop manipulation in small animals},
+@misc{wild_repository,
+  title        = {WILD: Wireless, Interactive, Lightweight Datalogger},
   author       = {Zhao, Zifang and Chang, Hongyu and Paudel, Praveen and Park, Jaehyo and Liu, Can and Aurelio, Maria Q. and Oliva, Azahara and Fernandez-Ruiz, Antonio},
-  journal      = {Nature Methods},
-  year         = {2026},
-  doi          = {ADD_FINAL_DOI}
+  howpublished = {\url{https://github.com/ayalab1/Neurologger}},
+  note         = {Public documentation and release files. Report the release tag, device image, hardware revision, WILD Console version, and analysis-script commit used in the experiment.},
+  year         = {2026}
 }
 ```
 </section>
@@ -243,7 +243,7 @@ hide:
   <div class="wild-grid">
     <div class="wild-card">
       <h3>GitHub</h3>
-      <p><a href="https://github.com/ayalab1/Neurologger">Browse hardware files, release images, WILD_console installers, and analysis scripts.</a></p>
+      <p><a href="https://github.com/ayalab1/Neurologger">Browse hardware files, release images, WILD Console installers, and analysis scripts.</a></p>
     </div>
     <div class="wild-card">
       <h3>Issues and pull requests</h3>
@@ -256,14 +256,13 @@ hide:
   </div>
 </section>
 
-
 ---
 
 # Source file: docs/getting-started/index.md
 
 # Getting Started
 
-Start here if you are setting up a WILD device for the first time or reproducing the public workflow from the Nature Methods platform paper.
+Start here if you are setting up a WILD device for the first time or reproducing the public WILD workflow associated with the manuscript under review.
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="hardware-setup/">
@@ -288,7 +287,7 @@ Start here if you are setting up a WILD device for the first time or reproducing
 
 ## Before You Begin
 
-- Windows 10 or later for WILD_console.
+- Windows 10 or later for WILD Console.
 - Bluetooth 4.0 or later for BLE control.
 - A tested microSD card installed in the WILD device. Use Samsung EVO series or tested Lexar cards for first recordings; some SanDisk cards may be unreliable in specific WILD operating modes.
 - A battery that can boot the WILD device and sustain the planned recording mode.
@@ -303,7 +302,7 @@ Start here if you are setting up a WILD device for the first time or reproducing
 | Asset | Location |
 | --- | --- |
 | Prebuilt device images | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
-| WILD_console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
+| WILD Console installers | [Latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest) |
 | Fabrication guide | [Fabrication](../fabrication.md) |
 | Board source files | [PCB](https://github.com/ayalab1/Neurologger/tree/main/PCB) |
 | 3D-print files | [3Dprint](https://github.com/ayalab1/Neurologger/tree/main/3Dprint) |
@@ -333,12 +332,11 @@ Start here if you are setting up a WILD device for the first time or reproducing
 
 **Success criteria:**
 
-1. The WILD device is discovered and connected in WILD_console.
+1. The WILD device is discovered and connected in WILD Console.
 2. A short recording starts and stops cleanly.
 3. SD-card export completes without missing-core-file errors.
 4. The exported folder contains the expected files for the recording mode.
 5. MATLAB or Python post-processing runs without manual file repair.
-
 
 ---
 
@@ -373,21 +371,21 @@ The WILD device uses these connectors to support local acquisition, storage, wir
 
 For a newly assembled WILD device, complete the bench power and programming checks before connecting a battery or probe.
 
-1. Prepare a 4-pin JST-SH 1.0 mm cable using the connector orientation shown above. Pre-crimped JST-SH wire leads can be used, for example [JST-SH 1.0 mm female wire leads](https://www.amazon.com/dp/B0FH4QRHH4).
-2. Build a USB-to-4-pin test cable by soldering the JST-SH lead to a USB-A connector board, for example [USB-A solder socket board](https://www.amazon.com/dp/B0F935X5YP).
+1. Prepare a 4-pin JST-SH 1.0 mm cable using the connector orientation shown above. Pre-crimped JST-SH wire leads or equivalent lab-qualified leads can be used if the polarity and pin order are verified before connection.
+2. Build a USB-to-4-pin test cable by soldering the JST-SH lead to a USB-A connector breakout or equivalent bench-supply adapter. Record the adapter type in local bring-up notes if the cable will be reused.
 3. Insert a USB power meter between the PC or USB supply and the WILD device.
 4. Connect the WILD device without a battery and check the first current reading. A current below 10 mA is the expected first-pass check for no obvious short circuit.
 5. If current is higher than expected, disconnect the device and inspect the power connector, regulator area, microSD socket, and fine-pitch solder joints before continuing.
 6. To enter DFU mode, momentarily short the DFU mode-select pin to VCC with metal tweezers while connecting USB. Use the connector schematic and avoid shorting adjacent pins.
 7. Confirm that Windows detects an `STM32-DFU` device. If needed, install the ST DFU driver from [STSW-STM32080](https://www.st.com/en/development-tools/stsw-stm32080.html).
-8. In WILD_console, open the **Advanced** tab and use the DFU update pipeline to install the latest validated `.hex` release image for the hardware revision.
+8. In WILD Console, open the **Advanced** tab and use the DFU update pipeline to install the latest validated `.hex` release image for the hardware revision.
 9. After the first release image is installed, later supported updates can be performed through microSD when the release notes document that path.
 
 Detailed board-ordering, assembly, and special-component notes are listed in [Fabrication](../fabrication.md).
 
 ## microSD Card
 
-Format the card from WILD_console before recording. The microSD card affects both reliability and power draw.
+Format the card from WILD Console before recording. The microSD card affects both reliability and power draw.
 
 ![microSD power comparison](../images/WIrelessEphys_Github_10_SDcard_power.jpg){ .wild-readable-figure }
 
@@ -401,8 +399,7 @@ Public setup documentation is based on prebuilt WILD release images. Each releas
 
 Release images are distributed through the [latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest). Follow the release notes for the specific image used in the experiment.
 
-Treat the released device image as part of the hardware setup record. The WILD device, WILD_console version, SD card, battery, and analysis scripts should all be traceable to the dataset.
-
+Treat the released device image as part of the hardware setup record. The WILD device, WILD Console version, SD card, battery, and analysis scripts should all be traceable to the dataset.
 
 ---
 
@@ -410,11 +407,11 @@ Treat the released device image as part of the hardware setup record. The WILD d
 
 # Data Acquisition
 
-WILD_console is the main operator interface for BLE connection, synchronization support, recording configuration, selected live preview, closed-loop control, and SD-card export.
+WILD Console is the main operator interface for BLE connection, synchronization support, recording configuration, selected live preview, closed-loop control, and SD-card export.
 
 WILD is a local-storage neurologger. High-bandwidth neural and multimodal data are written to the device microSD card. BLE supports setup, timing calibration, status messages, command delivery, and selected preview signals.
 
-The current public workflow uses WILD_console on Windows. Full-resolution recordings are recovered from the microSD card.
+The current public workflow uses WILD Console on Windows. Full-resolution recordings are recovered from the microSD card.
 
 The WILD device does not need continuous full-bandwidth wireless streaming to preserve the recording. Keep BLE connected when the session needs online preview, parameter changes, or live commands. Otherwise, use BLE for setup and timing coordination, then recover the full dataset from the microSD card.
 
@@ -434,9 +431,9 @@ WILD and the PC use independent clocks. Windows automatic time management does n
 
 ## First-Pass Button Path
 
-For a basic dry run, only a small part of WILD_console is needed. The closed-loop, camera, stimulation, GPIO, and advanced parameter panels can stay unchanged until the device connects, synchronizes, records, and exports reliably.
+For a basic dry run, only a small part of WILD Console is needed. The closed-loop, camera, stimulation, GPIO, and advanced parameter panels can stay unchanged until the device connects, synchronizes, records, and exports reliably.
 
-The online and live figures below are runtime screenshots from WILD_console during hardware sessions. Some window-title or device-list strings may still show older internal labels; the public documentation uses the WILD name consistently.
+The online and live figures below are runtime screenshots from WILD Console during hardware sessions. Some window-title or device-list strings may still show older internal labels; the public documentation uses the WILD name consistently.
 
 <div class="wild-operator-path">
   <div class="wild-operator-step">
@@ -469,7 +466,7 @@ The online and live figures below are runtime screenshots from WILD_console duri
   </div>
   <div class="wild-operator-step">
     <span class="wild-button-label primary">Save to Disk</span>
-    <p><strong>Export the recording folder.</strong> WILD_console decodes the SD-card recording into public analysis files.</p>
+    <p><strong>Export the recording folder.</strong> WILD Console decodes the SD-card recording into public analysis files.</p>
   </div>
 </div>
 
@@ -477,11 +474,11 @@ The online and live figures below are runtime screenshots from WILD_console duri
   First-session rule: ignore <span class="wild-button-label muted">Closed-loop</span>, <span class="wild-button-label muted">Camera</span>, <span class="wild-button-label muted">Advanced</span>, and parameter panels until a simple recording can be started, stopped, and exported.
 </p>
 
-![WILD_console runtime screenshot during connected acquisition](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot during connected acquisition](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
 
 ## Connect
 
-1. Launch `WILD_console.exe`.
+1. Launch `WILD Console_EXE_PLACEHOLDER`.
 2. Click <span class="wild-button-label">Rescan</span> if the device is not listed.
 3. Select the WILD device from <span class="wild-button-label">Device List</span>.
 4. Click <span class="wild-button-label primary">Connect</span> and wait for device-state and synchronization updates.
@@ -498,7 +495,7 @@ The online and live figures below are runtime screenshots from WILD_console duri
 
 1. Confirm the expected sampling speed and channel count.
 2. Leave closed-loop and camera settings unchanged unless the experiment needs them.
-3. Use `Wait for start` only when coordinating multiple WILD_console instances.
+3. Use `Wait for start` only when coordinating multiple WILD Console instances.
 4. Click <span class="wild-button-label primary">Recording Start</span> to begin local logging on the device.
 5. Click <span class="wild-button-label">Recording Stop</span> when the experiment is complete.
 
@@ -529,7 +526,7 @@ Disable preview to save power and BLE bandwidth when live monitoring is not need
 
 ## Download
 
-Insert the SD card and click <span class="wild-button-label primary">Save to Disk</span>. WILD_console exports recordings into timestamped folders with neural, auxiliary, ADC, camera, metadata, and parameter files.
+Insert the SD card and click <span class="wild-button-label primary">Save to Disk</span>. WILD Console exports recordings into timestamped folders with neural, auxiliary, ADC, camera, metadata, and parameter files.
 
 **Expected signs of success**
 
@@ -542,7 +539,7 @@ Insert the SD card and click <span class="wild-button-label primary">Save to Dis
   Normal export does not require the red maintenance buttons. <span class="wild-button-label warning">Quick Format</span> is only for preparing a known empty card, and release-image maintenance is outside the routine recording path.
 </p>
 
-![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
 ## Common Blockers
 
@@ -554,7 +551,6 @@ Insert the SD card and click <span class="wild-button-label primary">Save to Dis
 | Export folder is missing expected files | Recording mode, whether audio or camera were enabled, and whether preprocessing was run after export. |
 | Preview is unstable | Treat preview as optional; confirm local recording first, then revisit BLE preview bandwidth or adapter quality. |
 
-
 ---
 
 # Source file: docs/getting-started/data-analysis.md
@@ -565,7 +561,7 @@ The repository includes MATLAB and Python scripts for converting WILD recordings
 
 ## Standard Post-processing
 
-1. Export data from WILD_console.
+1. Export data from WILD Console.
 2. Run `WILD_PreProcess.m` to generate corrected headers and timing files.
 3. Run `WILD_processIMU.m` for IMU processing.
 4. Run `WILD_VideoDecodewAudio.py` or the folder variants for camera recordings.
@@ -582,7 +578,6 @@ The repository includes MATLAB and Python scripts for converting WILD recordings
 
 !!! note
     Keep raw SD exports unchanged. Run conversion scripts into a separate analysis folder so the original recording can be reprocessed if metadata or analysis settings change.
-
 
 ---
 
@@ -626,7 +621,7 @@ Hardware documentation covers the WILD device architecture, onboard sensors, opt
   <a class="wild-card wild-card-link wild-card-compact" href="power/">
     <div>
     <h3>Power</h3>
-      <p>Battery and SD</p>
+      <p>Battery, SD, mode power</p>
     </div>
   </a>
   <a class="wild-card wild-card-link wild-card-compact" href="https://github.com/ayalab1/Neurologger/releases/latest">
@@ -663,7 +658,7 @@ Document the following for each supported WILD hardware build or dataset:
 | --- | --- |
 | PCB or device revision | Distinguishes connector layout, sensor options, and supported release images. |
 | Release tag and image filename | Ties behavior to a reproducible device image. |
-| WILD_console version | Defines the export and control tool behavior used in the session. |
+| WILD Console version | Defines the export and control tool behavior used in the session. |
 | SD-card model | Affects boot reliability and long-session write stability. |
 | Battery model | Affects boot margin, runtime, and peak-load behavior. |
 | Enabled modalities | States whether the session used ephys, IMU, audio, video, stimulation, or external sync. |
@@ -674,7 +669,7 @@ Before the first recording on a newly assembled WILD device:
 
 1. Confirm that the PCB revision, assembly files, and intended release image match.
 2. Use the USB-to-4-pin bench cable and USB power meter for the first power check.
-3. Install the first validated `.hex` release image through WILD_console **Advanced** DFU update.
+3. Install the first validated `.hex` release image through WILD Console **Advanced** DFU update.
 4. Confirm battery polarity and boot stability.
 5. Confirm microSD insertion and basic discoverability.
 6. Confirm BLE connection and synchronization state.
@@ -684,6 +679,15 @@ Before the first recording on a newly assembled WILD device:
 
 Public hardware visuals should be traceable to real WILD material: device photographs, CAD or EDA exports, microscope images, measured drawings, software screenshots, or hand-authored diagrams derived from measured hardware. AI-generated device photographs or device-like renders are excluded from WILD hardware documentation.
 
+---
+
+# Source file: docs/hardware/pcb.md
+
+# Fabrication
+
+The PCB manufacturing and assembly workflow is now documented as a top-level [Fabrication](../fabrication.md) page.
+
+Use that page for board ordering parameters, PCBA files, special components, first DFU image installation, and post-assembly inspection.
 
 ---
 
@@ -776,7 +780,6 @@ Detailed sensor, opto-module, and USB-GPIO board notes are documented in the ded
 - Digital input and synchronization signals.
 - External I/O for synchronization, stimulation control, and integration with behavioral equipment.
 
-
 ---
 
 # Source file: docs/hardware/onboard-sensors.md
@@ -829,7 +832,6 @@ Digital input channels are used for synchronization pulses, behavioral event mar
 
 For timing-sensitive work, keep the raw digital input record and any generated event files. Post-export correction should preserve both raw event times and the corrected WILD-time event table.
 
-
 ---
 
 # Source file: docs/hardware/opto-module.md
@@ -854,7 +856,7 @@ The WILD opto-module is the optional stimulation hardware path for optical manip
 | Manual stimulation test | Confirm optical output and wiring before closed-loop use. | Use a bench photodiode, optical power meter, or other approved output check. |
 | Closed-loop stimulation output | Deliver stimulation in response to WILD DSP, threshold, or TinyML state when supported by the release image. | Compare event files, stimulation markers, and observed output timing. |
 | External trigger stimulation | Drive stimulation from external timing equipment when the experiment requires external coordination. | Record the external trigger and WILD event path for later alignment. |
-| Parameter review | Confirm pulse width, intensity, channel selection, and enable state before the animal session. | Save release image, WILD_console version, and stimulation settings with the dataset. |
+| Parameter review | Confirm pulse width, intensity, channel selection, and enable state before the animal session. | Save release image, WILD Console version, and stimulation settings with the dataset. |
 
 ## Bring-Up Checks
 
@@ -869,7 +871,6 @@ Before connecting the opto-module to an animal-mounted device:
 ## Metadata
 
 Record the opto-module PCB revision, release image, stimulation channel, optical output calibration, cable or connector path, and validation file. For closed-loop studies, also record the DSP or model state that generated each stimulation event.
-
 
 ---
 
@@ -925,8 +926,142 @@ See [GPIO-through-USB Trigger Alignment](../software/data-format.md#gpio-through
 
 ## Metadata
 
-Record the USB-GPIO board revision, connected channels, edge polarity, host software, WILD_console version, BLE controller path, and whether the board was used for input logging, output control, or both.
+Record the USB-GPIO board revision, connected channels, edge polarity, host software, WILD Console version, BLE controller path, and whether the board was used for input logging, output control, or both.
 
+---
+
+# Source file: docs/hardware/mechanical.md
+
+# Mechanical
+
+Mechanical files are stored in the repository for baseplates, covers, and camera-related parts.
+
+## Available Files
+
+| Part | Repository path |
+| --- | --- |
+| Top cover | [WILD_TopCover.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_TopCover.STL) |
+| Baseplate | [WILD_Baseplate.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Baseplate.STL) |
+| Camera baseplate | [WILD_Baseplate_Camera.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Baseplate_Camera.STL) |
+| Mouse-case CAD source | [Wild_Case.SLDPRT](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/Wild_Case.SLDPRT) and [WILD_Case.f3d](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Case.f3d) |
+| Cambridge NeuroTech probe assembly | [WILDAssemblyVertical.stp](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/CambridgeNT_Probe/WILDAssemblyVertical.stp), [WILDAssemblyVertical.f3d](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/CambridgeNT_Probe/WILDAssemblyVertical.f3d), and printable support parts in `3Dprint/CambridgeNT_Probe/` |
+
+## Rendered Model Views
+
+<div class="wild-grid two">
+  <figure class="wild-image-frame">
+    <img src="../images/WILD_Case_render.png" alt="Rendered WILD mouse case model with baseplate and cover">
+    <figcaption class="wild-caption">Mouse-case render showing the baseplate and cover geometry for device protection and mounting.</figcaption>
+  </figure>
+  <figure class="wild-image-frame">
+    <img src="../images/WILDAssemblyVertical_render.png" alt="Rendered vertical WILD assembly for Cambridge NeuroTech probe workflow">
+    <figcaption class="wild-caption">Vertical assembly render for the Cambridge NeuroTech probe workflow, useful for checking model orientation and enclosure clearance. Courtesy of Adam Lowet, UC Berkeley.</figcaption>
+  </figure>
+</div>
+
+## Design Considerations
+
+- Keep cable strain relief and connector access visible in photos.
+- Document orientation of the baseplate relative to probes, stimulation leads, and camera modules.
+- Include printing material, layer height, support recommendations, and post-processing steps.
+- Add animal-specific mounting notes only after local approval and protocol review.
+
+---
+
+# Source file: docs/hardware/power.md
+
+# Power
+
+Power planning is central to WILD experiments because battery selection, microSD choice, recording mode, selected preview signals, stimulation, and camera use all affect runtime.
+
+## Power Architecture
+
+The WILD device conditions the selected battery through a converter and regulator chain before powering analog acquisition, digital control, and peripheral subsystems. Battery choice should therefore follow validated hardware-revision guidance rather than a single nominal-voltage number.
+
+Boot, microSD writes, camera use, stimulation, and live preview can create different peak-load conditions. Validate the complete experiment mode on the bench before using a battery in an animal session.
+
+## Measured Device Modes
+
+Representative WILD power modes are summarized here because they directly affect battery selection and runtime planning. Report these values together with the release image, SD-card model, battery, and enabled peripherals used for the session.
+
+<div class="wild-spec-scroll" markdown="1">
+
+| Power (mW) | Channels | Samples/s | Mode | Weight (g) | Video | Audio | Motion sensor | Processing |
+| --- | ---: | ---: | --- | ---: | --- | --- | --- | --- |
+| 0.11 | 0 | 0 | Sleep | 1.48 | - | - | - | - |
+| 24.42 | 8 | 4.0e4 | Ephys, IMU | 1.48 | - | - | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 194.04 | 64 | 2.6e6 | Ephys, IMU | 1.48 | - | - | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 208.67 | 64 | 2.92e6 | Ephys, IMU, audio | 1.48 | - | 160 kHz ultrasonic audio path | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 245.28 | 64 | 5.48e6 | Ephys, IMU, audio, video | 1.48 | 320 x 320 px, 16 Hz | 160 kHz ultrasonic audio path | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+
+</div>
+
+The table is a planning reference, not a substitute for bench validation. Current draw can change with release image, recording duration, SD-card behavior, battery voltage, preview state, stimulation, and camera configuration.
+
+## Battery
+
+The WILD device should use a battery approved for the specific hardware revision and experiment mode. Before mounting the device, confirm that the battery can boot the device without voltage sag, start recording, and sustain the planned sensors, preview state, stimulation, or camera load.
+
+![Battery examples](../images/WIrelessEphys_Github_9_batteries.jpg){ .wild-readable-figure }
+
+The [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) provides baseline capacity and runtime-planning references.
+
+## Battery Connector
+
+The WILD device battery input uses the JST-SH connector orientation documented in the hardware setup workflow. The connector is part of the experiment record because polarity, strain relief, and repeated mating can affect boot stability and long-session reliability.
+
+![WILD connector orientation schematic](../images/WIrelessEphys_Github_6_Connectors.jpg){ .wild-readable-figure }
+
+For each hardware revision, record:
+
+- Battery connector type and orientation.
+- Battery lead polarity as assembled.
+- Whether the battery lead was modified, extended, or re-terminated.
+- Any strain-relief method used between the battery, enclosure, and animal-mounted device.
+
+Before a recording session, inspect the connector shell, solder joints, and battery lead for looseness or damage. Do not infer polarity from wire color alone; confirm the assembled connector orientation against the WILD hardware revision being used.
+
+See [Hardware Setup](../getting-started/hardware-setup.md) for the first-device connector checklist.
+
+## First Power Check
+
+For a newly assembled WILD device, use the USB-to-4-pin bench cable and a USB power meter before connecting a battery. The first connection should draw less than 10 mA before a release image is installed; a higher or unstable current is a stop condition for solder-bridge and connector inspection.
+
+The DFU mode-select pin can be temporarily shorted to VCC during USB connection to expose the `STM32-DFU` device for first image installation. Use the connector schematic, keep the short temporary, and verify the pin orientation before applying power.
+
+## Battery Charger
+
+The charger is external to the WILD recording path. Charge batteries with a single-cell lithium-polymer charger that matches the battery chemistry, capacity, connector, and manufacturer charge-current rating. Record the charger model when reporting runtime or power stability results.
+
+The WILD device should not be treated as a battery charger unless a specific hardware revision and release note explicitly documents charging support. For the public workflow, charge and inspect the battery before connecting it to the WILD device.
+
+Recommended charger record:
+
+| Item | Record |
+| --- | --- |
+| Charger model | Identifies the charge circuit used before the session. |
+| Battery model and capacity | Links runtime to the actual energy source. |
+| Charge current | Helps interpret battery heating, aging, and boot margin. |
+| Connector adapter | Documents any JST-SH adapter or lead conversion used between the charger and battery. |
+| Pre-session check | Confirms battery voltage, connector condition, and absence of swelling or cable damage. |
+
+## microSD Power
+
+The microSD card is part of the power and reliability budget. Format cards with WILD Console before recording, and validate the selected card in the same sampling and modality mode planned for the experiment.
+
+![microSD power comparison](../images/WIrelessEphys_Github_10_SDcard_power.jpg){ .wild-readable-figure }
+
+## Runtime Reporting
+
+Runtime depends on sampling rate, active modalities, preview state, stimulation use, microSD-card model, battery capacity, and ambient conditions. When reporting a WILD recording mode, include:
+
+- Release image.
+- SD-card model and format state.
+- Battery model and capacity.
+- Sampling rate and enabled modalities.
+- Preview state.
+- Stimulation or TinyML state, if used.
+- Session environment, especially for outdoor or long-duration recordings.
 
 ---
 
@@ -996,13 +1131,13 @@ Some WILD components may need advance ordering or manual handling:
 Prepare a bench cable before applying power to a newly assembled WILD device.
 
 1. Solder the WILD 4-pin JST-SH 1.0 mm cable according to the connector illustration in [Hardware Setup](getting-started/hardware-setup.md).
-2. Pre-crimped JST-SH 1.0 mm wire leads can be used for cable preparation, for example [JST-SH 1.0 mm female wire leads](https://www.amazon.com/dp/B0FH4QRHH4).
-3. Build a 4-pin USB power/programming cable by soldering the JST-SH lead to a USB-A connector board, for example [USB-A solder socket board](https://www.amazon.com/dp/B0F935X5YP).
+2. Pre-crimped JST-SH 1.0 mm wire leads or equivalent lab-qualified leads can be used for cable preparation after verifying polarity and pin order.
+3. Build a 4-pin USB power/programming cable by soldering the JST-SH lead to a USB-A connector breakout or equivalent bench-supply adapter. Keep the cable labeled and reuse it only after continuity checks.
 4. Place a USB power meter between the PC or USB supply and the 4-pin cable.
 5. Connect the WILD device for the first time and check the current before programming. Current below 10 mA is the expected first-pass check for no obvious short circuit; disconnect immediately if the current is higher than expected or unstable.
 6. Momentarily short the DFU mode-select pin to VCC with metal tweezers while connecting USB, using the connector schematic to avoid shorting the wrong pins.
 7. Confirm that the PC detects an `STM32-DFU` device. If the driver is missing, install the ST DFU driver package from [STSW-STM32080](https://www.st.com/en/development-tools/stsw-stm32080.html).
-8. Open WILD_console, go to the **Advanced** tab, and use the packed DFU update pipeline to select the latest validated `.hex` release image.
+8. Open WILD Console, go to the **Advanced** tab, and use the packed DFU update pipeline to select the latest validated `.hex` release image.
 9. After the first DFU installation succeeds, use the documented microSD release-image update path for later upgrades when the release notes support it.
 
 ## Inspection Checks
@@ -1013,140 +1148,20 @@ Prepare a bench cable before applying power to a newly assembled WILD device.
 - Keep the PCB revision, manufacturer, assembly date, special part substitutions, and release-image filename with the experiment metadata.
 - Match each board revision to a compatible release image before recording.
 
-
----
-
-# Source file: docs/hardware/mechanical.md
-
-# Mechanical
-
-Mechanical files are stored in the repository for baseplates, covers, and camera-related parts.
-
-## Available Files
-
-| Part | Repository path |
-| --- | --- |
-| Top cover | [WILD_TopCover.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_TopCover.STL) |
-| Baseplate | [WILD_Baseplate.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Baseplate.STL) |
-| Camera baseplate | [WILD_Baseplate_Camera.STL](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Baseplate_Camera.STL) |
-| Mouse-case CAD source | [Wild_Case.SLDPRT](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/Wild_Case.SLDPRT) and [WILD_Case.f3d](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/MouseCase/WILD_Case.f3d) |
-| Cambridge NeuroTech probe assembly | [WILDAssemblyVertical.stp](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/CambridgeNT_Probe/WILDAssemblyVertical.stp), [WILDAssemblyVertical.f3d](https://github.com/ayalab1/Neurologger/blob/main/3Dprint/CambridgeNT_Probe/WILDAssemblyVertical.f3d), and printable support parts in `3Dprint/CambridgeNT_Probe/` |
-
-## Rendered Model Views
-
-<div class="wild-grid two">
-  <figure class="wild-image-frame">
-    <img src="../images/WILD_Case_render.png" alt="Rendered WILD mouse case model with baseplate and cover">
-    <figcaption class="wild-caption">Mouse-case render showing the baseplate and cover geometry for device protection and mounting.</figcaption>
-  </figure>
-  <figure class="wild-image-frame">
-    <img src="../images/WILDAssemblyVertical_render.png" alt="Rendered vertical WILD assembly for Cambridge NeuroTech probe workflow">
-    <figcaption class="wild-caption">Vertical assembly render for the Cambridge NeuroTech probe workflow, useful for checking model orientation and enclosure clearance. Courtesy of Adam Lowet, UC Berkeley.</figcaption>
-  </figure>
-</div>
-
-## Design Considerations
-
-- Keep cable strain relief and connector access visible in photos.
-- Document orientation of the baseplate relative to probes, stimulation leads, and camera modules.
-- Include printing material, layer height, support recommendations, and post-processing steps.
-- Add animal-specific mounting notes only after local approval and protocol review.
-
-
----
-
-# Source file: docs/hardware/power.md
-
-# Power
-
-Power planning is central to WILD experiments because battery selection, microSD choice, recording mode, selected preview signals, stimulation, and camera use all affect runtime.
-
-## Power Architecture
-
-The WILD device conditions the selected battery through a converter and regulator chain before powering analog acquisition, digital control, and peripheral subsystems. Battery choice should therefore follow validated hardware-revision guidance rather than a single nominal-voltage number.
-
-Boot, microSD writes, camera use, stimulation, and live preview can create different peak-load conditions. Validate the complete experiment mode on the bench before using a battery in an animal session.
-
-## Battery
-
-The WILD device should use a battery approved for the specific hardware revision and experiment mode. Before mounting the device, confirm that the battery can boot the device without voltage sag, start recording, and sustain the planned sensors, preview state, stimulation, or camera load.
-
-![Battery examples](../images/WIrelessEphys_Github_9_batteries.jpg){ .wild-readable-figure }
-
-The [battery selection table](https://github.com/ayalab1/Neurologger/blob/main/docs/LipoBattery_selection.csv) provides baseline capacity and runtime-planning references.
-
-## Battery Connector
-
-The WILD device battery input uses the JST-SH connector orientation documented in the hardware setup workflow. The connector is part of the experiment record because polarity, strain relief, and repeated mating can affect boot stability and long-session reliability.
-
-![WILD connector orientation schematic](../images/WIrelessEphys_Github_6_Connectors.jpg){ .wild-readable-figure }
-
-For each hardware revision, record:
-
-- Battery connector type and orientation.
-- Battery lead polarity as assembled.
-- Whether the battery lead was modified, extended, or re-terminated.
-- Any strain-relief method used between the battery, enclosure, and animal-mounted device.
-
-Before a recording session, inspect the connector shell, solder joints, and battery lead for looseness or damage. Do not infer polarity from wire color alone; confirm the assembled connector orientation against the WILD hardware revision being used.
-
-See [Hardware Setup](../getting-started/hardware-setup.md) for the first-device connector checklist.
-
-## First Power Check
-
-For a newly assembled WILD device, use the USB-to-4-pin bench cable and a USB power meter before connecting a battery. The first connection should draw less than 10 mA before a release image is installed; a higher or unstable current is a stop condition for solder-bridge and connector inspection.
-
-The DFU mode-select pin can be temporarily shorted to VCC during USB connection to expose the `STM32-DFU` device for first image installation. Use the connector schematic, keep the short temporary, and verify the pin orientation before applying power.
-
-## Battery Charger
-
-The charger is external to the WILD recording path. Charge batteries with a single-cell lithium-polymer charger that matches the battery chemistry, capacity, connector, and manufacturer charge-current rating. Record the charger model when reporting runtime or power stability results.
-
-The WILD device should not be treated as a battery charger unless a specific hardware revision and release note explicitly documents charging support. For the public workflow, charge and inspect the battery before connecting it to the WILD device.
-
-Recommended charger record:
-
-| Item | Record |
-| --- | --- |
-| Charger model | Identifies the charge circuit used before the session. |
-| Battery model and capacity | Links runtime to the actual energy source. |
-| Charge current | Helps interpret battery heating, aging, and boot margin. |
-| Connector adapter | Documents any JST-SH adapter or lead conversion used between the charger and battery. |
-| Pre-session check | Confirms battery voltage, connector condition, and absence of swelling or cable damage. |
-
-## microSD Power
-
-The microSD card is part of the power and reliability budget. Format cards with WILD_console before recording, and validate the selected card in the same sampling and modality mode planned for the experiment.
-
-![microSD power comparison](../images/WIrelessEphys_Github_10_SDcard_power.jpg){ .wild-readable-figure }
-
-## Runtime Reporting
-
-Runtime depends on sampling rate, active modalities, preview state, stimulation use, microSD-card model, battery capacity, and ambient conditions. When reporting a WILD recording mode, include:
-
-- Release image.
-- SD-card model and format state.
-- Battery model and capacity.
-- Sampling rate and enabled modalities.
-- Preview state.
-- Stimulation or TinyML state, if used.
-- Session environment, especially for outdoor or long-duration recordings.
-
-
 ---
 
 # Source file: docs/software/index.md
 
 # Software
 
-Software documentation covers how to connect to the WILD device, configure recordings in WILD_console, export data from the device microSD card, and process recordings for analysis.
+Software documentation covers how to connect to the WILD device, configure recordings in WILD Console, export data from the device microSD card, and process recordings for analysis.
 
 ## Software Components
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="acquisition/">
     <div>
-    <h3>WILD_console</h3>
+    <h3>WILD Console</h3>
       <p>Connect and export</p>
     </div>
   </a>
@@ -1172,13 +1187,13 @@ Software documentation covers how to connect to the WILD device, configure recor
 
 ## Install
 
-Download WILD_console from the [latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest). The link always opens the newest published WILD release.
+Download WILD Console from the [latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest). The link always opens the newest public WILD release.
 
 ## Public Workflow Boundary
 
 The current public software path is:
 
-1. Connect and record with WILD_console.
+1. Connect and record with WILD Console.
 2. Export from the device microSD card.
 3. Run documented MATLAB or Python post-processing.
 
@@ -1186,7 +1201,7 @@ The public documentation does not treat BLE as a continuous high-bandwidth acqui
 
 ## Wireless Control
 
-WILD_console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
+WILD Console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
 
 Full-resolution WILD recordings remain local to the device microSD card and are exported after the session.
 
@@ -1203,18 +1218,17 @@ Full-resolution WILD recordings remain local to the device microSD card and are 
 - WILD BLE backend DLL for BLE support in older installer layouts.
 - `ffmpeg.exe` for some camera processing workflows.
 
-
 ---
 
 # Source file: docs/software/acquisition.md
 
 # Acquisition
 
-The acquisition workflow starts by connecting to a WILD device in WILD_console and ends with exported recording folders from the device microSD card.
+The acquisition workflow starts by connecting to a WILD device in WILD Console and ends with exported recording folders from the device microSD card.
 
 The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization support, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
 
-WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
+WILD Console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
 ## Recording Prerequisites
 
@@ -1241,11 +1255,11 @@ Most first-session work uses four button groups:
 
 Closed-loop settings, camera controls, stimulation parameters, GPIO options, and advanced panels are optional experiment-specific controls. Configure them after the basic connect-record-export path is working.
 
-![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
 ## Typical Session
 
-1. Start WILD_console.
+1. Start WILD Console.
 2. Complete Windows clock preparation if the session uses PC-side timestamps or external timing alignment.
 3. Scan for the WILD device.
 4. Connect over BLE.
@@ -1281,18 +1295,17 @@ The exported folder can include:
 
 See [Data Format](data-format.md) for field descriptions.
 
-
 ---
 
 # Source file: docs/software/live-visualization.md
 
 # Live Visualization
 
-WILD_console includes real-time panels for checking selected neural channels, auxiliary signals, camera preview, closed-loop state, and device status during setup and recording.
+WILD Console includes real-time panels for checking selected neural channels, auxiliary signals, camera preview, closed-loop state, and device status during setup and recording.
 
 Live visualization is a monitoring surface. Full-resolution neural, IMU, audio, camera, and event data are written locally to the device microSD card and recovered during export. Use the live view to confirm that the device is configured correctly, sensors are connected, and closed-loop state variables behave as expected.
 
-![WILD_console runtime screenshot with live preview and camera windows](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot with live preview and camera windows](../images/WIrelessEphys_Github_4_onlineAPI.jpg){ .wild-readable-figure }
 
 ## What Live View Is For
 
@@ -1343,7 +1356,6 @@ Live preview consumes device power and BLE bandwidth. Disable preview when the e
 - Confirm export completion after removing the microSD card.
 - Treat SD, BLE, low-battery, and release-image mismatch messages as session blockers until resolved.
 
-
 ---
 
 # Source file: docs/software/data-format.md
@@ -1367,15 +1379,15 @@ Each WILD device recording session exports a folder with neural data, auxiliary 
 
 ## Export Decoding
 
-The WILD device records compact local streams on its microSD card. During the current SD-card download workflow, WILD_console decodes the on-device recording into analysis-facing files: neural samples are written to `amplifier.dat`, auxiliary and timing words to `analogin.dat`, ADC or audio streams to `adc.dat`, camera payloads to `misc.dat`, and session parameters to the WILD parameter binary.
+The WILD device records compact local streams on its microSD card. During the current SD-card download workflow, WILD Console decodes the on-device recording into analysis-facing files: neural samples are written to `amplifier.dat`, auxiliary and timing words to `analogin.dat`, ADC or audio streams to `adc.dat`, camera payloads to `misc.dat`, and session parameters to the WILD parameter binary.
 
 The exported folder is therefore the decoded public data interface. Raw device storage blocks are not the expected analysis input; downstream MATLAB and Python tools operate on the downloaded files and generate derived outputs such as `info.rhd`, `time.dat`, event files, media files, IMU outputs, and spike-sorting inputs.
 
-![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
 ## Time Synchronization
 
-The WILD device keeps high-bandwidth recordings local while WILD_console provides PC-device coordination over BLE. At connection and recording setup, the console synchronizes device state with the PC session and records timing context with the exported dataset.
+The WILD device keeps high-bandwidth recordings local while WILD Console provides PC-device coordination over BLE. At connection and recording setup, the console synchronizes device state with the PC session and records timing context with the exported dataset.
 
 Timing metadata should be interpreted as a layered system: device sample counts provide the primary sample timeline, PC-device timing coordination supports session-level alignment, and external I/O or digital events provide the most direct alignment path for external cameras, behavior systems, stimulation hardware, and multi-device sessions.
 
@@ -1417,7 +1429,7 @@ Recommended synchronization workflow:
 4. Record PC/USB-GPIO timestamps, `t_usb`, and export the matching WILD event or digital-input timestamps as logger time, `t_wild = sample_index / fs`.
 5. Pair the same pulses across both records and reject missed, duplicated, or ambiguous edges.
 6. Fit the direction-specific map. For incoming triggers, use `t_wild = a * t_usb + b`. For outgoing triggers, fit the observed external TTL time against the originating WILD event and invert the map when external timestamps must be expressed in WILD time.
-7. Store the direction, TimeCalibrator record, fit coefficients, sync-pulse residuals, release image, WILD_console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
+7. Store the direction, TimeCalibrator record, fit coefficients, sync-pulse residuals, release image, WILD Console version, USB-GPIO interface, BLE controller path, and trigger wiring with the exported dataset.
 
 Periodic drift monitoring should continue across the recording, not only at the start. A short pre-session pulse train estimates initial delay, but repeated pulses during the session reveal PC clock drift, USB scheduling changes, logger clock drift, missed edges, or an interrupted connection. After fitting the USB-to-WILD time map, inspect residuals over time. A stable residual trace supports a single affine correction; jumps or curvature indicate that the session needs segmented correction, dropped-pulse review, or exclusion from high-precision timing analysis.
 
@@ -1455,7 +1467,6 @@ Keep three folders per experiment:
 1. Raw SD export.
 2. Converted analysis copy.
 3. Downstream results from spike sorting, behavior alignment, or machine-learning analysis.
-
 
 ---
 
@@ -1495,25 +1506,24 @@ Closed-loop model releases define:
 !!! warning "Deployment discipline"
     Embedded models are part of the validated device release. A model that passes desktop inference tests may still be unsafe for closed-loop use if RAM pressure or inference timing affects acquisition, storage, or stimulation behavior.
 
-
 ---
 
 # Source file: docs/software/api-cli.md
 
 # Programmatic Workflows
 
-WILD_console and the listed scripts form the supported public interface for acquisition, export, post-processing, and validation.
+WILD Console and the listed scripts form the supported public interface for acquisition, export, post-processing, and validation.
 
-WILD_console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
+WILD Console handles BLE discovery, synchronization support, configuration, selected preview, and SD-card export. Full-resolution recordings are recovered from local storage rather than streamed continuously over BLE.
 
 !!! warning "No stable SDK yet"
-    The supported public programmable surface is WILD_console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
+    The supported public programmable surface is WILD Console plus the documented repository scripts. The project does not currently document a stable general-purpose SDK with a versioned command contract.
 
 ## Current Support
 
 | Area | Current operation style | Purpose |
 | --- | --- | --- |
-| Acquisition | WILD_console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
+| Acquisition | WILD Console | BLE discovery, connection, synchronization support, recording setup, selected live preview, closed-loop configuration, and SD-card export. |
 | Post-processing | MATLAB scripts | Header generation, timing correction, event export, IMU processing, and Intan-compatible output preparation. |
 | Camera/audio decoding | Python scripts | Decode `misc.dat` and related audio data into reviewable media outputs. |
 | Batch processing | Python and MATLAB scripts | Process folders of recordings after SD export. |
@@ -1524,7 +1534,7 @@ WILD_console handles BLE discovery, synchronization support, configuration, sele
 
 The current public API surface is organized around these operations:
 
-- Export recording folders from WILD_console.
+- Export recording folders from WILD Console.
 - Generate corrected `info.rhd` and `time.dat` outputs.
 - Convert raw WILD camera/audio data into media files.
 - Process IMU channels into calibrated signals.
@@ -1534,7 +1544,7 @@ The current public API surface is organized around these operations:
 
 ## Device Operation Categories
 
-WILD_console and controller workflows expose device operations at a task level. Public documentation should describe these operations by purpose rather than by low-level command ID.
+WILD Console and controller workflows expose device operations at a task level. Public documentation should describe these operations by purpose rather than by low-level command ID.
 
 | Category | Typical operations |
 | --- | --- |
@@ -1562,8 +1572,7 @@ For reproducible use, record the following metadata with tool outputs and exampl
 
 ## SDK Status
 
-WILD_console operations and documented processing scripts are the supported public surface. Script internals remain implementation details unless a workflow is explicitly documented.
-
+WILD Console operations and documented processing scripts are the supported public surface. Script internals remain implementation details unless a workflow is explicitly documented.
 
 ---
 
@@ -1599,12 +1608,11 @@ Analysis documentation covers conversion from WILD exports to analysis-ready fil
 ## Reproducibility Checklist
 
 - Record release image filename.
-- Record WILD_console version.
+- Record WILD Console version.
 - Preserve the raw export folder.
 - Preserve the WILD parameter binary.
 - Record probe, channel map, sampling rate, and stimulation configuration.
 - Track post-processing script version or commit hash.
-
 
 ---
 
@@ -1658,7 +1666,6 @@ example_recording/
 ```
 
 Output names depend on the script path and whether audio is present, but the public decoder workflow writes reviewable media next to the source export by default.
-
 
 ---
 
@@ -1722,7 +1729,6 @@ example_recording/
 4. Confirm that `IMU.mat` is generated.
 5. Keep the raw export unchanged and write downstream results into a separate analysis copy when reprocessing.
 
-
 ---
 
 # Source file: docs/analysis/spike-sorting.md
@@ -1746,7 +1752,6 @@ Kilosort is the recommended starting point for spike sorting exported WILD elect
 !!! note
     Do not assume a generic channel map. Document the exact probe and channel ordering used for each dataset.
 
-
 ---
 
 # Source file: docs/examples/index.md
@@ -1762,7 +1767,7 @@ These example workflows summarize common WILD device use cases and the metadata 
 | Basic neural recording | Battery, SD format, BLE connect, recording, export, preprocessing. | `amplifier.dat`, `analogin.dat`, `time.dat`, `info.rhd`, `CE_params.bin`. |
 | Closed-loop ripple detection | Filter setup, thresholding, stimulation configuration, validation waveform. | Event files, threshold traces, and stimulation timing review. |
 | Theta phase stimulation | Hilbert mode setup, phase logic, stimulation timing, event export. | Phase-locked trigger timing and stimulation event checks. |
-| Multi-animal synchronization | Multiple WILD_console instances, start timing, sync line, analysis alignment. | Matched durations, stable offsets, and retained sync events. |
+| Multi-animal synchronization | Multiple WILD Console instances, start timing, sync line, analysis alignment. | Matched durations, stable offsets, and retained sync events. |
 | Outdoor recording | Power planning, SD choice, wireless checks, data integrity checks. | Complete export, no unexpected truncation, and logged power configuration. |
 | Camera plus IMU | Camera decode, IMU processing, and behavioral alignment. | Reviewable video output and generated `IMU.mat`. |
 
@@ -1790,7 +1795,6 @@ The highest-value example pages to expand next are:
 
 These three paths cover the first successful dry run, cross-device timing, and one validated responsive-control workflow.
 
-
 ---
 
 # Source file: docs/community/index.md
@@ -1804,7 +1808,7 @@ Community pages collect citation guidance, contribution rules, and support expec
 <div class="wild-grid two">
   <a class="wild-card wild-card-link" href="../publications/">
     <h3>Publication</h3>
-    <p>Use the Nature Methods citation and include release metadata for reproducible methods reporting.</p>
+    <p>Use the current publication-status guidance and include release metadata for reproducible methods reporting.</p>
   </a>
   <a class="wild-card wild-card-link" href="../contributing/">
     <h3>Contributing</h3>
@@ -1826,12 +1830,11 @@ When sharing a method, bug report, example dataset, or compatibility note, inclu
 
 - Hardware revision.
 - Release image or release tag.
-- WILD_console version.
+- WILD Console version.
 - SD-card model.
 - Battery model.
 - Recording mode and sampling configuration.
 - Whether audio, video, IMU, stimulation, or external sync were enabled.
-
 
 ---
 
@@ -1839,19 +1842,25 @@ When sharing a method, bug report, example dataset, or compatibility note, inclu
 
 # Publications
 
-Publication notes collect the WILD citation and the release metadata needed for reproducible methods reporting.
+Publication notes collect the current WILD manuscript status and the release metadata needed for reproducible methods reporting.
 
-## Platform Paper
+## Publication Status
 
-The WILD platform paper appears in *Nature Methods*. Add the final DOI, volume, issue, and page range here when available. For repository-based methods descriptions, include the WILD hardware revision, release image, WILD_console version, and analysis-script version used in the work.
+A manuscript describing the WILD platform is currently under review. This documentation provides public-facing information for the hardware files, release images, WILD Console usage, post-processing workflows, metadata requirements, and validation checks associated with the platform.
+
+Final peer-reviewed citation information, including journal, DOI, volume, issue, and page details, will be added after publication.
+
+## Citation Before Publication
+
+Before publication, cite the repository or release record and report the exact release context used in the work. Do not include journal, DOI, volume, issue, or page information until those details are final.
 
 ```bibtex
-@article{zhao2026wild,
-  title        = {A wireless modular platform for neuro-behavioral recording and closed-loop manipulation in small animals},
+@misc{wild_repository,
+  title        = {WILD: Wireless, Interactive, Lightweight Datalogger},
   author       = {Zhao, Zifang and Chang, Hongyu and Paudel, Praveen and Park, Jaehyo and Liu, Can and Aurelio, Maria Q. and Oliva, Azahara and Fernandez-Ruiz, Antonio},
-  journal      = {Nature Methods},
-  year         = {2026},
-  doi          = {ADD_FINAL_DOI}
+  howpublished = {\url{https://github.com/ayalab1/Neurologger}},
+  note         = {Public documentation and release files. Report the release tag, device image, hardware revision, WILD Console version, and analysis-script commit used in the experiment.},
+  year         = {2026}
 }
 ```
 
@@ -1863,17 +1872,16 @@ Repository: [https://github.com/ayalab1/Neurologger](https://github.com/ayalab1/
 
 ## Reproducible Methods Reporting
 
-In addition to the paper citation, report the exact release context used in the work:
+For reproducible methods reporting, include:
 
 - Repository URL.
 - Release tag.
 - Release image filename.
 - Hardware revision.
-- WILD_console version.
+- WILD Console version.
 - Analysis script version or commit hash, when applicable.
 
 The repository includes a root `CITATION.cff` file for software-style citation metadata.
-
 
 ---
 
@@ -1887,7 +1895,7 @@ WILD is an open-source hardware and software project. Contributions are welcome 
 
 - Improve setup and troubleshooting documentation.
 - Share hardware assembly notes or photos.
-- Report WILD_console, release-image, or hardware compatibility issues with version details.
+- Report WILD Console, release-image, or hardware compatibility issues with version details.
 - Share analysis examples and validation datasets.
 - Improve closed-loop or TinyML examples.
 - Provide compatibility notes for probes, SD cards, batteries, and BLE adapters.
@@ -1909,7 +1917,6 @@ WILD is an open-source hardware and software project. Contributions are welcome 
 - Keep WILD hardware visuals traceable to real hardware, CAD, PCB, or measured source material.
 - Separate validated behavior from unvalidated claims.
 - Keep safety, protocol, and animal-use details local to approved lab procedures unless they are public and reviewed.
-
 
 ---
 
@@ -1943,11 +1950,8 @@ WILD supports online inference of curated, experiment-specific models through va
 
 ## How do I cite WILD?
 
-Use the Nature Methods citation listed on the [Publications](publications/index.md) page. Reproducible methods should also include the WILD hardware revision, release image, WILD_console version, and analysis-script version.
+Use the current citation guidance on the [Publications](publications/index.md) page. Until the manuscript is published, cite the repository or release record and include the WILD hardware revision, release image, WILD Console version, and analysis-script version.
 
 ## Where do new diagrams go?
 
 Source diagrams are best kept editable where possible, with web-ready images exported into `docs/images/`. For readable architecture diagrams, Mermaid in Markdown is preferred.
-
-
----

@@ -28,7 +28,7 @@ Analysis documentation covers conversion from WILD exports to analysis-ready fil
 ## Reproducibility Checklist
 
 - Record release image filename.
-- Record WILD_console version.
+- Record WILD Console version.
 - Preserve the raw export folder.
 - Preserve the WILD parameter binary.
 - Record probe, channel map, sampling rate, and stimulation configuration.

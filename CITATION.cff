@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use WILD, please cite the repository and include the exact release tag, release image, hardware revision, and WILD_console version."
+message: "If you use WILD, please cite the repository and include the exact release tag, release image, hardware revision, and WILD Console version."
 title: "WILD: Wireless, Interactive, Lightweight Datalogger"
 type: software
 authors:

@@ -8,6 +8,24 @@ The WILD device conditions the selected battery through a converter and regulato
 
 Boot, microSD writes, camera use, stimulation, and live preview can create different peak-load conditions. Validate the complete experiment mode on the bench before using a battery in an animal session.
 
+## Measured Device Modes
+
+Representative WILD power modes are summarized here because they directly affect battery selection and runtime planning. Report these values together with the release image, SD-card model, battery, and enabled peripherals used for the session.
+
+<div class="wild-spec-scroll" markdown="1">
+
+| Power (mW) | Channels | Samples/s | Mode | Weight (g) | Video | Audio | Motion sensor | Processing |
+| --- | ---: | ---: | --- | ---: | --- | --- | --- | --- |
+| 0.11 | 0 | 0 | Sleep | 1.48 | - | - | - | - |
+| 24.42 | 8 | 4.0e4 | Ephys, IMU | 1.48 | - | - | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 194.04 | 64 | 2.6e6 | Ephys, IMU | 1.48 | - | - | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 208.67 | 64 | 2.92e6 | Ephys, IMU, audio | 1.48 | - | 160 kHz ultrasonic audio path | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+| 245.28 | 64 | 5.48e6 | Ephys, IMU, audio, video | 1.48 | 320 x 320 px, 16 Hz | 160 kHz ultrasonic audio path | Accelerometer, gyroscope, magnetosensor | Spectral power, TinyML |
+
+</div>
+
+The table is a planning reference, not a substitute for bench validation. Current draw can change with release image, recording duration, SD-card behavior, battery voltage, preview state, stimulation, and camera configuration.
+
 ## Battery
 
 The WILD device should use a battery approved for the specific hardware revision and experiment mode. Before mounting the device, confirm that the battery can boot the device without voltage sag, start recording, and sustain the planned sensors, preview state, stimulation, or camera load.
@@ -57,7 +75,7 @@ Recommended charger record:
 
 ## microSD Power
 
-The microSD card is part of the power and reliability budget. Format cards with WILD_console before recording, and validate the selected card in the same sampling and modality mode planned for the experiment.
+The microSD card is part of the power and reliability budget. Format cards with WILD Console before recording, and validate the selected card in the same sampling and modality mode planned for the experiment.
 
 ![microSD power comparison](../images/WIrelessEphys_Github_10_SDcard_power.jpg){ .wild-readable-figure }
 

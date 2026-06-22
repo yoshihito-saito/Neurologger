@@ -6,7 +6,7 @@ WILD is an open-source hardware and software project. Contributions are welcome 
 
 - Improve setup and troubleshooting documentation.
 - Share hardware assembly notes or photos.
-- Report WILD_console, release-image, or hardware compatibility issues with version details.
+- Report WILD Console, release-image, or hardware compatibility issues with version details.
 - Share analysis examples and validation datasets.
 - Improve closed-loop or TinyML examples.
 - Provide compatibility notes for probes, SD cards, batteries, and BLE adapters.

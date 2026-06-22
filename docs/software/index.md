@@ -1,13 +1,13 @@
 # Software
 
-Software documentation covers how to connect to the WILD device, configure recordings in WILD_console, export data from the device microSD card, and process recordings for analysis.
+Software documentation covers how to connect to the WILD device, configure recordings in WILD Console, export data from the device microSD card, and process recordings for analysis.
 
 ## Software Components
 
 <div class="wild-grid wild-nav-grid">
   <a class="wild-card wild-card-link wild-card-compact" href="acquisition/">
     <div>
-    <h3>WILD_console</h3>
+    <h3>WILD Console</h3>
       <p>Connect and export</p>
     </div>
   </a>
@@ -33,13 +33,13 @@ Software documentation covers how to connect to the WILD device, configure recor
 
 ## Install
 
-Download WILD_console from the [latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest). The link always opens the newest published WILD release.
+Download WILD Console from the [latest GitHub release](https://github.com/ayalab1/Neurologger/releases/latest). The link always opens the newest public WILD release.
 
 ## Public Workflow Boundary
 
 The current public software path is:
 
-1. Connect and record with WILD_console.
+1. Connect and record with WILD Console.
 2. Export from the device microSD card.
 3. Run documented MATLAB or Python post-processing.
 
@@ -47,7 +47,7 @@ The public documentation does not treat BLE as a continuous high-bandwidth acqui
 
 ## Wireless Control
 
-WILD_console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
+WILD Console remains the stable public control and export workflow for BLE discovery, connection, synchronization support, status checks, selected preview, low-bandwidth commands, and SD-card export.
 
 Full-resolution WILD recordings remain local to the device microSD card and are exported after the session.
 

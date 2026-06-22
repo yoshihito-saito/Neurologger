@@ -26,7 +26,7 @@ WILD supports online inference of curated, experiment-specific models through va
 
 ## How do I cite WILD?
 
-Use the Nature Methods citation listed on the [Publications](publications/index.md) page. Reproducible methods should also include the WILD hardware revision, release image, WILD_console version, and analysis-script version.
+Use the current citation guidance on the [Publications](publications/index.md) page. Until the manuscript is published, cite the repository or release record and include the WILD hardware revision, release image, WILD Console version, and analysis-script version.
 
 ## Where do new diagrams go?
 

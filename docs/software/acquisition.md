@@ -1,10 +1,10 @@
 # Acquisition
 
-The acquisition workflow starts by connecting to a WILD device in WILD_console and ends with exported recording folders from the device microSD card.
+The acquisition workflow starts by connecting to a WILD device in WILD Console and ends with exported recording folders from the device microSD card.
 
 The WILD device records high-bandwidth neural and multimodal data locally. BLE is used for discovery, synchronization support, configuration, status, selected preview, and control commands rather than continuous full-bandwidth data streaming.
 
-WILD_console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
+WILD Console is the stable public control path today. Full-resolution recordings remain stored on the device microSD card.
 
 ## Recording Prerequisites
 
@@ -31,11 +31,11 @@ Most first-session work uses four button groups:
 
 Closed-loop settings, camera controls, stimulation parameters, GPIO options, and advanced panels are optional experiment-specific controls. Configure them after the basic connect-record-export path is working.
 
-![WILD_console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
+![WILD Console runtime screenshot of the offline export workflow](../images/WIrelessEphys_Github_5_offlineAPI.jpg){ .wild-readable-figure }
 
 ## Typical Session
 
-1. Start WILD_console.
+1. Start WILD Console.
 2. Complete Windows clock preparation if the session uses PC-side timestamps or external timing alignment.
 3. Scan for the WILD device.
 4. Connect over BLE.

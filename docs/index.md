@@ -6,8 +6,8 @@ hide:
 
 <section class="wild-hero">
   <div>
-    <h1>WILD: Wireless neuro-behavioral recording and closed-loop manipulation in freely moving animals</h1>
-    <p>The Wireless, Interactive, Lightweight Datalogger (WILD) is an ultra-lightweight multimodal neurologger for local electrophysiology, behavioral sensing, embedded processing, and responsive stimulation in freely behaving small animals.</p>
+    <h1>WILD: wireless neural recording and closed-loop control in freely behaving animals</h1>
+    <p>The Wireless, Interactive, Lightweight Datalogger (WILD) is a head-mounted local-storage platform for neural recording and closed-loop experimental control in freely behaving small animals. The system combines multichannel electrophysiology, auxiliary behavioral sensing, onboard processing, microSD storage, wireless configuration, and validated stimulation workflows.</p>
     <div class="wild-actions">
       <a class="md-button md-button--primary" href="getting-started/">Get Started</a>
       <a class="md-button" href="hardware/">Hardware</a>
@@ -34,9 +34,9 @@ hide:
 </section>
 
 <section class="wild-section wild-paper-banner">
-  <h2>Nature Methods platform paper</h2>
-  <p>WILD was developed to make high-channel-count neural recording, multimodal behavioral monitoring, and closed-loop perturbation feasible during naturalistic behavior without tethered acquisition hardware.</p>
-  <p>Use this site to reproduce the public 64-channel WILD workflow, locate hardware and software assets, and document the release image, hardware revision, WILD_console version, SD card, battery, and analysis scripts used for each dataset.</p>
+  <h2>Publication status</h2>
+  <p>A manuscript describing the WILD platform is currently under review. This website provides public-facing documentation for the hardware files, release images, WILD Console usage, post-processing workflows, metadata requirements, and validation checks associated with the platform.</p>
+  <p>Final peer-reviewed citation information will be added after publication. Until then, report the repository, release image, hardware revision, WILD Console version, SD card, battery, enabled modalities, and analysis scripts used for each dataset.</p>
 </section>
 
 <section class="wild-section">
@@ -56,7 +56,7 @@ hide:
     </div>
     <div class="wild-card wild-feature-card">
       <h3>Open and reproducible</h3>
-      <p>Hardware files, release images, WILD_console installers, MATLAB scripts, Python tools, and documentation are maintained in the public repository.</p>
+      <p>Hardware files, release images, WILD Console installers, MATLAB scripts, Python tools, and documentation are organized for release-specific methods reporting.</p>
     </div>
   </div>
 </section>
@@ -65,12 +65,12 @@ hide:
   <div class="wild-grid two">
     <div class="wild-card">
       <h2>Open-source release</h2>
-      <p><strong>Included in the public workflow:</strong> 64-channel local-storage WILD recording, WILD_console on Windows, validated release images, optional stimulation workflows, and post-processing through documented MATLAB and Python scripts.</p>
+      <p><strong>Included in the public workflow:</strong> 64-channel local-storage WILD recording, WILD Console on Windows, validated release images, optional stimulation workflows, and post-processing through documented MATLAB and Python scripts.</p>
       <p><strong>Not part of the stable public workflow:</strong> continuous full-bandwidth BLE telemetry, arbitrary runtime AI-model upload, and separate higher-performance research variants unless a release note explicitly supports them.</p>
     </div>
     <div class="wild-card">
       <h2>Reproducibility record</h2>
-      <p>For each experiment, record the exact release tag, device image filename, hardware revision, WILD_console version, SD-card model, battery, enabled modalities, and analysis-script commit.</p>
+      <p>For each experiment, record the exact release tag, device image filename, hardware revision, WILD Console version, SD-card model, battery, enabled modalities, and analysis-script commit.</p>
       <p><a href="https://github.com/ayalab1/Neurologger/releases/latest">Open the latest GitHub release</a>.</p>
     </div>
   </div>
@@ -134,7 +134,7 @@ hide:
     <span>Head-mounted camera</span>
     <span>Closed-loop DSP</span>
   </div>
-  <p class="wild-table-note">Detailed mode-dependent power and runtime records belong in the Hardware and Power documentation, together with release image, SD-card, and battery metadata.</p>
+  <p class="wild-table-note">Mode-dependent power values are listed in <a href="hardware/power/#measured-device-modes">Hardware / Power</a>, together with release image, SD-card, and battery metadata.</p>
 </section>
 
 <section class="wild-section">
@@ -180,7 +180,7 @@ hide:
     </div>
     <div class="wild-card wild-highlight-card">
       <h3>Open hardware iteration</h3>
-      <p>The repository contains hardware files, validated release assets, WILD_console installers, and analysis scripts.</p>
+      <p>The repository contains hardware files, validated release assets, WILD Console installers, and analysis scripts.</p>
     </div>
   </div>
 </section>
@@ -194,7 +194,7 @@ hide:
     </div>
     <div class="wild-card wild-step">
       <h3>2. Data acquisition</h3>
-      <p>Use WILD_console for BLE connection, synchronization support, recording configuration, closed-loop settings, and local logging startup.</p>
+      <p>Use WILD Console for BLE connection, synchronization support, recording configuration, closed-loop settings, and local logging startup.</p>
     </div>
     <div class="wild-card wild-step">
       <h3>3. Data analysis</h3>
@@ -208,22 +208,22 @@ hide:
   <h2>Publication and citation</h2>
   <div class="wild-grid two">
     <div class="wild-card">
-      <h3>Platform paper</h3>
-      <p>The WILD platform paper appears in <em>Nature Methods</em>. Add the final DOI and page details here when available.</p>
+      <h3>Publication status</h3>
+      <p>A manuscript describing the WILD platform is currently under review. Final citation information, including journal, DOI, volume, issue, and page details, will be added only after publication.</p>
     </div>
     <div class="wild-card">
       <h3>Repository and release versions</h3>
-      <p>For reproducible methods, report the hardware revision, release image, WILD_console version, and analysis scripts used for each dataset.</p>
+      <p>Before publication, cite the repository or release record and report the hardware revision, release image, WILD Console version, SD-card model, battery configuration, enabled modalities, and analysis scripts used for each dataset.</p>
     </div>
   </div>
 
 ```bibtex
-@article{zhao2026wild,
-  title        = {A wireless modular platform for neuro-behavioral recording and closed-loop manipulation in small animals},
+@misc{wild_repository,
+  title        = {WILD: Wireless, Interactive, Lightweight Datalogger},
   author       = {Zhao, Zifang and Chang, Hongyu and Paudel, Praveen and Park, Jaehyo and Liu, Can and Aurelio, Maria Q. and Oliva, Azahara and Fernandez-Ruiz, Antonio},
-  journal      = {Nature Methods},
-  year         = {2026},
-  doi          = {ADD_FINAL_DOI}
+  howpublished = {\url{https://github.com/ayalab1/Neurologger}},
+  note         = {Public documentation and release files. Report the release tag, device image, hardware revision, WILD Console version, and analysis-script commit used in the experiment.},
+  year         = {2026}
 }
 ```
 </section>
@@ -233,7 +233,7 @@ hide:
   <div class="wild-grid">
     <div class="wild-card">
       <h3>GitHub</h3>
-      <p><a href="https://github.com/ayalab1/Neurologger">Browse hardware files, release images, WILD_console installers, and analysis scripts.</a></p>
+      <p><a href="https://github.com/ayalab1/Neurologger">Browse hardware files, release images, WILD Console installers, and analysis scripts.</a></p>
     </div>
     <div class="wild-card">
       <h3>Issues and pull requests</h3>

@@ -4,7 +4,7 @@ The repository includes MATLAB and Python scripts for converting WILD recordings
 
 ## Standard Post-processing
 
-1. Export data from WILD_console.
+1. Export data from WILD Console.
 2. Run `WILD_PreProcess.m` to generate corrected headers and timing files.
 3. Run `WILD_processIMU.m` for IMU processing.
 4. Run `WILD_VideoDecodewAudio.py` or the folder variants for camera recordings.

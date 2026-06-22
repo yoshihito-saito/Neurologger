@@ -573,7 +573,8 @@
   box-shadow: var(--wild-shadow);
 }
 
-.md-typeset .wild-spec-table {
+.md-typeset .wild-spec-table,
+.md-typeset .wild-spec-scroll table {
   min-width: 58rem;
   margin: 0;
   border-collapse: collapse;
@@ -582,7 +583,9 @@
 }
 
 .md-typeset .wild-spec-table th,
-.md-typeset .wild-spec-table td {
+.md-typeset .wild-spec-table td,
+.md-typeset .wild-spec-scroll table th,
+.md-typeset .wild-spec-scroll table td {
   padding: 0.52rem 0.62rem;
   border: 0;
   border-bottom: 1px solid var(--wild-border);
@@ -590,7 +593,8 @@
   white-space: nowrap;
 }
 
-.md-typeset .wild-spec-table th {
+.md-typeset .wild-spec-table th,
+.md-typeset .wild-spec-scroll table th {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -599,13 +603,17 @@
   font-weight: 700;
 }
 
-.md-typeset .wild-spec-table td {
+.md-typeset .wild-spec-table td,
+.md-typeset .wild-spec-scroll table td {
   color: var(--wild-muted);
 }
 
 .md-typeset .wild-spec-table td:nth-child(4),
 .md-typeset .wild-spec-table td:nth-child(8),
-.md-typeset .wild-spec-table td:nth-child(9) {
+.md-typeset .wild-spec-table td:nth-child(9),
+.md-typeset .wild-spec-scroll table td:nth-child(4),
+.md-typeset .wild-spec-scroll table td:nth-child(8),
+.md-typeset .wild-spec-scroll table td:nth-child(9) {
   white-space: normal;
   min-width: 8rem;
 }

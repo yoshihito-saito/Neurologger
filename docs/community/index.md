@@ -7,7 +7,7 @@ Community pages collect citation guidance, contribution rules, and support expec
 <div class="wild-grid two">
   <a class="wild-card wild-card-link" href="../publications/">
     <h3>Publication</h3>
-    <p>Use the Nature Methods citation and include release metadata for reproducible methods reporting.</p>
+    <p>Use the current publication-status guidance and include release metadata for reproducible methods reporting.</p>
   </a>
   <a class="wild-card wild-card-link" href="../contributing/">
     <h3>Contributing</h3>
@@ -29,7 +29,7 @@ When sharing a method, bug report, example dataset, or compatibility note, inclu
 
 - Hardware revision.
 - Release image or release tag.
-- WILD_console version.
+- WILD Console version.
 - SD-card model.
 - Battery model.
 - Recording mode and sampling configuration.
